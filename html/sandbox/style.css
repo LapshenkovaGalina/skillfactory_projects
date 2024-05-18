@@ -1,0 +1,226 @@
+/* общие стили */
+* {
+  box-sizing: border-box;
+  font-family: Raleway;
+  margin: 0;
+  color: #2e2c2d;
+}
+
+.logo {
+  font-family: Righteous;
+  font-size: 24px;
+  color: #6b6364;
+}
+
+main {
+  padding: 1em;
+}
+
+footer {
+  padding: 1em;
+}
+
+footer p {
+  color: #8d8384;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header {
+  padding: 1em;
+  background-color: #f5eded;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #171516;
+  padding: 20px;
+}
+
+/* стили для больших экранов */
+.desktop {
+  position: relative;
+  width: 65%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.desktop .header {
+  display: flex;
+  align-items: center;
+}
+
+.desktop h1 {
+  font-size: 30px;
+  margin-bottom: 1em;
+}
+
+.desktop ul {
+  display: flex;
+  list-style: none;
+}
+
+.desktop li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.desktop li:last-child {
+  margin-right: 0;
+}
+
+.desktop p {
+  font-size: 16px;
+}
+
+.desktop footer {
+  font-size: 14px;
+}
+/* стили для смартфонов */
+.mobile {
+  width: 25%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.mobile .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile .menu-toggle {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.mobile .menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #2e2c2d;
+  border-radius: 3px;
+}
+
+.mobile .menu {
+  display: none;
+}
+
+.mobile .menu.active {
+  display: block;
+  margin-top: 20px;
+}
+
+.mobile ul {
+  list-style: none;
+}
+
+.mobile li {
+  margin-bottom: 10px;
+}
+
+.mobile h1 {
+  font-size: 24px;
+  margin-bottom: 1em;
+}
+
+.mobile footer {
+  padding: 1rem;
+  font-size: 14px;
+}
+
+/* чат */
+
+.tech-service-dialog {
+  position: absolute;
+  width: 30%;
+  bottom: 60px;
+  right: 1em;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.chat-message {
+  margin-bottom: 10px;
+}
+
+.chat-message-content {
+  display: inline-block;
+}
+
+.chat-input {
+  min-height: 30px;
+}
+.chat-form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+.chat-send-btn {
+  background-color: #638976;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Hide the dialog by default */
+.tech-service {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+.tech-service-dialog {
+  display: none;
+}
+
+.tech-service-btn {
+  font-family: inherit;
+  padding: 10px;
+  min-height: 30px;
+  background-color: #151314;
+  color: #ede7e8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.h1-images {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1-img {
+  max-width: 15%;
+  height: auto;
+}
