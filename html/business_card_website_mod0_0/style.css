@@ -1,0 +1,126 @@
+
+@media screen and (min-width: 1440px){
+    body > div {
+        width: 70%;  
+    }
+}
+
+@media screen and (max-width: 1439px) and (min-width: 1280px){
+    body > div {  
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    body > div {  
+        width: 100%;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1-block {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+h1 {
+    margin-bottom: 2px;
+    font-family: Lora, serif;
+    font-size: 28;
+    font-weight: 400;
+    font-style: normal;
+}
+.h1-block_icon {
+    border: 8px;
+    border-style: solid;
+    border-radius: 10%;
+    border-color: #DA954B;
+    width: 50px;
+    height: auto;
+}
+
+.h1-block_paragraph {
+    margin-top: 0px;
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-size: 24px;
+    color: #DA954B;
+}
+
+h2 {
+    margin-top: 0px;
+    font-size: 30px;
+    font-weight: 500;
+    border-bottom: 3px dotted #DA954B; 
+}
+
+.hero {
+    display: flex;
+    flex-shrink: 8;
+    height: auto;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 25px;
+}
+
+.hero_photo {
+    border: 3px;
+    border-style: solid;
+    border-radius: 3%;
+    border-color: #DA954B;
+}
+
+li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero_list0 {
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    padding-left: 0px;
+}
+
+.hero_list1 {
+    list-style: none;
+}
+
+.hero_list0 li::before {
+    content: '■';
+    color: #DA954B;
+    padding-right: 8px;
+}
+
+.hero_list1 li::before {
+    content: '•';
+    color: #DA954B;
+    padding-right: 8px;
+}
+
+.hero_paragraph {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person-info_part1 p, .person-info_part2 p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 25px;
+}

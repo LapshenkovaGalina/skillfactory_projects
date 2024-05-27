@@ -1,0 +1,149 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    border-bottom: 3px solid #DA954B;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    width: 1000px;
+}
+
+.h1-block {
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+h1 {
+    margin-bottom: 2px;
+    font-family: Lora, Times, serif;
+    font-size: 28;
+    font-weight: 400;
+    font-style: normal;
+}
+.h1-block__icon {
+    border: 8px solid #DA954B;
+    border-radius: 10%;
+
+    width: 50px;
+    height: auto;
+}
+
+.h1-block__paragraph {
+    margin-top: 0px;
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-size: 24px;
+    color: #DA954B;
+}
+
+h2 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    border-bottom: 3px dotted #DA954B;
+}
+
+.h2_icon {
+    margin-left: -3px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 40px;
+    flex-shrink: 2;
+}
+
+.hero h2 {
+    margin-top: 0px;
+}
+
+.hero__photo {
+    border: 3px solid #DA954B;
+    border-radius: 3%;
+    max-width: 330px;
+}
+
+ul {
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    list-style: none;
+    font-size: 22px;
+    line-height: 30px;
+    padding-left: 20px;
+}
+
+li::before {
+    font-family: Arial, Helvetica, sans-serif;
+    content: '■';
+    color: #DA954B;
+    padding-right: 9px;
+}
+
+.hero__text_sublist li::before {
+    font-family: Arial, Helvetica, sans-serif;
+    content: '•';
+    color: #DA954B;
+    padding-left: 30px;
+}
+
+.hero__text_paragraph {
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.person-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.person-info p {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+footer {
+    border-top: 3px solid #DA954B;
+    text-align: center;
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+}
+
+footer p{
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+}
+
+a {
+    color: black;
+    transition: color .2s;
+  }
+
+a:hover {
+    color: #DA954B;
+  }

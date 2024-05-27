@@ -3,54 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лапшенкова Галина</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <title>Лапшенкова Галина</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Comfortaa:wght@300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Лапшенкова Галина.<br>Разработчик</h1>
-    <img src="LapshenkovaG.jpg" alt="Фото. Галина Лапшенкова" width="300">
-    <h2>Навыки разработчика</h2>
-    <ul>
-        <li>Программирование на C:</li>
-        <ul>
-            <li>Микроконтроллеры</li>
-            <li>OS Windows</li>
-            <li>GNU/Linux</li>
-        </ul>
-        <li>HTML+CSS</li>
-        <li>Конфигурирование ПЛИС</li>
-        <li>Написание bash-скриптов в GNU/Linux</li>
-    </ul>
-    <p>Также умею управляться с осциллографом, генератором сигналов,<br>
-        и паяльником умело орудую!</p>
-    <h2>Курсы повышения квалификации</h2>
-     <p>Курс "Цифровая обработка сигналов", НАУЧНО‑ОБРАЗОВАТЕЛЬНЫЙ ЦЕНТР<br>
-        АО «Северо-Западный региональный центр Концерна ВКО «Алмаз‑Антей» - <br>
-        Обуховский завод»</p>
-    <h2>Опыт работы</h2>
-    <ul>
-        <li>Инженер АО "РИРВ"</li>
-        <li>Технический специалист ООО "Адривер"</li>
-    </ul>
-    <h2>Хобби</h2>
-    <p>Постоянного хобби нет, но я в активном его поиске!</p>
-    <h2>Как я стала разработчиком</h2>
-    <p>В школьные годы я познакомилась с программистом и решила,<br>
-    что <em>если уж на кого и учиться, то только на программиста...</em><br>
-    <p>В итоге:
-    <ul>
-        <li>в июне 2012 г. я поступила в СПб ГБПОУ «Петровский колледж»</li>
-        <li>в июне 2014 г. поступила в ФГАОУ ВО «САНКТ-ПЕТЕРБУРГСКИЙ<br>
-        ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ АЭРОКОСМИЧЕСКОГО ПРИБОРОСТРОЕНИЯ»</li>
-        <li>в апреле 2016 г. я, наконец, устроилась по специальности! </li>
-    </ul></p>
-    <p>Ну а сейчас я уже не просто программист, а <strong>разработчик</strong>!</p>
-    <img src="line0.jpg" alt="line_img" width="200" height="20">
-    <h3>Контакты</h3>
-    <p>Телефон: 5554445<br>
-        E-mail: <a href="mailto:lapshenkovagalina@gmail.com" target="_blank">lapshenkovagalina@gmail.com</a><br>
-        Telegram: <a href="https://t.me/toolazyperson" target="_blank">toolazyperson</a></p>
+<header>
+    <p>Визитка IT-специалиста</p>
+</header>
+<main>
+    <div class="h1-block">
+        <img src="person_icon.svg" alt="icon" class="h1-block__icon">
+        <div>
+            <h1>Лапшенкова Галина</h1>
+            <p class="h1-block__paragraph">Разработчик</p>
+        </div>
+    </div>
+    <div class="hero">
+       <img src="LapshenkovaG.jpg" alt="person_photo" class="hero__photo">
+       <div class="hero__text">
+           <h2 class=><img src="label_icon.svg" alt="icon" class="h2_icon"> Навыки разработчика</h2>
+           <ul class="hero__text_list">
+               <li>Программирование на C:</li>
+               <ul class="hero__text_sublist">
+                   <li>Микроконтроллеры</li>
+                   <li>OS Windows</li>
+                   <li>GNU/Linux</li>
+               </ul>
+               <li>HTML+CSS</li>
+               <li>Конфигурирование ПЛИС</li>
+               <li>Написание bash-скриптов в GNU/Linux</li>
+           </ul>
+           <p class="hero__text_paragraph">Также умею управляться с осциллографом, <br>генератором сигналов, <br>
+            и паяльником умело орудую!</p>
+       </div>
+    </div>
+    <div class="person-info__part1 person-info">
+    <div>
+        <div class="person-info__part1_text">
+            <h2><img src="label_icon.svg" alt="icon" class="h2_icon"> Опыт работы</h2>
+            <ul>
+               <li>Инженер АО "РИРВ"</li>
+               <li>Технический специалист ООО "Адривер"</li>
+            </ul> 
+        </div>        
+        <div> 
+           <h2><img src="label_icon.svg" alt="icon" class="h2_icon"> Курсы повышения квалификации</h2>
+           <p>Курс "Цифровая обработка сигналов", НАУЧНО‑ОБРАЗОВАТЕЛЬНЫЙ ЦЕНТР<br>
+           АО «Северо-Западный региональный центр Концерна ВКО «Алмаз‑Антей» - <br>
+           Обуховский завод»</p>
+        </div>
+    </div>
+    <div class="person-info__part2 person-info">
+        <div>
+            <h2><img src="label_icon.svg" alt="icon" class="h2_icon"> Хобби</h2>
+            <p>Постоянного хобби нет, но я в активном его поиске!<br>
+            Хотелось бы увлечение, связанное с музыкой или 3D-анимацией. А может танцы?
+            </p>
+        </div>
+        <div> 
+            <h2><img src="label_icon.svg" alt="icon" class="h2_icon"> Как я стала разработчиком</h2>
+            <p>В школьные годы я познакомилась с программистом и решила,<br>
+            что <em>если уж на кого и учиться, то только на программиста...</em><br>
+            <p>В итоге:
+                <ul>
+                   <li>в июне 2012 г. я поступила в СПб ГБПОУ «Петровский колледж»</li>
+                   <li>в июне 2014 г. поступила в ФГАОУ ВО «САНКТ-ПЕТЕРБУРГСКИЙ<br>
+                   ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ АЭРОКОСМИЧЕСКОГО <br>ПРИБОРОСТРОЕНИЯ»</li>
+                   <li>в апреле 2016 г. я, наконец, устроилась по специальности! </li>
+                </ul>
+            </p>
+           <p>Ну а сейчас я уже не просто программист, а <strong>разработчик</strong>!</p>
+        </div>
+    </div>
+</div>
+</main>
+<footer>
+    <p><img src="contact_phone_icon.svg" alt="icon"><br><a href="tel:5554445" class="link">5554445</a></p>
+    <p><img src="mail_icon.svg" alt="icon"><br><a href="mailto:lapshenkovagalina@gmail.com" target="_blank">lapshenkovagalina@gmail.com</a></p>
+    <p><img src="web_icon.svg" alt="icon"><br><a href="https://t.me/toolazyperson" target="_blank">toolazyperson</a></p>
+</footer>
 </body>
 </html>
