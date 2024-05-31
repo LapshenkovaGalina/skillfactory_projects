@@ -217,10 +217,6 @@ footer {
     column-gap: 93px;
 }
 
-.footer_list div{
-    display: flex;
-}
-
 .footer_list ul{
     list-style: none;
 
