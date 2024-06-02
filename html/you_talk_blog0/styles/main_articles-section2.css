@@ -3,7 +3,8 @@
     .main__articles-section2 article {
         
         height: 25vw;
-        width: 25vw;
+        width: 32%;
+        /* width: 25vw; */
     }
 }
 @media screen and (max-width: 768px) and (min-width: 576px){
@@ -11,14 +12,17 @@
     .main__articles-section2 article {
         
         height: 45vw;
-        width: 45vw;
+        width: 48%;
+        /* width: 45vw; */
     }
 }
 
 @media screen and (max-width: 575px) {
 
-    .main__articles-section2 article, .footer__section1 div {
-        
+    .main__articles-section2 article {
+        height: 45vw;
+        width: 100%;
+        /* width: 45vw; */
     }
 }
 /* -------------------------------------------------------------- */
