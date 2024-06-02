@@ -1,0 +1,135 @@
+@media screen and (min-width: 769px) {
+    
+    .body-container {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 576px){
+    
+    .body-container {
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+    
+    h1 {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    
+    .body-container {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+}
+
+/* @media screen and (min-width: 769px) {
+    
+    .body-container {
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+
+    .main__articles-section1 {
+        flex-direction: row;
+    }
+
+    .main__articles-section2 div {
+        
+        height: 25vw;
+        width: 25vw;
+    }
+
+    .footer__section1 div:first-child
+    {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .footer__section1 div:nth-child(2)
+    {
+        width: 30vw;
+        height: 25vw;
+    }
+
+    .footer__section1 div:last-child
+    {
+        width: 15vw;
+        height: 25vw;
+    }
+
+    .footer__section2 {
+        height: 5vw;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 576px){
+    
+    .body-container {
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
+    
+    .main__articles-section1 {
+        flex-direction: column;
+    }
+
+    .main__articles-section2 div {
+        
+        height: 45vw;
+        width: 45vw;
+    }
+
+    .footer__section1 div:first-child
+    {
+        width: 30vw;
+        height: 25vw;
+    }
+
+    .footer__section1 div:nth-child(2)
+    {
+        width: 45vw;
+        height: 25vw;
+    }
+
+    .footer__section1 div:last-child
+    {
+        width: 20vw;
+        height: 25vw;
+    }
+
+    .footer__section2 {
+        height: 20vw;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    
+    .body-container {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .main__articles-section1 {
+        flex-direction: column;
+    }
+
+    .main__articles-section2 div, .footer__section1 div {
+        
+        height: 100vw;
+        width: 100vw;
+    }
+
+    .footer__section2 {
+        height: 30vw;
+    }
+} */

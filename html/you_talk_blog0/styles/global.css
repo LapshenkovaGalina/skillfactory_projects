@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+}
+
+header {
+    background-color:azure;
+    height: 8vh;
+    width: 100%;
+}
+
+main {
+    background-color:lightcyan;
+    width: 100%
+}
+
+footer {
+    width:100%;
+    background-color:#2963A3;
+    color: #FFFFFF;
+}
+
+body {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    background-color:blueviolet;
+    /* width: 100vw; */
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+article {
+    border: 3px;
+    border-color:black;
+    border-style: solid;
+}
+
+article p {
+    font-size: 14px;
+}
+
+article span {
+    font-size: 12px;
+}
