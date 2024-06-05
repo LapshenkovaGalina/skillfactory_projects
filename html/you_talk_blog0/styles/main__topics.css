@@ -22,6 +22,8 @@
 
 .main__topics {
     row-gap: 8px;
+    column-gap: 8px;
+    margin-bottom: 24px;
 }
 
 .main__topics a {

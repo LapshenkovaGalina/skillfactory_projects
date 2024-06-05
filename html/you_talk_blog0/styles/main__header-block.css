@@ -1,0 +1,42 @@
+@media screen and (min-width: 769px) {
+
+    h1 {
+        font-size: 48px;
+        margin-top: 40px;
+        margin-bottom: 32px;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 576px){
+    
+    h1 {
+        font-size: 48px;
+        margin-top: 40px;
+        margin-bottom: 32px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+
+    h1 {
+        font-size: 48px;
+    }
+}
+
+.main__header-block_navigate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 16px;
+}
+
+.main__header-block_navigate span {
+    font-size: 12px;
+    color: #333333;
+}
+
+.main__header-block_navigate .arrow {
+    transform: rotate(-90deg);
+    margin-left: 4px;
+    margin-right: 8px;
+}
