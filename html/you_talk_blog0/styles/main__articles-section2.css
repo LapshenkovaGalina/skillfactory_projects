@@ -6,7 +6,8 @@
 
     .main__articles-section2 article {
         width: 32%;
-        aspect-ratio: 1.2;        column-gap: 24px;
+        aspect-ratio: 1.2;
+        /* column-gap: 24px; */
     }
 }
 @media screen and (max-width: 768px) and (min-width: 576px){
