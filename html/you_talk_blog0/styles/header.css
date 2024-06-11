@@ -1,39 +1,22 @@
-@media screen and (min-width: 1024px) {
-    header {
-        height: 76px;
+@media screen and (min-width: 1440px) {
+    .header__nav_ul li {
+        display: inline-block;
+        margin-right: 30px;  
+      }
+
+    .header__hamburger-button {
+        display: none;
     }
+}
 
-    .header__nav_ul {
-        display: flex;
-        list-style: none;
-        column-gap: 30px;
-    }
+@media screen and (max-width: 1439px) and (min-width: 1024px) {
+    .header__nav_ul li {
+        display: inline-block;
+        margin-right: 15px;  
+      }
 
-    .header__nav_ul a {
-        text-decoration: none;
-        color: #333333;
-        cursor: pointer;
-    }
-
-    #dropdown_list {
-        display: flex;
-        align-items: center;
-        column-gap: 8px;
-    }
-
-    header button {
-        background-color: #E3F5F5;
-
-        font-size: 16px;
-        color: #03B2A5;
-        font-weight: 700;
-
-        border-style: none;
-        border-radius: 4px;
-
-        width: 230px;
-        height: 48px;
-        padding: 14px 20px 14px 20px;
+    .header__hamburger-button {
+        display: none;
     }
 }
 
@@ -43,7 +26,7 @@
         height: 70px;
     }
 
-    .header__nav_ul, header button{
+    .header__nav, header button{
         display: none;
     }
 }
@@ -51,9 +34,69 @@
 /* --------------------------------------------------- */
 
 header {
+    height: 76px;
     width: 100%;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.header__logo {
+    margin-right: 32px;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+header > nav {
+    width: 100%;
+}
+
+.header__nav_ul {
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+    font-size: 14px;
+
+    width: 100%;
+}
+
+.header__nav_ul a {
+    text-decoration: none;
+    color: #333333;
+    cursor: pointer;
+}
+
+#dropdown_list {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+}
+
+header button {
+    background-color: #E3F5F5;
+
+    font-size: 16px;
+    color: #03B2A5;
+    font-weight: 700;
+
+    border-style: none;
+    border-radius: 4px;
+    min-width: 230px;
+    height: 48px;
+    padding: 14px 20px 14px 20px;
+}
+
+header > button:hover {
+    background-color: #03B2A5;
+    color: white;
+}
+
+.header__nav_ul li {
+  display: inline-block;
 }

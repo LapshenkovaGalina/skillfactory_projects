@@ -1,56 +1,103 @@
-@media screen and (min-width: 769px) {
-    
-    /* .footer__section1_links-list {
-        width: 25vw;
-        height: 15vw;
-    }
+@media screen and (min-width: 768px) {
+
+    .footer__section1_links-list {
+        max-width: 310px;
+    }   
 
     .footer__section1_subscribing {
-        width: 30vw;
-        height: 15vw;
+        width: 450px;
     }
 
-    .footer__section1_soc-networks {
-        width: 15vw;
-        height: 15vw;
-    } */
+    .footer__section1_subscribing input {
+        width: 384px;
+    }
+
+    .footer__section1_subscribing button {
+        position: absolute;
+        left: 320px;
+    }
+
+    .footer__section1_soc-networks_networks {
+        margin-top: 40px;
+    }
 
     .footer__section2 {
-        height: 3vw;
+        flex-wrap: nowrap;
     }
 }
-@media screen and (max-width: 768px) and (min-width: 576px){
 
+@media screen and (min-width: 1200px) {
     
-    /* .footer__section1_links-list {
-        width: 30vw;
-        height: 20vw;
+    .footer__section1 {
+        flex-wrap: nowrap;
+    }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+
+    .footer__section1 {
+        flex-wrap: wrap;
+        row-gap: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px){
+
+    .footer__section1_links-list {
+        width: 100%;
     }
 
-    .footer__section1_subscribing {
-        width: 45vw;
-        height: 20vw;
+    .footer__section1_soc-networks_networks {
+        margin-top: 20px;
     }
 
-    .footer__section1_soc-networks {
-        width: 20vw;
-        height: 20vw;
-    } */
+    .footer__section1_subscribing input {
+        width: 384px;
+    }
+
+    .footer__section1_subscribing button {
+        position: absolute;
+        left: 320px;
+    }
+
+    .footer__section1 {
+        flex-wrap: wrap;
+        row-gap: 24px;
+    }
 
     .footer__section2 {
-        height: 15vw;
+        flex-wrap: wrap;
+        row-gap: 20px;
     }
 }
 
 @media screen and (max-width: 575px) {
 
-    .footer__section1 > div {
-        height: 50vw;
+    .footer__section1 > div, .footer__section1_links-list {
         width: 100%;
     }
 
+    .footer__section1_soc-networks_networks {
+        margin-top: 20px;
+    }
+
+    .footer__section1_subscribing button {
+        position: absolute;
+        right: 0px;
+    }
+
+    .footer__section1_subscribing input {
+        width: 100%;
+    }
+
+    .footer__section1 {
+        flex-wrap: wrap;
+        row-gap: 24px;
+    }
+
     .footer__section2 {
-        height: 30vw;
+        flex-direction: column;
+        row-gap: 20px;
     }
 }
 
@@ -58,34 +105,29 @@
 
 footer {
     width:100%;
+    padding-top: 40px;
+
     background-color:#2963A3;
     color: #FFFFFF;
 }
 
-.footer__section1 {
+.footer__section1, .footer__section1_links-list, .footer__section1_links-list ul {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-
-    /* height: 80%; */
 }
 
 .footer__section1_links-list {
-    display: flex;
-    justify-content: space-between;
+    min-width: 247px;
 }
 
 .footer__section1_links-list ul {
     list-style: none;
-    padding-left: 0px;
-
-    display: flex;    
+  
     flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
 
     font-size: 16px;
     font-weight: 700;
+    height: 184px;
 }
 
 .footer__section1_links-list ul li {
@@ -105,6 +147,12 @@ footer {
 
 .footer__section1_soc-networks {
     display: block;
+    width: 221px;
+}
+
+.footer__section1_soc-networks_networks {
+    display: flex;
+    column-gap: 16px;
 }
 
 .footer__section1 > div {
@@ -115,11 +163,40 @@ footer {
     border-style: solid;
 }
 
+.footer__section1_subscribing input {
+    border: 1px;
+    border-radius: 4px;
+
+    height: 48px;
+}
+
+.footer__section1_subscribing > div {
+    position: relative;
+    display: flex;
+}
+
+.footer__section1_subscribing button {
+    background-image: url("/images/footer__section1_subscribing_button.png");
+    border: 1px;
+    border-radius: 4px;
+
+    width: 64px;
+    height: 48px;
+    
+    z-index: 10;
+}
+
 .footer__section2 {
+    display: flex;
+    column-gap: 48px;
+    
     border: 3px;
     border-color:chocolate;
     border-style: solid;
 
     font-size: 14px;
     font-weight: 400;
+
+    padding-top: 17px;
+    padding-bottom: 17px;
 }

@@ -20,18 +20,21 @@
 <body>
     <div class="body-container">
         <header class="header">
-            <img src="images/you_talk_logo.svg" alt="you talk logo"/>
-            <nav class="header__nav">
-                <ul class="header__nav_ul">
-                    <li><a href="">О нас</a></li>
-                    <li><a href="">Тарифы</a></li>
-                    <li><a href="">Для бизнеса</a></li>
-                    <li><a href="">Психологам</a></li>
-                    <li><a href="">Сертификат</a></li>
-                    <li><div id="dropdown_list"><a href="">Материалы</a><img src="images/arrow.svg" alt="arrow down" class="arrow"/></div></li>
-                    <li><a href="">FAQ</a></li>
-                </ul>
-            </nav>
+            <div>
+                <img class="header__logo" src="images/you_talk_logo.svg" alt="you talk logo"/>
+                <nav class="header__nav">
+                    <ul class="header__nav_ul">
+                        <li><a href="">О нас</a></li>
+                        <li><a href="">Тарифы</a></li>
+                        <li><a href="">Для бизнеса</a></li>
+                        <li><a href="">Психологам</a></li>
+                        <li><a href="">Сертификат</a></li>
+                        <li><div id="dropdown_list"><a href="">Материалы</a><img src="images/arrow.svg" alt="arrow down" class="arrow"/></div></li>
+                        <li><a href="">FAQ</a></li>
+                    </ul>
+                </nav> 
+            </div>
+            <img class="header__hamburger-button" src="images/hamburger_button.png" alt="navigation">
             <button>Подобрать психолога</button>
         </header>
         <main class="main">
@@ -150,7 +153,6 @@
         <footer class="footer">
             <div class="footer__section1">
                 <div class="footer__section1_links-list">
-                    <div>
                         <ul>
                             <a href=""><li>О нас</li></a>
                             <a href=""><li>Тарифы</li></a>
@@ -158,8 +160,6 @@
                             <a href=""><li>Психологам</li></a>
                             <a href=""><li>FAQ</li></a>
                         </ul>
-                    </div>
-                    <div>
                         <ul>
                             <a href=""><li>Блог</li></a>
                             <a href=""><li>Вебинары</li></a>
@@ -167,16 +167,18 @@
                             <a href=""><li>Сертификат</li></a>
                             <a href=""><li>Контакты</li></a>
                         </ul>
-                    </div>
                 </div>
                 <div class="footer__section1_subscribing">
                     <p>Одно письмо в неделю со свежими новостями и акциями</p>
-                    <input type="text"/><button></button>
+                    <div>
+                        <input type="text"/>
+                        <button></button>
+                    </div>
                     <p>Подписываясь, я соглашаюсь на обработку персональных данных в соответствии с ФЗ РФ № 152-ФЗ «О персональных данных», а также с Политикой конфиденциальности</p>
                 </div>
                 <div class="footer__section1_soc-networks">
                     <img src="images/participant.svg"/>
-                    <div>
+                    <div class="footer__section1_soc-networks_networks">
                         <img src="images/VK_icon.svg"/>
                         <img src="images/telegram_icon.svg"/>
                         <img src="images/twitter_icon.svg"/>

@@ -1,25 +1,7 @@
-@media screen and (min-width: 769px) {
-
-    h1 {
-        font-size: 48px;
-        margin-top: 40px;
-        margin-bottom: 32px;
-    }
-}
-@media screen and (max-width: 768px) and (min-width: 576px){
-    
-    h1 {
-        font-size: 48px;
-        margin-top: 40px;
-        margin-bottom: 32px;
-    }
-}
-
-@media screen and (max-width: 575px) {
-
-    h1 {
-        font-size: 48px;
-    }
+h1 {
+    font-size: 48px;
+    margin-top: 40px;
+    margin-bottom: 32px;
 }
 
 .main__header-block_navigate {
