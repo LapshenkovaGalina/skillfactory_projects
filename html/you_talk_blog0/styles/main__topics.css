@@ -30,9 +30,7 @@
     display: flex;
     align-items: center;
 
-    border: 1px;
-    border-color:#C1C5CD;
-    border-style: solid;
+    border: 1px solid #C1C5CD;
     border-radius: 24px;
     
     padding: 6px 8px;

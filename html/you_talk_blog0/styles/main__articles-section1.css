@@ -9,7 +9,7 @@
         width: 49%;
     }
 
-    .main__articles-section1 img{
+    .article_img{
         height: 60%;
     }
 
@@ -26,7 +26,7 @@
         width: 100%;
     }
 
-    .main__articles-section1 img{
+    .article_img{
         height: 70%;
     }
 
@@ -44,7 +44,7 @@
         aspect-ratio: 0.95;
     }
 
-    .main__articles-section1 img{
+    .article_img {
         height: 40%;
     }
 }
