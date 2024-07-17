@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Кредитный калькулятор</title>
+    <style>
+        * {font-size: 22px;} 
+    </style>
+</head>
+<body>
+    <h3>Условия выдачи кредита:</h3>
+    <ul>
+    <li>выдача кредита возможна только лицу, достигшему 18 лет</li>
+    <li>максимально возможная сумма кредита, в зависимости от возраста:</li>
+    <ul>
+        <li>от 18 до 21 лет: 50000 р.</li>
+        <li>от 22 до 35 лет: 400000 р.</li>
+        <li>от 36 до 65 лет: 1000000 р.</li>
+    </ul>
+    <li>кредит выдаётся суммами, кратными 1000</li>
+    </ul>
+    <script>
+        const MAX_LOAN_AMOUNT_18_21 = 50000;
+        const MAX_LOAN_AMOUNT_22_35 = 400000;
+        const MAX_LOAN_AMOUNT_36_65 = 1000000;
+
+        const personAge = +prompt('Сколько Вам лет?');
+
+        if(isNaN(personAge))
+        {
+            alert('Введено некорректное значение!');
+        }
+        else if(personAge < 18)
+        {
+            alert('Выдача кредита невозможна лицу, не достигшему 18 лет.')
+        }
+        else if(personAge > 65)
+        {
+            alert('Выдача кредита невозможна лицу, старше 65 лет.');
+        }
+        else
+        {
+            if(personAge <= 21)
+            {
+                const credit = +prompt(`Максимально доступная сумма для Вас: ${MAX_LOAN_AMOUNT_18_21} р.\nВведите сумму, кратную 1000`);
+        
+                if (credit <= MAX_LOAN_AMOUNT_18_21 && credit > 0)
+                {
+                    if(credit % 1000 > 0)
+                    {
+                        alert(`Вы ввели значение не кратное 1000. Мы можем выдать ${Math.floor(credit - credit % 1000)} р.`);
+                    }
+                    else
+                    {
+                        alert('Сумма кредита одобрена!')
+                    }
+                }
+                else
+                {
+                    alert('Видимо, Вам кредит не нужен. Всего доброго!')
+                }
+        
+            }
+            else if(personAge > 21 && personAge <= 35)
+            {
+                const credit = +prompt(`Максимально доступная сумма для Вас: ${MAX_LOAN_AMOUNT_21_35} р.\nВведите сумму, кратную 1000`);
+
+                if (credit <= MAX_LOAN_AMOUNT_21_35 && credit > 0)
+                {
+                    if(credit % 1000 > 0)
+                    {
+                        alert(`Вы ввели значение не кратное 1000. Мы можем выдать ${Math.floor(credit - credit % 1000)} р.`);
+                    }
+                    else
+                    {
+                        alert('Сумма кредита одобрена!')
+                    }
+                }
+                else
+                {
+                    alert('Видимо, Вам кредит не нужен. Всего доброго!')
+                }
+            }
+            else if(personAge > 35 && personAge <= 65)
+            {
+                const credit = +prompt(`Максимально доступная сумма для Вас: ${MAX_LOAN_AMOUNT_36_65} р.\nВведите сумму, кратную 1000`);
+
+                if (credit <= MAX_LOAN_AMOUNT_36_65 && credit > 0)
+                {
+                    if(credit % 1000 > 0)
+                    {
+                        alert(`Вы ввели значение не кратное 1000. Мы можем выдать ${Math.floor(credit - credit % 1000)} р.`);
+                    }
+                    else
+                    {
+                        alert('Сумма кредита одобрена!')
+                    }
+                }
+                else
+                {
+                    alert('Видимо, Вам кредит не нужен. Всего доброго!')
+                }
+
+            }
+        }
+   </script> 
+</body>
+</html>

@@ -1,0 +1,91 @@
+.main__article-block {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 16px;
+
+    row-gap: 24px;
+}
+
+.main__article-block p {
+    line-height: 24px;
+}
+
+.article-block__big-img {
+    width: 100%;
+}
+
+figcaption {
+    font-size: 14px;
+    color: #868686;
+    margin-top: 16px;
+}
+
+.centered-paragraph {
+    background-image:url("/images/article-img_spot0.png");
+    background-repeat: no-repeat;
+
+    align-self: center;
+
+    height: 168px;
+}
+
+.centered-paragraph p{
+    width: 485px;
+    position: relative;
+}
+
+.article-block__h1-block {
+    row-gap: 16px;
+    margin-top: 54px;
+}
+
+.main__article-block ul {
+    list-style: none;
+}
+
+.article-block__contents h5{
+    margin-bottom: 16px;
+}
+
+.article-block__contents_main-ul ul{
+    margin-left: 56px;
+}
+
+.main__article-block > ul li::before, .article-block__contents_main-ul > li::before{
+    content: url("/images/ul_bold-dot.svg");
+    color: #03B2A5;
+    padding-right: 8px;
+}
+
+blockquote {
+    background-color: #F3F7FE;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.article-block__exercise {
+    padding: 24px;
+    border-radius: 16px;
+    background-color: #FEFAEC;
+}
+
+.article-block__exercise h5{
+    margin-bottom: 8px;
+}
+
+.exercise_blue {
+    background-color: #03B2A51A;
+}
+
+.article-block__topics a{
+    font-size: 14px;
+    color: #2963A3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.text-separator {
+    width: 178px;
+    align-self: center;
+}

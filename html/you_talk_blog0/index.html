@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/main__header-block.css">
-    <link rel="stylesheet" href="styles/main__topics.css">
-    <link rel="stylesheet" href="styles/main__articles-section1.css">
-    <link rel="stylesheet" href="styles/main__articles-section2.css">
-    <link rel="stylesheet" href="styles/main-article.css">
+    <link rel="stylesheet" href="styles/index_styles/h1.css">
+    <link rel="stylesheet" href="styles/index_styles/main__topics.css">
+    <link rel="stylesheet" href="styles/index_styles/main__articles-section1.css">
+    <link rel="stylesheet" href="styles/index_styles/main__articles-section2.css">
+    <link rel="stylesheet" href="styles/index_styles/main-article.css">
     <link rel="stylesheet" href="styles/footer.css">
     <title>youtalk blog</title>
 </head>
@@ -22,7 +22,7 @@
         <header>
         <div class="header">
             <div>
-                <img class="header__logo" src="images/you_talk_logo.svg" alt="you talk logo"/>
+                <img class="logo header__logo" src="images/you_talk_logo.svg" alt="you talk logo"/>
                 <nav class="header__nav">
                     <ul class="header__nav_ul">
                         <li><a href="">О нас</a></li>
@@ -35,19 +35,17 @@
                     </ul>
                 </nav> 
             </div>
-            <img class="header__hamburger-button" src="images/hamburger_button.png" alt="navigation">
+            <img class="hamburger-button header__hamburger-button" src="images/hamburger_button.png" alt="navigation">
             <button>Подобрать психолога</button>
         </div>
         </header>
         <main>
             <div class="main"> 
-            <div class="main__header-block">
-                <div class="main__header-block_navigate">
-                <span>Главная</span><img src="images/arrow.svg" alt="arrow down" class="arrow"/>
+            <div class="main__breadcrumbs">
+                <span>Главная</span><img class="arrow" src="images/arrow.svg" alt="arrow down"/>
                 <span>Блог</span>
-                </div>
-                <h1>Блог</h1>
             </div>
+            <h1>Блог</h1>
             <div class="main__topics">
                 <a href=""><img src="images/smile_face.png" alt="smile face">Все</a>
                 <a href="">Самооценка и самопринятие</a>
@@ -60,11 +58,11 @@
                 <a href="">Личное здоровье</a>
             </div>
             <div class="main__articles-section1">
-                <article>
-                    <div class="article_img">
+                <article class="article articles-section1__article">
+                    <div class="article__img">
                         <img src="images/articles-section1_img1.png" alt="article header image"/>
-                        <div class="article-topics">
-                            <div class="article-topics__topic">
+                        <div class="article__topics">
+                            <div class="article__topics">
                                 <img src="images/unicorn.png" alt="unicorn img">
                                 <span>Самооценка и самопринятие</span>
                             </div>
@@ -211,7 +209,7 @@
                     </div>
                 </article>
             </div>
-            <button id="more_content_button">Ещё</button>
+            <button class="main-block_button">Ещё</button>
         </div>
         </main>
         <footer>

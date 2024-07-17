@@ -22,8 +22,39 @@ header, main, footer {
     flex-direction: column;
 }
 
+h1 {
+    font-size: 48px;
+}
+
 h2 {
     font-size: 18px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+.main__breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-top: 16px;
+}
+
+.main__breadcrumbs span {
+    font-size: 12px;
+    color: #333333;
+}
+
+.main__breadcrumbs .arrow {
+    transform: rotate(-90deg);
+    margin-left: 4px;
+    margin-right: 8px;
 }
 
 a {
@@ -31,7 +62,7 @@ a {
     cursor: pointer;
 }
 
-#more_content_button {
+.main-block_button {
     width: 182px;
     height: 48px;
     padding: 12px 16px 12px 16px;
@@ -48,7 +79,7 @@ a {
     border-radius: 4px;
 }
 
-#more_content_button:hover {
+.main-block_button:hover {
     background-color:#35b3a99b;
     color:#FFFFFF;
 }

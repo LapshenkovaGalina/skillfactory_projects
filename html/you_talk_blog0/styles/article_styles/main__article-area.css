@@ -1,0 +1,20 @@
+@media screen and (min-width: 1400px) {
+    .main__article-area {
+        column-gap: 228px;
+    }
+}
+
+@media screen and (max-width: 1399px) and (min-width: 1200px){
+    .main__article-area {
+        column-gap: 24px;
+    }
+}
+
+.main__article-area {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.main__breadcrumbs span {
+    color: hsla(0, 0%, 20%, 0.7);
+}
