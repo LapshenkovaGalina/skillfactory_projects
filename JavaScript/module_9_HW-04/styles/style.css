@@ -1,0 +1,83 @@
+* {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: Comfortaa, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-image: url("../cat-vector-line.jpg");
+    background-position: center;
+    background-size: 50vw;
+}
+
+.load-button {
+    background-color: hsl(34, 78%, 91%);
+
+    border: 5px solid hsl(34, 78%, 91%);
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 8px;
+}
+
+.load-button:active {
+    background-color: rgb(250, 226, 193);
+    border-color: rgb(250, 226, 193);
+    box-shadow: 0px 0px 3px gray;
+}
+
+.content-back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: hsla(34, 93%, 82%, 0.911);
+
+    min-height: 100vh;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 40px;
+    gap: 5px;
+
+    min-height: 70vh;
+}
+
+.gallery > img {
+    aspect-ratio: 1/1;
+    object-fit: fill;
+}
+
+.gallery__loader {
+    position: absolute;
+}
+
+.loader__inner {
+    position: relative;
+    
+    animation: 2s linear infinite rotate;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.loader__img {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+  footer p {
+    text-align: center;
+    padding: 30px 0 20px 0;
+  }
+
