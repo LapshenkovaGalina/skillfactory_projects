@@ -1,0 +1,118 @@
+@media screen and (min-width:2560px){
+    .slider__discriptions p {
+        line-height: 40px;
+    }
+
+    .slider__discriptions p {
+        margin-top: 1em;  
+        font-size: calc(2em - 3px);
+    }
+
+    .slider__discriptions > div {
+        width: 42%;
+    }
+
+    .slider__discriptions{
+        row-gap: 10em;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 2559px) and (min-width:1024px){
+    .slider__discriptions p {
+        margin-top: 1em;
+    }
+    
+    .slider__discriptions{
+        row-gap: 5em;
+        width: 100%;
+    } 
+}
+
+@media screen and (max-width: 2559px) and (min-width:1440px) {
+    .slider__discriptions {
+        margin-bottom: 2em;
+        row-gap: 6em;
+    }
+    
+    .slider__discriptions p {
+        margin-top: 1em;
+    
+        font-size: calc(1rem - 3px);
+        line-height: 21px;
+    }
+
+    .slider__discriptions > div {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width:1439px) and (min-width:1024px) {
+    .slider__discriptions p {
+        margin-top: calc(1em - 6px);
+    
+        font-size: calc(1rem - 4px);
+        line-height: 22px;
+    }
+    
+    .slider__discriptions > div {
+        width: 50%;
+    }
+}
+@media screen and (max-width:1023px) and (min-width:768px) {
+    .slider__discriptions {
+
+        min-width: 100%;
+        justify-content: space-between;
+    }
+
+    .slider__discriptions > div {
+        width: 25%;
+    }
+
+    .slider__discriptions p {
+        margin-top: calc(1em - 6px);
+
+        font-size: calc(1rem - 2px);
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width:767px) and (min-width:425px) {
+    .slider__discriptions {
+
+        min-width: 100%;
+        justify-content: space-between;
+    }
+
+    .slider__discriptions > div {
+        width: 25%;
+    }
+
+    .slider__discriptions p {
+        margin-top: calc(1em - 6px);
+
+        font-size: calc(1rem - 2px);
+        line-height: 22px;
+    }
+}
+
+@media screen and (max-width:424px) {
+    .slider__discriptions {
+        min-width: 100%;
+        min-height: 35%;
+
+        justify-content: space-between;
+    }
+
+    .slider__discriptions > div {
+        width: 50%;
+    }
+
+    .slider__discriptions p {
+        margin-top: calc(1em - 6px);
+
+        font-size: calc(1rem - 2px);
+        line-height: 22px;
+    }
+}
