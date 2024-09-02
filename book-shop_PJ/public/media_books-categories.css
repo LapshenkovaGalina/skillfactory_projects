@@ -1,0 +1,20 @@
+@media screen and (min-width: 1440px) {
+  .books-categories {
+    width: 29vw;
+    height: 49vw;
+  }
+}
+@media screen and (max-width: 1439px) and (min-width: 992px) {
+  .books-categories {
+    width: 78vw;
+    height: 49vw;
+  }
+}
+@media screen and (max-width: 991px) {
+  .books-categories {
+    width: 78vw;
+    height: 49vw;
+  }
+}
+
+/*# sourceMappingURL=media_books-categories.css.map */
