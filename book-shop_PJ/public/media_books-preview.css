@@ -1,5 +1,5 @@
 @media screen and (min-width: 1440px) {
-  .books-preview {
+  .books-preview__books {
     width: 78vw;
     padding-top: 3vw;
     padding-bottom: 3vw;
@@ -11,20 +11,9 @@
     height: 300px;
     border: 1px solid red;
   }
-  .books-categories {
+  .books-preview__categories {
     width: 37%;
     height: 700px;
-    border: 1px solid cadetblue;
-  }
-}
-@media screen and (max-width: 1439px) and (min-width: 992px) {
-  .books-preview {
-    width: 78vw;
-  }
-}
-@media screen and (max-width: 991px) {
-  .books-preview {
-    width: 78vw;
   }
 }
 

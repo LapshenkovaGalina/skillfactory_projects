@@ -1,0 +1,29 @@
+$primaryFont: Montserrat, Arial, Helvetica, sans-serif;
+$primaryFontDarkColor: #1C2A39;
+$primaryFontLightColor: #5C6A79;
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-family: $primaryFont;
+    color: $primaryFontLightColor;
+
+    & nav, & ul, & div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        column-gap: 2.7vw;
+    }
+
+    & ul {
+        list-style-type: none;
+    }
+}

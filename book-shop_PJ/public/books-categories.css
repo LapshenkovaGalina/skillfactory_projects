@@ -1,0 +1,14 @@
+.books-preview__categories {
+  position: absolute;
+  left: 0px;
+  z-index: -1;
+  background-color: #EFEEF6;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  color: #5C6A79;
+  font-weight: 500;
+}
+.books-preview__categories ulli:not([class=active]) {
+  list-style: none;
+}
+
+/*# sourceMappingURL=books-categories.css.map */

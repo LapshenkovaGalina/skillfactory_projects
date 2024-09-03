@@ -1,0 +1,21 @@
+$primaryFont: Montserrat, Arial, Helvetica, sans-serif;
+$primaryFontDarkColor: #1C2A39;
+$primaryFontLightColor: #5C6A79;
+
+.books-preview__categories {
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+
+    background-color: #EFEEF6;
+
+    font-family: $primaryFont;
+    color: $primaryFontLightColor;
+    font-weight: 500;
+
+    & ul {
+        &li:not([class="active"]){
+            list-style: none;
+        }
+    }
+}

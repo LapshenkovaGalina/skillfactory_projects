@@ -9,11 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <base href="/">
     <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="books-preview.css">
+    <link rel="stylesheet" href="books-categories.css">
+    <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="media_global.css">
     <link rel="stylesheet" href="media_slider.css">
     <link rel="stylesheet" href="media_books-preview.css">
     <link rel="stylesheet" href="media_books-categories.css">
     <link rel="stylesheet" href="media_header-container.css">
+    <link rel="stylesheet" href="media_main.css">
 </head>
 <body>
     <header>
@@ -36,40 +41,61 @@
         </div>
     </header>
     <main>
-        <div class="books-selection-ref"></div>
-        <div class="books-selection-ref"></div>
+        <div class="books-selection-ref books-selection-ref0"></div>
+        <div class="books-selection-ref books-selection-ref1"></div>
         <div class="slider">
             <div class="slider__images"></div>
             <div class="slider__nav-dots"></div>
         </div>
         <div class="books-preview">
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
+            <div class="books-preview__categories">
+                <ul>
+                    <li class="active">Architecture</li>
+                    <li>Art & Fashion</li>
+                    <li>Biography</li>
+                    <li>Business</li>
+                    <li>Crafts & Hobbies</li>
+                    <li>Drama</li>
+                    <li>Fiction</li>
+                    <li>Food & Drink</li>
+                    <li>Health & Wellbeing</li>
+                    <li>History & Politics</li>
+                    <li>Humor</li>
+                    <li>Poetry</li>
+                    <li>Psychology</li>
+                    <li>Science</li>
+                    <li>Technology</li>
+                    <li>Travel & Maps</li>
+                </ul>
             </div>
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
-            </div>
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
-            </div>
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
-            </div>
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
-            </div>
-            <div class="books-preview__book">
-                <img/>
-                <div class="books-preview__book-info"></div>
+            <div class="books-preview__books">
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
+                <div class="books-preview__book">
+                    <img/>
+                    <div class="books-preview__book-info"></div>
+                </div>
             </div>
         </div>
-        <div class="books-categories"></div>
-        <div><button>load more</button></div>
+        <div><button class="button_primary-type">load more</button></div>
     </main>
     <footer></footer>
 </body>

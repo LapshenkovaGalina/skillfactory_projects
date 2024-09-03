@@ -1,0 +1,11 @@
+.slider__nav-dot {
+  width: 20px;
+  height: 20px;
+  border: 50% solid #EFEEF6;
+}
+
+.slider__nav-dot.active {
+  border-color: #9E98DC;
+}
+
+/*# sourceMappingURL=slider.css.map */

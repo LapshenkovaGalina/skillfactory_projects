@@ -1,46 +1,53 @@
 $primaryFont: Montserrat, Arial, Helvetica, sans-serif;
 $primaryFontDarkColor: #1C2A39;
 $primaryFontLightColor: #5C6A79;
+$primaryButtonTextColor: #4C3DB2;
 
 * {
     margin: 0px;
     padding: 0px;
 }
 
+html {
+    font-size: 10px;
+}
+
 body {
     color: #ffffff;
-    border: 1px solid blue;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-}
-
-.header-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    font-family: $primaryFont;
-    color: $primaryFontLightColor;
-    border: 1px solid blue;
-}
-
-main {
+main, .slider {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.slider {
-    border: 1px solid blue;
+.books-selection-ref {
+    position: absolute;
+    box-shadow: 0px 40px 20px -20px rgb(0 0 0 / 20%);
 }
 
-.books-preview {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: end;
-    border: 1px solid blue;
+.books-selection-ref0 {
+    top: 12vw;
+    right: 5vw;
+
+    background-color: #9E98DC;
+}
+
+.books-selection-ref1 {
+    top: 33vw;
+    right: -2vw;
+
+    background-color: #FF8FE6;
+}
+
+.button_primary-type {
+    width: 12.2vw;
+    height: 3.1vw;
+
+    color: $primaryButtonTextColor;
+    text-transform: uppercase;
+
+    background-color: white;
+    border: 1px solid $primaryButtonTextColor;
 }
