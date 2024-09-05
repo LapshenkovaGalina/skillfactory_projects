@@ -5,6 +5,10 @@ $primaryFontWeight_bold: 700;
     width: 78vw;
     position: relative;
     z-index: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
 
 .books-preview__books {

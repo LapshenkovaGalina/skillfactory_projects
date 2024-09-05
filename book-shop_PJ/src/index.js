@@ -20,7 +20,9 @@ const booksCategoriesArr = [
 const headerNav = document.querySelector('.header-container__header-nav');
 const booksCategoriesUl = document.querySelector('.categories-ul');
 const booksBlock= document.querySelector('.books-preview__books');
-const buyButton = document.querySelector('.buy-button');
+const buyButton = document.querySelector('.button_books-load');
+
+let activeCategoryName;
 
 async function booksLoad(booksLoadUrl) {
     try {
@@ -31,8 +33,9 @@ async function booksLoad(booksLoadUrl) {
         }
 
         let booksInfoObjectsArr = await response.json();
-
+        console.log('Загрузили  джейсон');
         booksInfoObjectsArr = booksInfoObjectsArr.items;
+        console.log('Сформировали массив объектов', booksInfoObjectsArr);
         loadInfoToBookTags(booksInfoObjectsArr);
 
     } catch (error) {
@@ -41,6 +44,7 @@ async function booksLoad(booksLoadUrl) {
 }
 
 function addInfoToTags(infoObject, bookNum) {
+    console.log('Будем заполнять тэги инфой');
     const bookInfoDiv = booksBlock.querySelector(`.book-num${bookNum} .books-preview__book-info`);
     const bookImg = booksBlock.querySelector(`.book-num${bookNum} img`);
 
@@ -75,9 +79,11 @@ function addInfoToTags(infoObject, bookNum) {
     } else {
         bookInfoDiv.querySelector('.retail-price').innerHTML = 'Not on sale';
     }
+    console.log('Заполнили тэги инфой');
 }
 
 function loadInfoToBookTags(InfoObjectsArr) {
+    console.log('Будем печатать тэги');
     InfoObjectsArr.forEach((infoObject, index) => {
         booksBlock.innerHTML +=`<div class="books-preview__book book-num${index} last_loaded">
             <img class="thumbnail"/>
@@ -115,7 +121,7 @@ function loadInfoToBookTags(InfoObjectsArr) {
                 <button class="button_primary-type buy-button">buy now</button>
             </div>
         </div>`;
-
+        console.log('Напечатали тэги');
         addInfoToTags(infoObject, index);
     });
 }
@@ -134,33 +140,36 @@ function selectedCategoryBooksLoad (categoryNameStr, booksAPIkeyStr, booksNum) {
     if(categoryNameStr === '' || categoryNameStr === +categoryNameStr) return;
 
     const booksLoadUrl = `https://www.googleapis.com/books/v1/volumes?q=%22subject:${categoryNameStr}%22&key=${booksAPIkeyStr}&printType=books&startIndex=0&maxResults=${booksNum}&langRestrict=en`;
-    console.log(booksLoadUrl);
+    console.log('Сформировали ссылку', booksLoadUrl);
     booksLoad(booksLoadUrl);
     // Некорректно отрабатывают ссылки, в которых категория содержит пробелы - разобраться.
 }
 
-document.addEventListener('click', (e) => {
+booksCategoriesUl.addEventListener('click', (e) => {
+    console.log('Слушатель категорий. Таргет - ', e.target); 
     if (e.target.classList.contains('categories-ul_li')) {
         booksCategoriesUl.querySelector('.active').classList.remove('active');
         e.target.classList.add('active');
+
+        booksBlock.innerHTML = '';
         
-        const activeCategoryName = e.target.textContent;
+        activeCategoryName = e.target.textContent;
         selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
     }
 });
 
-// document.addEventListener('click', (e) => {
-//     const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last_loaded'));
-//     console.log('lastLoadedBooks', lastLoadedBooks); 
-//     lastLoadedBooks.forEach((book) => {
-//         console.log('book', book);
-//         book.classList = 'books-preview__book';
-//     });
+buyButton.addEventListener('click', (e) => {
+    console.log('Слушатель кнопки. Таргет - ', e.target);
+    const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last_loaded'));
+    console.log('lastLoadedBooks', lastLoadedBooks); 
+    lastLoadedBooks.forEach((book) => {
+        console.log('book', book);
+        book.classList = 'books-preview__book';
+    });
     
-//     const activeCategoryName = e.target.textContent;
-//     selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
-    
-// });
+    console.log(activeCategoryName);
+    selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+});
 
 //////////////////////////////////////////////////////////////////////////////////////
 

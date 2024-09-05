@@ -1,7 +1,7 @@
 @media screen and (min-width: 1440px) {
   .slider {
     width: 78vw;
-    height: 58vw;
+    height: 60vw;
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 992px) {

@@ -5,11 +5,13 @@ $primaryFontWeight_bold: 700;
 
 @media screen and (min-width: 1440px) {
     .books-preview__books {
-        width: 78vw;
+        width: 62vw;
         padding-top: 3vw;
         padding-bottom: 3vw;
         row-gap: 7vw;
-        column-gap: 5vw;
+        // column-gap: 5vw;
+
+        justify-content: space-between;
     }
 }
 
@@ -43,6 +45,5 @@ $primaryFontWeight_bold: 700;
     .books-preview__book {
         width: 38%;
         height: 20vw;
-        border: 1px solid red;
     }
 }
