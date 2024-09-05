@@ -1,13 +1,26 @@
 .books-preview__categories {
   position: absolute;
-  left: 0px;
   z-index: -1;
+  padding-bottom: 6rem;
+  display: flex;
+  justify-content: center;
   background-color: #EFEEF6;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   color: #5C6A79;
   font-weight: 500;
 }
-.books-preview__categories ulli:not([class=active]) {
+.books-preview__categories .categories-ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  row-gap: 2rem;
+}
+.books-preview__categories .categories-ul .active {
+  color: #1C2A39;
+  font-weight: 700;
+}
+.books-preview__categories .categories-ul > .categories-ul_li:not([class=active]) {
   list-style: none;
 }
 

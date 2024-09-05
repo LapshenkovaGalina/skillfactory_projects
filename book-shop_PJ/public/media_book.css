@@ -1,0 +1,31 @@
+@media screen and (min-width: 1440px) {
+  .books-preview__book {
+    width: 38%;
+    height: 21vw;
+  }
+  .books-preview__book-info {
+    width: 12.2vw;
+  }
+  .authors {
+    margin-bottom: 0.7rem;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+  .retail-price {
+    font-size: 1.5rem;
+  }
+  .description {
+    height: 3.3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .button_primary-type {
+    width: 12.2vw;
+    height: 3.1vw;
+    font-size: 0.7rem;
+  }
+}
+
+/*# sourceMappingURL=media_book.css.map */

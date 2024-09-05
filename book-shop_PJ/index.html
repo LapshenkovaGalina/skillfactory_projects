@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="books-preview.css">
     <link rel="stylesheet" href="books-categories.css">
+    <link rel="stylesheet" href="book.css">
     <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="media_global.css">
     <link rel="stylesheet" href="media_slider.css">
     <link rel="stylesheet" href="media_books-preview.css">
     <link rel="stylesheet" href="media_books-categories.css">
     <link rel="stylesheet" href="media_header-container.css">
+    <link rel="stylesheet" href="media_book.css">
     <link rel="stylesheet" href="media_main.css">
 </head>
 <body>
@@ -25,12 +27,12 @@
         <div class="header-container">
             <div class="header-container__logo"><img src="assets/bookshop-logo.svg" alt="logo"/>
             </div>
-            <nav>
+            <nav class="header-container__header-nav">
                 <ul>
-                    <li>BOOKS</li>
-                    <li>AUDIOBOOKS</li>
-                    <li>STATIONERY & GIFTS</li>
-                    <li>BLOG</li>
+                    <li><a class="header-nav_a active" href="">BOOKS</a></li>
+                    <li><a class="header-nav_a" href="">AUDIOBOOKS</a></li>
+                    <li><a class="header-nav_a" href="">STATIONERY & GIFTS</a></li>
+                    <li><a class="header-nav_a" href="">BLOG</a></li>
                 </ul>
             </nav>
             <div class="header-container__right-block">
@@ -49,53 +51,12 @@
         </div>
         <div class="books-preview">
             <div class="books-preview__categories">
-                <ul>
-                    <li class="active">Architecture</li>
-                    <li>Art & Fashion</li>
-                    <li>Biography</li>
-                    <li>Business</li>
-                    <li>Crafts & Hobbies</li>
-                    <li>Drama</li>
-                    <li>Fiction</li>
-                    <li>Food & Drink</li>
-                    <li>Health & Wellbeing</li>
-                    <li>History & Politics</li>
-                    <li>Humor</li>
-                    <li>Poetry</li>
-                    <li>Psychology</li>
-                    <li>Science</li>
-                    <li>Technology</li>
-                    <li>Travel & Maps</li>
-                </ul>
+                <ul class="categories-ul"></ul>
             </div>
             <div class="books-preview__books">
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
-                <div class="books-preview__book">
-                    <img/>
-                    <div class="books-preview__book-info"></div>
-                </div>
             </div>
         </div>
-        <div><button class="button_primary-type">load more</button></div>
+        <div><button class="button_primary-type button_books-load">load more</button></div>
     </main>
     <footer></footer>
 </body>

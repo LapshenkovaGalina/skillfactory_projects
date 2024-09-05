@@ -1,3 +1,4 @@
+$primaryFontDarkColor: #1C2A39;
 $primaryFontWeight_bold: 700;
 
 .books-preview {
@@ -13,39 +14,3 @@ $primaryFontWeight_bold: 700;
     flex-wrap: wrap;
     justify-content: end;
 }
-
-.books-preview__book {
-    z-index: 2;
-    display: flex;
-    flex-direction: row;
-
-    & img {
-    width: 50%;
-    height: 100%;
-
-    box-shadow: 0px 40px 20px -20px rgb(0 0 0 / 20%);
-    }
-}
-
-.books-preview__book-info {
-    width: 50%;
-    height: 100%;
-    background-color: mediumorchid;
-
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-
-    & button {
-        align-self: center;
-    }
-}
-
-// .title, .cost {
-//     font-weight: $primaryFontWeight_bold;
-//     color: $primaryFontDarkColor;
-// }
-
-// .author, .discription, .views {
-//     color: $primaryFontLightColor;
-// }

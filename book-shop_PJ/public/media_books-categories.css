@@ -1,19 +1,19 @@
 @media screen and (min-width: 1440px) {
-  .books-categories {
+  .books-preview__categories {
     width: 29vw;
-    height: 49vw;
+    left: -11vw;
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 992px) {
-  .books-categories {
-    width: 78vw;
-    height: 49vw;
+  .books-preview__categories {
+    width: 29vw;
+    left: -11vw;
   }
 }
 @media screen and (max-width: 991px) {
-  .books-categories {
-    width: 78vw;
-    height: 49vw;
+  .books-preview__categories {
+    width: 29vw;
+    left: -11vw;
   }
 }
 

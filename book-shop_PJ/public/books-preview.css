@@ -12,26 +12,4 @@
   justify-content: end;
 }
 
-.books-preview__book {
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-}
-.books-preview__book img {
-  width: 50%;
-  height: 100%;
-}
-
-.books-preview__book-info {
-  width: 50%;
-  height: 100%;
-  background-color: mediumorchid;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-.books-preview__book-info button {
-  align-self: center;
-}
-
 /*# sourceMappingURL=books-preview.css.map */

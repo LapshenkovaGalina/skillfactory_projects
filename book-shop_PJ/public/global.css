@@ -11,15 +11,36 @@ body {
   color: #ffffff;
 }
 
-main, .slider {
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #5C6A79;
+}
+
+span, p {
+  display: inline-block;
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #5C6A79;
+}
+
+li > .active {
+  color: #1C2A39;
+  font-weight: 700;
+}
+
+h3 {
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 .books-selection-ref {
   position: absolute;
-  border: 2px solid #1C2A39;
+  box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.2);
 }
 
 .books-selection-ref0 {
@@ -35,12 +56,15 @@ main, .slider {
 }
 
 .button_primary-type {
-  width: 12.2vw;
-  height: 3.1vw;
+  font-weight: 700;
   color: #4C3DB2;
   text-transform: uppercase;
   background-color: white;
   border: 1px solid #4C3DB2;
+}
+
+.button_books-load:active {
+  border: 0px;
 }
 
 /*# sourceMappingURL=global.css.map */
