@@ -1,6 +1,4 @@
 .books-preview__categories {
-  position: absolute;
-  z-index: -1;
   display: flex;
   background-color: #EFEEF6;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
@@ -9,7 +7,6 @@
 }
 .books-preview__categories .categories-ul {
   display: flex;
-  flex-direction: column;
 }
 .books-preview__categories .categories-ul .active {
   color: #1C2A39;

@@ -10,7 +10,7 @@
 }
 @media screen and (max-width: 1439px) and (min-width: 992px) {
   .header-container {
-    width: 78vw;
+    width: 84vw;
     height: 8vw;
     justify-content: space-between;
   }
@@ -20,14 +20,17 @@
 }
 @media screen and (max-width: 991px) {
   .header-container {
-    width: 95vw;
+    width: 90vw;
     height: 16vw;
   }
   .header-container ul {
     display: none;
   }
-  .header-container__logo-img {
-    width: 30vw;
+  .header-container .burger-menu_img {
+    height: 45%;
+  }
+  .header-container__logo {
+    width: 30%;
   }
   .header-container__right-block {
     margin-left: auto;

@@ -4,9 +4,6 @@ $primaryFontLightColor: #5C6A79;
 $primaryFontWeight_bold: 700;
 
 .books-preview__categories {
-    position: absolute;
-    z-index: -1;
-
     display: flex;
 
     background-color: #EFEEF6;
@@ -17,7 +14,6 @@ $primaryFontWeight_bold: 700;
 
     & .categories-ul {
         display: flex;
-        flex-direction: column;
 
         & .active {
             color: $primaryFontDarkColor;

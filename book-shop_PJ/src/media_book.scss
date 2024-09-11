@@ -89,16 +89,6 @@
 }
 
 @media screen and (max-width: 991px) {
-
-    .books-preview__book {
-        width: 100%;
-        height: 44vw;
-    }
-    
-    .books-preview__book-info {
-        width: 45%;
-        height: 80%;
-    }
     
     .authors {
         margin-bottom: calc(4px + 6 * (100vw - 991px) / 671);
@@ -130,5 +120,31 @@
         height: 22%;
     
         font-size:calc(8px + 10 * (100vw - 991px) / 671);
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px){
+
+    .books-preview__book {
+        width: 46%;
+        height: 26vw;
+    }
+    
+    .books-preview__book-info {
+        width: 44%;
+        height: 74%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .books-preview__book {
+        width: 100%;
+        height: 50vw;
+    }
+    
+    .books-preview__book-info {
+        width: 45%;
+        height: 80%;
     }
 }

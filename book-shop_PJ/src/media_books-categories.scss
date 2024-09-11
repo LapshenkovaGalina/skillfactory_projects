@@ -1,34 +1,42 @@
 @media screen and (min-width: 1440px) {
     .books-preview__categories {
+        position: absolute;
+        z-index: -1;
+
         width: 31vw;
         left: -11vw;
 
         justify-content: center;
 
-        padding-bottom: 6rem;
-
         .categories-ul {
-            font-size: 1.2rem;
+            flex-direction: column;
+
+            font-size: calc(12px + 10 * (100vw - 1440px) / 1120);
             
-            margin-top: 4rem;
-            row-gap: 2rem;
+            margin-top: calc(40px + 24 * (100vw - 1440px) / 1120);
+            margin-bottom: calc(70px + 100 * (100vw - 1440px) / 1120);
+            row-gap: calc(20px + 18 * (100vw - 1440px) / 1120);
         }
     }
 }
 
 @media screen and (max-width: 1439px) and (min-width: 992px){
     .books-preview__categories {
+        position: absolute;
+        z-index: -1;
+
         width: 29vw;
         left: -11vw;
 
         justify-content: center;
 
-        padding-bottom: 6rem;
-
         .categories-ul {
-            font-size: 1.2rem;
+            flex-direction: column;
+
+            font-size: 12px;
             
             margin-top: 4rem;
+            margin-bottom: 8rem;
             row-gap: 2rem;
         }
     }
@@ -36,19 +44,24 @@
 
 @media screen and (max-width: 991px) {
     .books-preview__categories {
-        width: 33vw;
-        left: -3vw;
+        width: 100%;
 
-        justify-content: start;
-        padding-left: 7vw;
-
-        padding-bottom: 4rem;
+        justify-content: center;
+        align-items: center;
 
         .categories-ul {
+            box-sizing: border-box;
+            flex-flow: row wrap;
+
+            padding: calc(10px + 10 * (100vw - 320px) / 671);
+            column-gap: calc(8px + 4 * (100vw - 320px) / 671);
+            row-gap: calc(6px + 4 * (100vw - 320px) / 671);
+
             font-size: calc(6px + 12 * (100vw - 320px) / 671);
-            
-            margin-top: 2.5rem;
-            row-gap: calc(8px + 10 * (100vw - 320px) / 671);
+
+            li {
+                list-style-position: inside;
+            }
         }
     }
 }
