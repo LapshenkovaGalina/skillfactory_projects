@@ -6,8 +6,8 @@
     }
     
     .books-preview__book-info {
-        width: 11.5vw;
-        height: 70%;
+        width: 42%;
+        height: 71%;
     }
     
     .authors {
@@ -46,13 +46,13 @@
 @media screen and (max-width: 1439px) and (min-width: 992px){
 
     .books-preview__book {
-        width: 46%;
-        height: 21vw;
+        width: 48%;
+        height: 24vw;
     }
     
     .books-preview__book-info {
-        width: 11.5vw;
-        height: 70%;
+        width: 44%;
+        height: 74%;
     }
     
     .authors {
@@ -62,7 +62,7 @@
     
     .title {
         margin-bottom: 4px;
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .rating-info {
@@ -74,15 +74,15 @@
     }
     
     .description {
-        margin-top: 16px;
-        margin-bottom: 16px;
+        margin-top: 12px;
+        margin-bottom: 12px;
 
         font-size: 10px;
     }
     
     .buy-button {
         width: 100%;
-        height: 22%;
+        height: 16%;
     
         font-size: 8px;
     }
@@ -101,12 +101,13 @@
     }
     
     .authors {
-        font-size:calc(8px + 10 * (100vw - 320px) / 671);
-        margin-bottom: 0.5rem;
+        margin-bottom: calc(4px + 6 * (100vw - 991px) / 671);
+        font-size:calc(10px + 10 * (100vw - 991px) / 671);
     }
     
     .title {
-        font-size:calc(10px + 10 * (100vw - 320px) / 671);
+        margin-bottom: calc(4px + 6 * (100vw - 991px) / 671);
+        font-size:calc(16px + 10 * (100vw - 991px) / 671);
     }
 
     .rating-info {
@@ -114,18 +115,20 @@
     }
 
     .retail-price {
-        font-size: calc(8px + 10 * (100vw - 320px) / 671);
+        font-size: calc(13px + 10 * (100vw - 991px) / 671);
     }
     
     .description {
-        font-size:calc(8px + 10 * (100vw - 320px) / 671);
-    }
-    
-    .button_primary-type {
-        width: 12.2vw;
-        height: 6.1vw;
-    
-        font-size: 0.5rem;
-    }
+        margin-top: calc(16px + 10 * (100vw - 991px) / 671);
+        margin-bottom: calc(16px + 10 * (100vw - 991px) / 671);
 
+        font-size:calc(10px + 10 * (100vw - 991px) / 671);
+    }
+    
+    .buy-button {
+        width: 100%;
+        height: 22%;
+    
+        font-size:calc(8px + 10 * (100vw - 991px) / 671);
+    }
 }
