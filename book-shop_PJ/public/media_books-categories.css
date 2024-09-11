@@ -2,18 +2,40 @@
   .books-preview__categories {
     width: 31vw;
     left: -11vw;
+    justify-content: center;
+    padding-bottom: 6rem;
+  }
+  .books-preview__categories .categories-ul {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    row-gap: 2rem;
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 992px) {
   .books-preview__categories {
     width: 29vw;
     left: -11vw;
+    justify-content: center;
+    padding-bottom: 6rem;
+  }
+  .books-preview__categories .categories-ul {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    row-gap: 2rem;
   }
 }
 @media screen and (max-width: 991px) {
   .books-preview__categories {
-    width: 29vw;
-    left: -11vw;
+    width: 33vw;
+    left: -3vw;
+    justify-content: start;
+    padding-left: 7vw;
+    padding-bottom: 4rem;
+  }
+  .books-preview__categories .categories-ul {
+    font-size: calc(6px + 12 * (100vw - 320px) / 671);
+    margin-top: 2.5rem;
+    row-gap: calc(8px + 10 * (100vw - 320px) / 671);
   }
 }
 

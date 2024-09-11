@@ -1,5 +1,4 @@
 .books-preview {
-  width: 78vw;
   position: relative;
   z-index: 0;
   display: flex;
@@ -10,9 +9,6 @@
 .books-preview__books {
   z-index: 1;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: end;
 }
 
 /*# sourceMappingURL=books-preview.css.map */

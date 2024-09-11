@@ -12,10 +12,10 @@
 }
 
 .books-preview__book-info {
-  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .title, .retail-price {
@@ -34,14 +34,25 @@
 .rating-info {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
-
-.ratings-count {
+.rating-info .average-rating {
+  width: 35%;
+  height: auto;
+}
+.rating-info .average-rating svg {
+  width: 100%;
+  height: auto;
+}
+.rating-info .ratings-count {
+  font-size: 1.2rem;
   background-color: aqua;
 }
 
 .description {
   width: 100%;
+  height: auto;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 3;

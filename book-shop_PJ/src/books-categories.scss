@@ -7,10 +7,7 @@ $primaryFontWeight_bold: 700;
     position: absolute;
     z-index: -1;
 
-    padding-bottom: 6rem;
-
     display: flex;
-    justify-content: center;
 
     background-color: #EFEEF6;
 
@@ -21,18 +18,14 @@ $primaryFontWeight_bold: 700;
     & .categories-ul {
         display: flex;
         flex-direction: column;
-        font-size: 1.2rem;
-        
-        margin-top: 4rem;
-        row-gap: 2rem;
 
         & .active {
             color: $primaryFontDarkColor;
             font-weight: $primaryFontWeight_bold;
         }
-
-        & > .categories-ul_li:not([class="active"]){
-            list-style: none;
-        }
     }
+}
+
+.categories-ul_li:not(.active){
+    list-style: none;
 }

@@ -2,7 +2,6 @@ $primaryFontDarkColor: #1C2A39;
 $primaryFontWeight_bold: 700;
 
 .books-preview {
-    width: 78vw;
     position: relative;
     z-index: 0;
 
@@ -14,7 +13,4 @@ $primaryFontWeight_bold: 700;
 .books-preview__books {
     z-index: 1;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: end;
 }

@@ -10,22 +10,24 @@
     <base href="/">
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="books-selections.css">
     <link rel="stylesheet" href="books-preview.css">
     <link rel="stylesheet" href="books-categories.css">
     <link rel="stylesheet" href="book.css">
     <link rel="stylesheet" href="slider.css">
     <link rel="stylesheet" href="media_global.css">
     <link rel="stylesheet" href="media_slider.css">
+    <link rel="stylesheet" href="media_books-selections.css">
     <link rel="stylesheet" href="media_books-preview.css">
     <link rel="stylesheet" href="media_books-categories.css">
-    <link rel="stylesheet" href="media_header-container.css">
+    <link rel="stylesheet" href="media_header.css">
     <link rel="stylesheet" href="media_book.css">
     <link rel="stylesheet" href="media_main.css">
 </head>
 <body>
     <header>
         <div class="header-container">
-            <div class="header-container__logo"><img src="assets/bookshop-logo.svg" alt="logo"/>
+            <div class="header-container__logo"><img class="header-container__logo-img" src="assets/bookshop-logo.svg" alt="logo"/>
             </div>
             <nav class="header-container__header-nav">
                 <ul>
@@ -34,6 +36,7 @@
                     <li><a class="header-nav_a" href="">STATIONERY & GIFTS</a></li>
                     <li><a class="header-nav_a" href="">BLOG</a></li>
                 </ul>
+                <img class="burger-menu_img" src="assets/burger-menu.png" alt="menu"/>
             </nav>
             <div class="header-container__right-block">
                 <img src="assets/user-icon.svg" alt="user"/>
@@ -43,9 +46,16 @@
         </div>
     </header>
     <main>
-        <div class="books-selection-ref books-selection-ref0"></div>
-        <div class="books-selection-ref books-selection-ref1"></div>
+        
         <div class="slider">
+            <div class="books-selection books-selection0">
+                <div class="books-selection_text">Change old book on new</div>
+                <img src="./assets/arrow.png" alt="arrow-right"/>
+            </div>
+            <div class="books-selection books-selection1">
+                <div class="books-selection_text">top 100 books 2022</div>
+                <img src="./assets/arrow.png" alt="arrow-right"/>
+            </div>
             <div class="slider__images"></div>
             <div class="slider__nav-dots"></div>
         </div>

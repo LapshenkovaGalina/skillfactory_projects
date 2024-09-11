@@ -38,33 +38,16 @@ h3 {
   font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-.books-selection-ref {
-  position: absolute;
-  box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.2);
-}
-
-.books-selection-ref0 {
-  top: 12vw;
-  right: 5vw;
-  background-color: #9E98DC;
-}
-
-.books-selection-ref1 {
-  top: 33vw;
-  right: -2vw;
-  background-color: #FF8FE6;
-}
-
 .button_primary-type {
   font-weight: 700;
   color: #4C3DB2;
   text-transform: uppercase;
+  min-width: 100%;
   background-color: white;
   border: 1px solid #4C3DB2;
 }
-
-.button_books-load:active {
-  border: 0px;
+.button_primary-type :active {
+  border: 1px solid rgba(77, 61, 178, 0.462745098);
 }
 
 /*# sourceMappingURL=global.css.map */

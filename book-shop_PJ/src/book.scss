@@ -11,7 +11,7 @@ $primaryFontWeight_bold: 700;
     justify-content: space-between;
     align-items: center;
 
-    & img {
+    img {
         width: 50%;
         height: 100%;
 
@@ -20,11 +20,11 @@ $primaryFontWeight_bold: 700;
 }
 
 .books-preview__book-info {
-    height: 70%;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    box-sizing: border-box;
 }
 
 .title, .retail-price {
@@ -43,14 +43,29 @@ $primaryFontWeight_bold: 700;
 .rating-info {
     display: flex;
     flex-direction: row;
-}
+    align-items: center;
 
-.ratings-count {
+    width: 100%;
+
+    .average-rating{
+        width: 35%;
+        height: auto;
+
+        svg {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .ratings-count {
+    font-size: 1.2rem;
     background-color: aqua;
+}
 }
 
 .description {
     width: 100%;
+    height: auto;
     overflow: hidden;
     // white-space: nowrap;
     // text-overflow: ellipsis;

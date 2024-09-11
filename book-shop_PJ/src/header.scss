@@ -5,17 +5,17 @@ $primaryFontLightColor: #5C6A79;
 header {
     display: flex;
     justify-content: center;
+    position: sticky;
 }
 
 .header-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
     font-family: $primaryFont;
     color: $primaryFontLightColor;
 
-    & nav, & ul, & div {
+    nav, ul, div {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -23,7 +23,7 @@ header {
         column-gap: 2.7vw;
     }
 
-    & ul {
+    ul {
         list-style-type: none;
     }
 }

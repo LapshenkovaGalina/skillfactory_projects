@@ -1,12 +1,12 @@
 header {
   display: flex;
   justify-content: center;
+  position: sticky;
 }
 
 .header-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   font-family: Montserrat, Arial, Helvetica, sans-serif;
   color: #5C6A79;
 }
