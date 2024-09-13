@@ -106,7 +106,7 @@ function addInfoToTags(infoObject, bookNum) {
     }
 
      if(infoObject.saleInfo.hasOwnProperty('retailPrice')) {
-        bookInfoDiv.querySelector('.retail-price').innerHTML = `${infoObject.saleInfo.retailPrice.amount}`;
+        bookInfoDiv.querySelector('.retail-price').innerHTML = `${infoObject.saleInfo.retailPrice.amount} RUB`;
     } else {
         bookInfoDiv.querySelector('.retail-price').innerHTML = 'Free';
     }

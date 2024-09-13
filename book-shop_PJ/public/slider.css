@@ -29,6 +29,9 @@
   background-color: #EFEEF6;
   border-radius: 50%;
 }
+.slider__nav-dot:hover {
+  cursor: pointer;
+}
 
 .slider__nav-dot.active {
   background-color: #9E98DC;

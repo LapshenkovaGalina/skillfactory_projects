@@ -15,9 +15,13 @@ $primaryFontWeight_bold: 700;
     & .categories-ul {
         display: flex;
 
-        & .active {
+        .active {
             color: $primaryFontDarkColor;
             font-weight: $primaryFontWeight_bold;
+        }
+        
+        li:hover {
+            cursor: pointer;
         }
     }
 }

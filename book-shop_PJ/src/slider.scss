@@ -32,6 +32,10 @@
 .slider__nav-dot {
     background-color: #EFEEF6;
     border-radius: 50%;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .slider__nav-dot.active {

@@ -51,4 +51,8 @@ h3 {
   border: 1px solid rgba(77, 61, 178, 0.3176470588);
 }
 
+.button_primary-type:hover {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=global.css.map */

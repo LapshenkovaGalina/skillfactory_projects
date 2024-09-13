@@ -12,6 +12,9 @@
   color: #1C2A39;
   font-weight: 700;
 }
+.books-preview__categories .categories-ul li:hover {
+  cursor: pointer;
+}
 
 .categories-ul_li:not(.active) {
   list-style: none;
