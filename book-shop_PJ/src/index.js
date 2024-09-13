@@ -20,9 +20,11 @@ const booksCategoriesArr = [
 const headerNav = document.querySelector('.header-container__header-nav');
 const booksCategoriesUl = document.querySelector('.categories-ul');
 const booksBlock = document.querySelector('.books-preview__books');
-const buyButton = document.querySelector('.button_books-load');
+const loadButton = document.querySelector('.button_books-load');
+const cartBooksCountDiv = document.querySelector('.cart-icon__books-counter-circle');
 
 let activeCategoryName;
+let cartBooksCounter = 0;
 
 async function booksLoad(booksLoadUrl) {
     try {
@@ -50,7 +52,7 @@ function ratingStarsFill(parentContainer, averageRatingNum) {
     parentContainer.querySelector('.average-rating')
     .innerHTML = `<svg width="60" height="14" viewBox="0 0 160 32">
   <defs>
-    <mask id="perc">
+    <mask id="perc${averageRatingNum}">
       <rect x="0" y="0" width="100%" height="100%" fill="white" />
       <rect x="${fillRatingStarsPersent}%" y="0" width="100%" height="100%" fill="grey" />
     </mask>
@@ -65,29 +67,9 @@ function ratingStarsFill(parentContainer, averageRatingNum) {
       <use xlink:href="#star" x="64" y="0"></use>
     </symbol>
   </defs>
-  <use xlink:href="#stars" fill="orange" mask="url(#perc)"></use>
+  <use xlink:href="#stars" fill="orange" mask="url(#perc${averageRatingNum})"></use>
 </svg>`
 }
-
-/*<svg width="60" height="14" viewBox="0 0 60 14">
-                        <defs>
-                            <mask id="perc">
-                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                                <rect x="${fillRatingStarsPersent}%" y="0" width="100%" height="100%" fill="grey" />
-                            </mask>
-                            <symbol viewBox="0 0 14 14" id="star">
-                                <path d="M31.547 12a.848.848 0 00-.677-.577l-9.427-1.376-4.224-8.532a.847.847 0 00-1.516 0l-4.218 8.534-9.427 1.355a.847.847 0 00-.467 1.467l6.823 6.664-1.612 9.375a.847.847 0 001.23.893l8.428-4.434 8.432 4.432a.847.847 0 001.229-.894l-1.615-9.373 6.822-6.665a.845.845 0 00.214-.869z" />
-                            </symbol>
-                            <symbol viewBox="0 0 60 14" id="stars">
-                                <use xlink:href="#star" x="-28" y="0"></use>
-                                <use xlink:href="#star" x="-14" y="0"></use>
-                                <use xlink:href="#star" x="0" y="0"></use>
-                                <use xlink:href="#star" x="14" y="0"></use>
-                                <use xlink:href="#star" x="28" y="0"></use>
-                            </symbol>
-                        </defs>
-                        <use xlink:href="#stars" fill="yellow" stroke="black" mask="url(#perc)"></use>
-                    </svg> */
 
 function addInfoToTags(infoObject, bookNum) {
     console.log('Будем заполнять тэги инфой');
@@ -126,7 +108,7 @@ function addInfoToTags(infoObject, bookNum) {
      if(infoObject.saleInfo.hasOwnProperty('retailPrice')) {
         bookInfoDiv.querySelector('.retail-price').innerHTML = `${infoObject.saleInfo.retailPrice.amount}`;
     } else {
-        bookInfoDiv.querySelector('.retail-price').innerHTML = 'Not on sale';
+        bookInfoDiv.querySelector('.retail-price').innerHTML = 'Free';
     }
     console.log('Заполнили тэги инфой');
 }
@@ -175,6 +157,12 @@ function selectedCategoryBooksLoad (categoryNameStr, booksAPIkeyStr, booksNum) {
     // Некорректно отрабатывают ссылки, в которых категория содержит пробелы - разобраться.
 }
 
+function cartBooksCountFunc (){
+    if(cartBooksCounter > 0){
+        cartBooksCountDiv.textContent = `${cartBooksCounter}`;
+    }
+}
+
 booksCategoriesUl.addEventListener('click', (e) => {
     console.log('Слушатель категорий. Таргет - ', e.target); 
     if (e.target.classList.contains('categories-ul_li')) {
@@ -184,11 +172,11 @@ booksCategoriesUl.addEventListener('click', (e) => {
         booksBlock.innerHTML = '';
         
         activeCategoryName = e.target.textContent;
-        selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 20);
+        selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
     }
 });
 
-buyButton.addEventListener('click', (e) => {
+loadButton.addEventListener('click', (e) => {
     console.log('Слушатель кнопки. Таргет - ', e.target);
     const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last_loaded'));
     console.log('lastLoadedBooks', lastLoadedBooks); 
@@ -198,7 +186,14 @@ buyButton.addEventListener('click', (e) => {
     });
     
     console.log(activeCategoryName);
-    selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 20);
+    selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+});
+
+booksBlock.addEventListener('click', (e) => {
+    console.log('Слушатель кнопки корзины. Таргет - ', e.target);
+    cartBooksCounter += 1;
+    console.log('Число книг в корзине - ', cartBooksCounter);
+    cartBooksCountFunc();
 });
 
 headerNav.addEventListener('click', (e) => {

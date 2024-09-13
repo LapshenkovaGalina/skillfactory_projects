@@ -90,14 +90,34 @@
 
 @media screen and (max-width: 991px) {
     
+    .buy-button {
+        width: 100%;
+        height: 16%;
+    
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px){
+
+    .books-preview__book {
+        width: 47%;
+        height: 32vw;
+    }
+    
+    .books-preview__book-info {
+        width: 44%;
+        height: 74%;
+    }
+
     .authors {
-        margin-bottom: calc(4px + 6 * (100vw - 991px) / 671);
-        font-size:calc(10px + 10 * (100vw - 991px) / 671);
+        margin-bottom: 4px;
+        font-size:10px;
     }
     
     .title {
-        margin-bottom: calc(4px + 6 * (100vw - 991px) / 671);
-        font-size:calc(16px + 10 * (100vw - 991px) / 671);
+        margin-bottom: 4px;
+        font-size: 14px;
     }
 
     .rating-info {
@@ -105,34 +125,14 @@
     }
 
     .retail-price {
-        font-size: calc(13px + 10 * (100vw - 991px) / 671);
+        font-size: 13px;
     }
     
     .description {
-        margin-top: calc(16px + 10 * (100vw - 991px) / 671);
-        margin-bottom: calc(16px + 10 * (100vw - 991px) / 671);
+        margin-top: 10px;
+        margin-bottom: 10px;
 
-        font-size:calc(10px + 10 * (100vw - 991px) / 671);
-    }
-    
-    .buy-button {
-        width: 100%;
-        height: 22%;
-    
-        font-size:calc(8px + 10 * (100vw - 991px) / 671);
-    }
-}
-
-@media screen and (max-width: 991px) and (min-width: 768px){
-
-    .books-preview__book {
-        width: 46%;
-        height: 26vw;
-    }
-    
-    .books-preview__book-info {
-        width: 44%;
-        height: 74%;
+        font-size: 10px;
     }
 }
 
@@ -140,11 +140,36 @@
 
     .books-preview__book {
         width: 100%;
-        height: 50vw;
+        height: 65vw;
     }
     
     .books-preview__book-info {
         width: 45%;
         height: 80%;
+    }
+
+    .authors {
+        margin-bottom: calc(4px + 6 * (100vw - 320px) / 671);
+        font-size:calc(10px + 8 * (100vw - 320px) / 671);
+    }
+    
+    .title {
+        margin-bottom: calc(4px + 2 * (100vw - 320px) / 671);
+        font-size:calc(12px + 8 * (100vw - 320px) / 671);
+    }
+
+    .rating-info {
+        column-gap: 0.5rem;
+    }
+
+    .retail-price {
+        font-size: calc(11px + 8 * (100vw - 320px) / 671);
+    }
+    
+    .description {
+        margin-top: calc(12px + 8 * (100vw - 320px) / 671);
+        margin-bottom: calc(12px + 10 * (100vw - 320px) / 671);
+
+        font-size:calc(10px + 8 * (100vw - 320px) / 671);
     }
 }

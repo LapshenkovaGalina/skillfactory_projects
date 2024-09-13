@@ -39,10 +39,11 @@
   .books-preview__categories .categories-ul {
     box-sizing: border-box;
     flex-flow: row wrap;
-    padding: calc(10px + 10 * (100vw - 320px) / 671);
-    column-gap: calc(8px + 4 * (100vw - 320px) / 671);
+    justify-content: space-between;
+    padding: calc(14px + 10 * (100vw - 320px) / 671);
+    column-gap: calc(10px + 4 * (100vw - 320px) / 671);
     row-gap: calc(6px + 4 * (100vw - 320px) / 671);
-    font-size: calc(6px + 12 * (100vw - 320px) / 671);
+    font-size: calc(8px + 12 * (100vw - 320px) / 671);
   }
   .books-preview__categories .categories-ul li {
     list-style-position: inside;

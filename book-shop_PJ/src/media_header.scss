@@ -3,11 +3,30 @@
         width: 78vw;
         height: 8vw;
 
+        font-size:calc(10px + 8 * (100vw - 1440px) / 1120);
+
         justify-content: space-between;
     }
 
+    .header-container__logo{
+        width: 11%;
+    }
+    
     .burger-menu_img {
         display: none;
+    }
+
+    .header-container__right-block  img{
+        width:calc(14px + 6 * (100vw - 1440px) / 1120);
+        height: auto;
+    }
+
+    .cart-icon__books-counter-circle {
+        top: 0px;
+        left: calc(6px + 3 * (100vw - 1440px) / 1120);
+
+        width: calc(12px + 6 * (100vw - 1440px) / 1120);
+        height: calc(12px + 6 * (100vw - 1440px) / 1120);
     }
 }
 
@@ -19,8 +38,20 @@
         justify-content: space-between;
     }
 
+    .header-container__logo{
+        width: 11%;
+    }
+
     .burger-menu_img {
         display: none;
+    }
+
+    .cart-icon__books-counter-circle {
+        top: 0px;
+        left: 6px;
+
+        width: 10px;
+        height: 10px;
     }
 }
 
@@ -40,10 +71,18 @@
     }
 
     .header-container__logo{
-        width: 30%;
+        width: 20%;
     }
 
     .header-container__right-block {
         margin-left: auto;
+
+        .cart-icon__books-counter-circle {
+            top: 0px;
+            left: 6px;
+    
+            width: 12px;
+            height: 12px;
+        }
     }
 }

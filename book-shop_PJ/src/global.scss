@@ -22,6 +22,8 @@ main {
     flex-direction: column;
     align-items: center;
 
+    box-sizing: border-box;
+
     color: #5C6A79;
 }
 
@@ -50,13 +52,10 @@ h3 {
     color: $primaryButtonTextColor;
     text-transform: uppercase;
 
-    min-width: 100%;
-
     background-color: white;
     border: 1px solid $primaryButtonTextColor;
-
-    :active {
-        border: 1px solid #4d3db276;
-    }
 }
 
+.button_primary-type:active {
+    border: 1px solid #4d3db251;
+}

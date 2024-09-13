@@ -1,3 +1,30 @@
-
+@media screen and (min-width: 1440px) {
+  .button_books-load {
+    width: 12vw;
+    height: 3vw;
+    font-size: calc(8px + 10 * (100vw - 1440px) / 1120);
+  }
+}
+@media screen and (max-width: 1439px) and (min-width: 992px) {
+  .button_books-load {
+    width: 15vw;
+    height: 3vw;
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .button_books-load {
+    width: 14vw;
+    height: 3vw;
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .button_books-load {
+    width: 35vw;
+    height: 7vw;
+    font-size: 8px;
+  }
+}
 
 /*# sourceMappingURL=media_main.css.map */
