@@ -43,6 +43,7 @@ const cartBooksCountDiv = document.querySelector('.cart-icon__books-counter-circ
 
 let activeCategoryName;
 let cartBooksCounter = 0;
+let localStorage = {};
 
 async function booksLoad(booksLoadUrl) {
     try {
@@ -97,7 +98,7 @@ function addInfoToTags(infoObject, bookNum) {
     if(infoObject.volumeInfo.imageLinks.hasOwnProperty('thumbnail')){
         bookImg.src = `${infoObject.volumeInfo.imageLinks.thumbnail}`;
     } else {
-        booksBlock.querySelector('.thumbnail').src = './assets/img_placeholder';
+        booksBlock.querySelector('.thumbnail').src = './assets/img_placeholder.png';
     }
 
     if(infoObject.volumeInfo.hasOwnProperty('authors')){
@@ -228,6 +229,24 @@ const sliderBanners = [{url:'./assets/banner-0.png'},
 const sliderImagesDiv = document.querySelector('.slider__images');
 const sliderNavDotsDiv = document.querySelector('.slider__nav-dots');
 const sliderBlocks = Array.from(document.querySelectorAll('.slider > div'));
+const sliderBlock = document.querySelector('.slider');
+
+let currActiveSliderDot;
+let sliderDotsArr;
+
+function sliderImgChange() {
+    setInterval(() => {
+        console.log('Текущая точка слайдера - ', currActiveSliderDot);
+        console.log('Длина массива точек - ', sliderDotsArr.length);
+        if(currActiveSliderDot != sliderDotsArr[sliderDotsArr.length - 1]){
+           currActiveSliderDot = sliderDotsArr[(sliderDotsArr.indexOf(currActiveSliderDot)) + 1]; 
+        } else {
+            currActiveSliderDot = sliderDotsArr[0];
+        }
+
+        currActiveSliderDot.click();
+    }, 5000);
+}
 
 function addObjectsToSlider(imagesArr){
     imagesArr.forEach((img, index) => {
@@ -247,33 +266,43 @@ function sliderNavDotsInit(imagesArr) {
     })
 }
 
-function setActiveClass(activeElementNum){
-    const sliderActiveElements = Array.from(document.querySelectorAll('.active'));
+function setActiveClass(activeElementNum, sliderParentElem){
+    const sliderActiveElements = Array.from(sliderParentElem.querySelectorAll('.active'));
     sliderActiveElements.map(e => e.classList.remove('active'));
 
     sliderBlocks.map(e => {
         if(e.querySelector(`.num${activeElementNum}`)) 
             e.querySelector(`.num${activeElementNum}`).classList.add('active')});
+
+    currActiveSliderDot = sliderNavDotsDiv.querySelector('.active');
 }
 
 document.addEventListener('click', (e) => {
     if(e.target.classList.contains('slider__nav-dot')) {
         const currentSliderElemIndex = e.target.dataset.num;
-        setActiveClass(currentSliderElemIndex);
+        setActiveClass(currentSliderElemIndex, sliderBlock);
     } 
 });
 
-headerNav.addEventListener('click', (e) => {
-    if(e.target.classList.contains('.header-nav_a')) {
-        headerNav.querySelector('.active').classList.remove('active');
-        e.target.classList.add('active');
-    } 
-});
+// headerNav.addEventListener('click', (e) => {
+//     if(e.target.classList.contains('.header-nav_a')) {
+//         headerNav.querySelector('.active').classList.remove('active');
+//         e.target.classList.add('active');
+//     } 
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
     sliderInit(sliderBanners);
     sliderNavDotsInit(sliderBanners);
+
+    sliderDotsArr = Array.from(document.querySelectorAll('.slider__nav-dot'));
+    currActiveSliderDot = sliderDotsArr[0];
+    console.log('Массив точек слайдера - ',sliderDotsArr);
+    console.log('Активная точка слайдера - ',currActiveSliderDot);
+
+    
     booksCategoriesListInit(booksCategoriesArr);
 
     booksCategoriesUl.querySelector('.categories-ul_li').click();
+    sliderImgChange();
 });
