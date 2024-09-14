@@ -1,3 +1,21 @@
+import './book.scss'
+import './books-categories.scss' 
+import './media_books-categories.scss'  
+import './media_load-button.scss'
+import './book.scss'           
+import './media_book.scss'           
+import './media_main.scss'
+import './books-preview.scss'     
+import './media_books-preview.scss'     
+import './media_slider.scss'
+import './books-selections.scss'  
+import './media_books-selections.scss'  
+import './slider.scss'
+import './global.scss'            
+import './media_global.scss'
+import './header.scss'            
+import './media_header.scss'
+
 const booksCategoriesArr = [
     'Architecture',
     'Art & Fashion',

@@ -1,22 +1,17 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-const path = require('path');
+//const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const isProduction = process.env.NODE_ENV == 'production';
-
-
-const stylesHandler = 'style-loader';
-
-
-
-const config = {
+module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-    },
+        filename: 'main.js'
+
+        },
     devServer: {
         open: true,
         host: 'localhost',
@@ -34,11 +29,8 @@ const config = {
         ]}),
         new LinkTypePlugin({
             '**/*.css' : 'text/css'
-        })
-
-        // Add your plugins here
-        // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-    ],
+        }),
+        new MiniCssExtractPlugin()],
     module: {
         rules: [
             {
@@ -46,21 +38,16 @@ const config = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.css$/i,
-                use: [stylesHandler, 'css-loader'],
+                test: /\.s[ac]ss$/i,
+                use: [{
+                loader: MiniCssExtractPlugin.loader},
+                // Translates CSS into CommonJS
+                {loader: 'css-loader'},
+                // Compiles Sass to CSS
+                {loader: 'sass-loader'}
+                ]
             },
-
-            // Add your rules for custom modules here
-            // Learn more about loaders from https://webpack.js.org/loaders/
         ],
-    },
-};
-
-module.exports = () => {
-    if (isProduction) {
-        config.mode = 'production';
-    } else {
-        config.mode = 'development';
     }
-    return config;
-};
+}
+
