@@ -1,20 +1,18 @@
 import './book.scss'
-import './books-categories.scss' 
-import './media_books-categories.scss'  
-import './media_load-button.scss'
-import './book.scss'           
-import './media_book.scss'           
-import './media_main.scss'
-import './books-preview.scss'     
-import './media_books-preview.scss'     
+import './books-block.scss'
+import './books-selections.scss'
+import './button_primary-type.scss'
+import './categories.scss'
+import './global.scss'
+import './header.scss'
+import './media_book.scss'
+import './media_books-block.scss'
+import './media_books-selections.scss'
+import './media_button_books-load.scss'
+import './media_categories.scss'
+import './media_header.scss'     
 import './media_slider.scss'
-import './books-selections.scss'  
-import './media_books-selections.scss'  
-import './slider.scss'
-import './global.scss'            
-import './media_global.scss'
-import './header.scss'            
-import './media_header.scss'
+import './slider.scss'             
 
 const booksCategoriesArr = [
     'Architecture',
@@ -35,11 +33,11 @@ const booksCategoriesArr = [
     'Travel & Maps'
 ];
 
-const headerNav = document.querySelector('.header-container__header-nav');
+const headerNav = document.querySelector('.header-nav');
 const booksCategoriesUl = document.querySelector('.categories-ul');
-const booksBlock = document.querySelector('.books-preview__books');
+const booksBlock = document.querySelector('.books');
 const loadButton = document.querySelector('.button_books-load');
-const cartBooksCountDiv = document.querySelector('.cart-icon__books-counter-circle');
+const cartBooksCountDiv = document.querySelector('.acc-block__books-counter');
 
 let activeCategoryName;
 let cartBooksCounter = 0;
@@ -54,21 +52,19 @@ async function booksLoad(booksLoadUrl) {
         }
 
         let booksInfoObjectsArr = await response.json();
-        console.log('Загрузили  джейсон');
+    
         booksInfoObjectsArr = booksInfoObjectsArr.items;
-        console.log('Сформировали массив объектов', booksInfoObjectsArr);
         loadInfoToBookTags(booksInfoObjectsArr);
-
+        
     } catch (error) {
         
     }
 }
 
 function ratingStarsFill(parentContainer, averageRatingNum) {
-    console.log('Рейтинг', averageRatingNum);
     const fillRatingStarsPersent = +averageRatingNum / (5 / 100);
-    console.log('Проценты', fillRatingStarsPersent);
-    parentContainer.querySelector('.average-rating')
+    
+    parentContainer.querySelector('.book__average-rating')
     .innerHTML = `<svg width="60" height="14" viewBox="0 0 160 32">
   <defs>
     <mask id="perc${averageRatingNum}">
@@ -91,23 +87,22 @@ function ratingStarsFill(parentContainer, averageRatingNum) {
 }
 
 function addInfoToTags(infoObject, bookNum) {
-    console.log('Будем заполнять тэги инфой');
-    const bookInfoDiv = booksBlock.querySelector(`.book-num${bookNum} .books-preview__book-info`);
+    const bookInfoDiv = booksBlock.querySelector(`.book-num${bookNum} .book__info`);
     const bookImg = booksBlock.querySelector(`.book-num${bookNum} img`);
 
     if(infoObject.volumeInfo.imageLinks.hasOwnProperty('thumbnail')){
         bookImg.src = `${infoObject.volumeInfo.imageLinks.thumbnail}`;
     } else {
-        booksBlock.querySelector('.thumbnail').src = './assets/img_placeholder.png';
+        booksBlock.querySelector('.book__thumbnail').src = './assets/img_placeholder.png';
     }
 
     if(infoObject.volumeInfo.hasOwnProperty('authors')){
-        bookInfoDiv.querySelector('.authors').innerHTML = `${infoObject.volumeInfo.authors}`;
+        bookInfoDiv.querySelector('.book__authors').innerHTML = `${infoObject.volumeInfo.authors}`;
     }
 
      if(infoObject.volumeInfo.hasOwnProperty('title')) {
-        bookInfoDiv.querySelector('.title').innerHTML = `${infoObject.volumeInfo.title}`;
-        console.log(infoObject.volumeInfo.title);
+        bookInfoDiv.querySelector('.book__title').innerHTML = `${infoObject.volumeInfo.title}`;
+        
     }
 
      if(infoObject.volumeInfo.hasOwnProperty('averageRating')) {
@@ -117,42 +112,40 @@ function addInfoToTags(infoObject, bookNum) {
     }
 
      if(infoObject.volumeInfo.hasOwnProperty('ratingsCount')) {
-        bookInfoDiv.querySelector('.ratings-count').innerHTML = `${infoObject.volumeInfo.ratingsCount} review`;
+        bookInfoDiv.querySelector('.book__ratings-count').innerHTML = `${infoObject.volumeInfo.ratingsCount} review`;
     }
 
     if(infoObject.volumeInfo.hasOwnProperty('description')) {
-        bookInfoDiv.querySelector('.description').innerHTML = `${infoObject.volumeInfo.description}`;
+        bookInfoDiv.querySelector('.book__description').innerHTML = `${infoObject.volumeInfo.description}`;
     }
 
      if(infoObject.saleInfo.hasOwnProperty('retailPrice')) {
-        bookInfoDiv.querySelector('.retail-price').innerHTML = `${infoObject.saleInfo.retailPrice.amount} RUB`;
+        bookInfoDiv.querySelector('.book__retail-price').innerHTML = `${infoObject.saleInfo.retailPrice.amount} RUB`;
     } else {
-        bookInfoDiv.querySelector('.retail-price').innerHTML = 'Free';
+        bookInfoDiv.querySelector('.book__retail-price').innerHTML = 'Free';
     }
-    console.log('Заполнили тэги инфой');
 }
 
 function loadInfoToBookTags(InfoObjectsArr) {
-    console.log('Будем печатать тэги');
     InfoObjectsArr.forEach((infoObject, index) => {
-        booksBlock.innerHTML +=`<div class="books-preview__book book-num${index} last_loaded">
-            <img class="thumbnail"/>
-            <div class="books-preview__book-info">
-                <div class="book-info_text-block">
-                    <p class="authors"></p>
-                    <h3 class="title"></h3>
-                    <div class="rating-info">
-                        <div class="average-rating">
+        booksBlock.innerHTML +=`<div class="book book-num${index} last-loaded-book">
+            <img class="book__thumbnail"/>
+            <div class="book__info">
+                <div class="book__text-block">
+                    <p class="book__authors"></p>
+                    <h3 class="book__title"></h3>
+                    <div class="book__rating-info">
+                        <div class="book__average-rating">
                         </div>
-                        <span class="ratings-count"></span>
+                        <span class="book__ratings-count"></span>
                     </div>
-                    <div class="description"></div>
-                    <span class="retail-price"></span>
+                    <div class="book__description"></div>
+                    <span class="book__retail-price"></span>
                 </div>
                 <button class="button_primary-type buy-button">buy now</button>
             </div>
         </div>`;
-        console.log('Напечатали тэги');
+        
         addInfoToTags(infoObject, index);
     });
 }
@@ -161,9 +154,9 @@ function booksCategoriesListInit(categoriesArr) {
     if(!categoriesArr) return;
 
     categoriesArr.map(category => {
-        booksCategoriesUl.innerHTML += `<li class="categories-ul_li">${category}</li>`;
+        booksCategoriesUl.innerHTML += `<li class="categories-ul__li">${category}</li>`;
     });
-    booksCategoriesUl.querySelector('.categories-ul_li')
+    booksCategoriesUl.querySelector('.categories-ul__li')
     .classList.add('active');
 }
 
@@ -171,9 +164,7 @@ function selectedCategoryBooksLoad (categoryNameStr, booksAPIkeyStr, booksNum) {
     if(categoryNameStr === '' || categoryNameStr === +categoryNameStr) return;
 
     const booksLoadUrl = `https://www.googleapis.com/books/v1/volumes?q=%22subject:${categoryNameStr}%22&key=${booksAPIkeyStr}&printType=books&startIndex=0&maxResults=${booksNum}&langRestrict=en`;
-    console.log('Сформировали ссылку', booksLoadUrl);
     booksLoad(booksLoadUrl);
-    // Некорректно отрабатывают ссылки, в которых категория содержит пробелы - разобраться.
 }
 
 function cartBooksCountFunc (){
@@ -183,11 +174,10 @@ function cartBooksCountFunc (){
 }
 
 booksCategoriesUl.addEventListener('click', (e) => {
-    console.log('Слушатель категорий. Таргет - ', e.target); 
-    if (e.target.classList.contains('categories-ul_li')) {
+     
+    if (e.target.classList.contains('categories-ul__li')) {
         booksCategoriesUl.querySelector('.active').classList.remove('active');
         e.target.classList.add('active');
-
         booksBlock.innerHTML = '';
         
         activeCategoryName = e.target.textContent;
@@ -196,22 +186,17 @@ booksCategoriesUl.addEventListener('click', (e) => {
 });
 
 loadButton.addEventListener('click', (e) => {
-    console.log('Слушатель кнопки. Таргет - ', e.target);
-    const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last_loaded'));
-    console.log('lastLoadedBooks', lastLoadedBooks); 
+    const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last-loaded-book'));
+     
     lastLoadedBooks.forEach((book) => {
-        console.log('book', book);
-        book.classList = 'books-preview__book';
+        book.classList = 'book';
     });
     
-    console.log(activeCategoryName);
     selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
 });
 
 booksBlock.addEventListener('click', (e) => {
-    console.log('Слушатель кнопки корзины. Таргет - ', e.target);
     cartBooksCounter += 1;
-    console.log('Число книг в корзине - ', cartBooksCounter);
     cartBooksCountFunc();
 });
 
@@ -236,8 +221,7 @@ let sliderDotsArr;
 
 function sliderImgChange() {
     setInterval(() => {
-        console.log('Текущая точка слайдера - ', currActiveSliderDot);
-        console.log('Длина массива точек - ', sliderDotsArr.length);
+        
         if(currActiveSliderDot != sliderDotsArr[sliderDotsArr.length - 1]){
            currActiveSliderDot = sliderDotsArr[(sliderDotsArr.indexOf(currActiveSliderDot)) + 1]; 
         } else {
@@ -284,25 +268,14 @@ document.addEventListener('click', (e) => {
     } 
 });
 
-// headerNav.addEventListener('click', (e) => {
-//     if(e.target.classList.contains('.header-nav_a')) {
-//         headerNav.querySelector('.active').classList.remove('active');
-//         e.target.classList.add('active');
-//     } 
-// });
-
 document.addEventListener("DOMContentLoaded", () => {
     sliderInit(sliderBanners);
     sliderNavDotsInit(sliderBanners);
-
     sliderDotsArr = Array.from(document.querySelectorAll('.slider__nav-dot'));
     currActiveSliderDot = sliderDotsArr[0];
-    console.log('Массив точек слайдера - ',sliderDotsArr);
-    console.log('Активная точка слайдера - ',currActiveSliderDot);
-
     
     booksCategoriesListInit(booksCategoriesArr);
 
-    booksCategoriesUl.querySelector('.categories-ul_li').click();
+    booksCategoriesUl.querySelector('.categories-ul__li').click();
     sliderImgChange();
 });

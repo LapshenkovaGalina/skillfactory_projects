@@ -1,5 +1,5 @@
 @media screen and (min-width: 1440px) {
-    .header-container {
+    .header-content {
         width: 78vw;
         height: 8vw;
 
@@ -8,20 +8,20 @@
         justify-content: space-between;
     }
 
-    .header-container__logo{
+    .logo{
         width: 11%;
     }
     
-    .burger-menu_img {
+    .nav-ul__burger-menu-img {
         display: none;
     }
 
-    .header-container__right-block  img{
+    .acc-block__icon{
         width:calc(14px + 6 * (100vw - 1440px) / 1120);
         height: auto;
     }
 
-    .cart-icon__books-counter-circle {
+    .acc-block__books-counter {
         top: 0px;
         left: calc(6px + 3 * (100vw - 1440px) / 1120);
 
@@ -31,22 +31,22 @@
 }
 
 @media screen and (max-width: 1439px) and (min-width: 992px){
-    .header-container {
+    .header-content {
         width: 84vw;
         height: 8vw;
 
         justify-content: space-between;
     }
 
-    .header-container__logo{
+    .logo{
         width: 11%;
     }
 
-    .burger-menu_img {
+    .nav-ul__burger-menu-img {
         display: none;
     }
 
-    .cart-icon__books-counter-circle {
+    .acc-block__books-counter {
         top: 0px;
         left: 6px;
 
@@ -57,27 +57,27 @@
 
 
 @media screen and (max-width: 991px) {
-    .header-container {
+    .header-content {
         width: 90vw;
         height: 16vw;
 
-        ul {
+        .header-content__nav-ul {
             display: none;
         }
 
-        .burger-menu_img {
+        .nav-ul__burger-menu-img {
             height: 45%;
         }
     }
 
-    .header-container__logo{
+    .logo{
         width: 20%;
     }
 
-    .header-container__right-block {
+    .acc-block {
         margin-left: auto;
 
-        .cart-icon__books-counter-circle {
+        .acc-block__books-counter {
             top: 0px;
             left: 6px;
     

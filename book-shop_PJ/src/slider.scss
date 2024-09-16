@@ -36,10 +36,10 @@
     &:hover {
         cursor: pointer;
     }
-}
 
-.slider__nav-dot.active {
-    background-color: #9E98DC;
+    .active {
+        background-color: #9E98DC;
+    }
 }
 
 .slider__nav-dots {

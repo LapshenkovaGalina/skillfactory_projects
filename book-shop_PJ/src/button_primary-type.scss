@@ -1,0 +1,19 @@
+$primaryButtonTextColor: #4C3DB2;
+$primaryFontWeight_bold: 700;
+
+.button_primary-type {
+    font-weight: $primaryFontWeight_bold;
+    color: $primaryButtonTextColor;
+    text-transform: uppercase;
+
+    background-color: white;
+    border: 1px solid $primaryButtonTextColor;
+}
+
+.button_primary-type:active {
+    border: 1px solid #4d3db251;
+}
+
+.button_primary-type:hover {
+    cursor: pointer;
+}

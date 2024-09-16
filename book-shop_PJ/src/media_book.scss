@@ -1,34 +1,34 @@
 @media screen and (min-width: 1440px) {
 
-    .books-preview__book {
+    .book {
         width: 46%;
         height: 21vw;
     }
     
-    .books-preview__book-info {
+    .book__info {
         width: 42%;
         height: 71%;
     }
     
-    .authors {
+    .book__authors {
         margin-bottom: calc(4px + 6 * (100vw - 1440px) / 1120);
         font-size:calc(10px + 10 * (100vw - 1440px) / 1120);
     }
     
-    .title {
+    .book__title {
         margin-bottom: calc(4px + 6 * (100vw - 1440px) / 1120);
         font-size:calc(16px + 10 * (100vw - 1440px) / 1120);
     }
 
-    .rating-info {
+    .book__rating-info {
         column-gap: 0.5rem;
     }
 
-    .retail-price {
+    .book__retail-price {
         font-size: calc(13px + 10 * (100vw - 1440px) / 1120);
     }
     
-    .description {
+    .book__description {
         margin-top: calc(16px + 10 * (100vw - 1440px) / 1120);
         margin-bottom: calc(16px + 10 * (100vw - 1440px) / 1120);
 
@@ -45,35 +45,35 @@
 
 @media screen and (max-width: 1439px) and (min-width: 992px){
 
-    .books-preview__book {
+    .book {
         width: 48%;
         height: 24vw;
     }
     
-    .books-preview__book-info {
+    .book__info {
         width: 44%;
         height: 74%;
     }
     
-    .authors {
+    .book__authors {
         margin-bottom: 4px;
         font-size:10px;
     }
     
-    .title {
+    .book__title {
         margin-bottom: 4px;
         font-size: 14px;
     }
 
-    .rating-info {
+    .book__rating-info {
         column-gap: 0.5rem;
     }
 
-    .retail-price {
+    .book__retail-price {
         font-size: 13px;
     }
     
-    .description {
+    .book__description {
         margin-top: 12px;
         margin-bottom: 12px;
 
@@ -100,35 +100,35 @@
 
 @media screen and (max-width: 991px) and (min-width: 768px){
 
-    .books-preview__book {
+    .book {
         width: 47%;
         height: 32vw;
     }
     
-    .books-preview__book-info {
+    .book__info {
         width: 44%;
         height: 74%;
     }
 
-    .authors {
+    .book__authors {
         margin-bottom: 4px;
         font-size:10px;
     }
     
-    .title {
+    .book__title {
         margin-bottom: 4px;
         font-size: 14px;
     }
 
-    .rating-info {
+    .book__rating-info {
         column-gap: 0.5rem;
     }
 
-    .retail-price {
+    .book__retail-price {
         font-size: 13px;
     }
     
-    .description {
+    .book__description {
         margin-top: 10px;
         margin-bottom: 10px;
 
@@ -138,35 +138,35 @@
 
 @media screen and (max-width: 767px) {
 
-    .books-preview__book {
+    .book {
         width: 100%;
         height: 65vw;
     }
     
-    .books-preview__book-info {
+    .book__info {
         width: 45%;
         height: 80%;
     }
 
-    .authors {
+    .book__authors {
         margin-bottom: calc(4px + 6 * (100vw - 320px) / 671);
         font-size:calc(10px + 8 * (100vw - 320px) / 671);
     }
     
-    .title {
+    .book__title {
         margin-bottom: calc(4px + 2 * (100vw - 320px) / 671);
         font-size:calc(12px + 8 * (100vw - 320px) / 671);
     }
 
-    .rating-info {
+    .book__rating-info {
         column-gap: 0.5rem;
     }
 
-    .retail-price {
+    .book__retail-price {
         font-size: calc(11px + 8 * (100vw - 320px) / 671);
     }
     
-    .description {
+    .book__description {
         margin-top: calc(12px + 8 * (100vw - 320px) / 671);
         margin-bottom: calc(12px + 10 * (100vw - 320px) / 671);
 

@@ -1,5 +1,5 @@
 @media screen and (min-width: 1440px) {
-    .books-preview__categories {
+    .categories {
         position: absolute;
         z-index: -1;
 
@@ -21,7 +21,7 @@
 }
 
 @media screen and (max-width: 1439px) and (min-width: 992px){
-    .books-preview__categories {
+    .categories {
         position: absolute;
         z-index: -1;
 
@@ -43,7 +43,7 @@
 }
 
 @media screen and (max-width: 991px) {
-    .books-preview__categories {
+    .categories {
         width: 100%;
 
         justify-content: center;
@@ -60,7 +60,7 @@
 
             font-size: calc(8px + 12 * (100vw - 320px) / 671);
 
-            li {
+            .categories-ul__li {
                 list-style-position: inside;
             }
         }

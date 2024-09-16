@@ -3,7 +3,7 @@ $primaryFontDarkColor: #1C2A39;
 $primaryFontLightColor: #5C6A79;
 $primaryFontWeight_bold: 700;
 
-.books-preview__categories {
+.categories {
     display: flex;
 
     background-color: #EFEEF6;
@@ -12,7 +12,7 @@ $primaryFontWeight_bold: 700;
     color: $primaryFontLightColor;
     font-weight: 500;
 
-    & .categories-ul {
+    .categories-ul {
         display: flex;
 
         .active {
@@ -20,12 +20,12 @@ $primaryFontWeight_bold: 700;
             font-weight: $primaryFontWeight_bold;
         }
         
-        li:hover {
+        .categories-ul__li:hover {
             cursor: pointer;
         }
-    }
-}
 
-.categories-ul_li:not(.active){
-    list-style: none;
+        .categories-ul__li:not(.active){
+            list-style: none;
+        }
+    }
 }

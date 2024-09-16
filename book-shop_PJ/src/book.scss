@@ -3,7 +3,7 @@ $primaryFontLightColor: #5C6A79;
 $primaryButtonTextColor: #4C3DB2;
 $primaryFontWeight_bold: 700;
 
-.books-preview__book {
+.book {
     z-index: 2;
 
     display: flex;
@@ -13,19 +13,19 @@ $primaryFontWeight_bold: 700;
 
     transition: box-shadow .5s;
 
-    img {
-        width: 50%;
-        height: 100%;
-
-        box-shadow: 0px 40px 20px -20px rgb(0 0 0 / 20%);
-    }
-
     &:hover {
         box-shadow: 0px 40px 20px -20px rgb(0 0 0 / 20%);
     }
 }
 
-.books-preview__book-info {
+.book__img {
+    width: 50%;
+    height: 100%;
+
+    box-shadow: 0px 40px 20px -20px rgb(0 0 0 / 20%);
+}
+
+.book__info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -33,12 +33,12 @@ $primaryFontWeight_bold: 700;
     box-sizing: border-box;
 }
 
-.title, .retail-price {
+.book__title, .book__retail-price {
     color: $primaryFontDarkColor;
     font-weight: $primaryFontWeight_bold;
 }
 
-.title {
+.book__title {
     display: inline-block;
     overflow: hidden;
     display: -webkit-box;
@@ -46,35 +46,34 @@ $primaryFontWeight_bold: 700;
     -webkit-box-orient: vertical; 
 }
 
-.rating-info {
+.book__rating-info {
     display: flex;
     flex-direction: row;
     align-items: center;
 
     width: 100%;
 
-    .average-rating{
+    .book__average-rating{
         width: 35%;
         height: auto;
 
-        svg {
+        .book__average-rating-svg {
             width: 100%;
             height: auto;
         }
     }
 
-    .ratings-count {
-    font-size: 1.2rem;
-    background-color: aqua;
-}
+    .book__ratings-count {
+        font-size: 1.2rem;
+        background-color: aqua;
+    }
 }
 
-.description {
+.book__description {
     width: 100%;
     height: auto;
+    
     overflow: hidden;
-    // white-space: nowrap;
-    // text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical; 

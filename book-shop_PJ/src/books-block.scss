@@ -1,14 +1,14 @@
 $primaryFontDarkColor: #1C2A39;
 $primaryFontWeight_bold: 700;
 
-.books-preview {
+.books-block {
     position: relative;
     z-index: 0;
 
     display: flex;
 }
 
-.books-preview__books {
+.books {
     z-index: 1;
     display: flex;
 }

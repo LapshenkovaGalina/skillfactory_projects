@@ -13,18 +13,21 @@ header {
     z-index: 3;
 }
 
-.header-container {
+.header-content {
     display: flex;
     flex-direction: row;
 
     font-family: $primaryFont;
     color: $primaryFontLightColor;
 
-    .header-container__logo-img{
+    .logo__img {
         width: 100%;
     }
 
-    nav, ul, > div {
+    .logo,
+    .header-nav,
+    .header-nav__ul,
+    .acc-block {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -32,24 +35,24 @@ header {
         column-gap: 2.7vw;
     }
 
-    ul {
+    .header-nav__ul {
         list-style-type: none;
     }
 
 }    
 
-.header-container__cart-icon{
+.acc-block__cart-icon{
     display: flex;
     flex-direction: row;
     align-items: center;
 
     position: relative;
 
-    .cart-icon__img {
+    .acc-block__cart-icon-img {
         position: absolute;
     }
 
-    .cart-icon__books-counter-circle {
+    .acc-block__books-counter {
         position: absolute;
 
         display: flex;
