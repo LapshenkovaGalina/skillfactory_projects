@@ -12,7 +12,9 @@ import './media_button_books-load.scss'
 import './media_categories.scss'
 import './media_header.scss'     
 import './media_slider.scss'
-import './slider.scss'             
+import './slider.scss'    
+
+import {parseBooksJSONItems} from './json-parse'
 
 const booksCategoriesArr = [
     'Architecture',
@@ -41,7 +43,8 @@ const cartBooksCountDiv = document.querySelector('.acc-block__books-counter');
 
 let activeCategoryName;
 let cartBooksCounter = 0;
-let localStorage = {};
+let booksInfoObjectsArray = [];
+let localStorage = [];
 
 async function booksLoad(booksLoadUrl) {
     try {
@@ -51,13 +54,15 @@ async function booksLoad(booksLoadUrl) {
             throw new Error (`Response status: ${response.status}`);
         }
 
-        let booksInfoObjectsArr = await response.json();
-    
-        booksInfoObjectsArr = booksInfoObjectsArr.items;
+        let responseJson = await response.json();
+        let booksInfoObjectsArr = responseJson.items;
+
         loadInfoToBookTags(booksInfoObjectsArr);
-        
+        const loadedBooksInfo = parseBooksJSONItems(responseJson);
+        booksInfoObjectsArray = booksInfoObjectsArray.concat(loadedBooksInfo);
+
     } catch (error) {
-        
+        console.error(error);
     }
 }
 
@@ -160,44 +165,69 @@ function booksCategoriesListInit(categoriesArr) {
     .classList.add('active');
 }
 
-function selectedCategoryBooksLoad (categoryNameStr, booksAPIkeyStr, booksNum) {
+async function selectedCategoryBooksLoad (categoryNameStr, booksAPIkeyStr, booksNum) {
     if(categoryNameStr === '' || categoryNameStr === +categoryNameStr) return;
 
     const booksLoadUrl = `https://www.googleapis.com/books/v1/volumes?q=%22subject:${categoryNameStr}%22&key=${booksAPIkeyStr}&printType=books&startIndex=0&maxResults=${booksNum}&langRestrict=en`;
-    booksLoad(booksLoadUrl);
+    await booksLoad(booksLoadUrl);
 }
 
 function cartBooksCountFunc (){
     if(cartBooksCounter > 0){
+        console.log('cartBooksCounter = ', cartBooksCounter);
         cartBooksCountDiv.textContent = `${cartBooksCounter}`;
     }
 }
 
-booksCategoriesUl.addEventListener('click', (e) => {
-     
+function addBookToCart() {
+    const addToCartButton = booksBlock.querySelector('.add-to-cart');
+    console.log("booksInfoObjectsArray: ", booksInfoObjectsArray)
+    localStorage.push(booksInfoObjectsArray[addToCartButton.dataset.num]);
+
+    cartBooksCounter += 1;
+    cartBooksCountFunc();
+}
+
+function addToCartButtonDataSet() {
+    console.log('booksBlock >>> ', booksBlock);
+    
+    let buttonsElemsArr = Array.from(booksBlock.querySelectorAll('.buy-button'));
+    
+    buttonsElemsArr.forEach((elem, index) => {
+        elem.dataset.num = `${index}`;
+    });
+}
+
+booksCategoriesUl.addEventListener('click', async (e) => {
     if (e.target.classList.contains('categories-ul__li')) {
         booksCategoriesUl.querySelector('.active').classList.remove('active');
         e.target.classList.add('active');
         booksBlock.innerHTML = '';
         
         activeCategoryName = e.target.textContent;
-        selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+        await selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+        addToCartButtonDataSet();
     }
 });
 
-loadButton.addEventListener('click', (e) => {
+loadButton.addEventListener('click', async (e) => {
     const lastLoadedBooks = Array.from(booksBlock.querySelectorAll('.last-loaded-book'));
      
     lastLoadedBooks.forEach((book) => {
         book.classList = 'book';
     });
     
-    selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+    await selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
+    addToCartButtonDataSet();
 });
 
 booksBlock.addEventListener('click', (e) => {
-    cartBooksCounter += 1;
-    cartBooksCountFunc();
+    console.log("buy now button click", e.target);
+    if(e.target.classList.contains('buy-button')) {
+        e.target.classList.add('add-to-cart', 'clicked');
+
+        addBookToCart();        
+    }
 });
 
 headerNav.addEventListener('click', (e) => {
