@@ -189,8 +189,6 @@ function addBookToCart() {
 }
 
 function addToCartButtonDataSet() {
-    console.log('booksBlock >>> ', booksBlock);
-    
     let buttonsElemsArr = Array.from(booksBlock.querySelectorAll('.buy-button'));
     
     buttonsElemsArr.forEach((elem, index) => {
@@ -203,6 +201,8 @@ booksCategoriesUl.addEventListener('click', async (e) => {
         booksCategoriesUl.querySelector('.active').classList.remove('active');
         e.target.classList.add('active');
         booksBlock.innerHTML = '';
+
+        booksInfoObjectsArray = [];
         
         activeCategoryName = e.target.textContent;
         await selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
@@ -222,7 +222,6 @@ loadButton.addEventListener('click', async (e) => {
 });
 
 booksBlock.addEventListener('click', (e) => {
-    console.log("buy now button click", e.target);
     if(e.target.classList.contains('buy-button')) {
         e.target.classList.add('add-to-cart', 'clicked');
 
