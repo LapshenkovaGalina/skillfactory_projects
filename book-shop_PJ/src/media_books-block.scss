@@ -7,9 +7,6 @@ $primaryFontWeight_bold: 700;
 
     .books-block {
         width: 78vw;
-
-        flex-direction: row;
-        justify-content: end;
     }
 
     .books {
@@ -28,9 +25,6 @@ $primaryFontWeight_bold: 700;
 
     .books-block {
         width: 84vw;
-
-        flex-direction: row;
-        justify-content: end;
     }
 
     .books {
@@ -48,36 +42,33 @@ $primaryFontWeight_bold: 700;
 
     .books-block {
         width: 90vw;
-
-        flex-direction: column;
-        align-items: center;
     }
 
     .books {
         width: 100%;
 
         padding-top: 8vw;
-        padding-bottom: 3vw;
+        padding-bottom: 5vw;
         row-gap: 10vw;
+    }
 
+    .books {
         flex-flow: row wrap;
         justify-content: space-between;
     }
+
 }
 
 @media screen and (max-width: 767px){
 
     .books-block {
         width: 90vw;
-
-        flex-direction: column;
-        align-items: center;
     }
 
-    .books-block__books {
+    .books {
         width: 100%;
         padding-top: 12vw;
-        padding-bottom: 3vw;
+        padding-bottom: 10vw;
         row-gap: 15vw;
 
         flex-flow: column nowrap;

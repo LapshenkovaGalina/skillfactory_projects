@@ -2,6 +2,9 @@
     .button_books-load {
         width: 12vw;
         height: 3vw;
+
+        margin-right: 25vw;
+        margin-bottom: 3vw;
     
         font-size:calc(8px + 10 * (100vw - 1440px) / 1120);
     }
@@ -11,18 +14,23 @@
     .button_books-load {
         width: 15vw;
         height: 3vw;
+
+        margin-right: 27.5vw;
+        margin-bottom: 3vw;
     
         font-size: 8px;
     }
-
 }
 
 @media screen and (max-width: 991px) and (min-width: 768px){
 
     .button_books-load {
-        width: 14vw;
-        height: 3vw;
-    
+        width: 20vw;
+        height: 4vw;
+
+        margin-right: 35vw;
+        margin-bottom: 5vw;
+
         font-size: 8px;
     }
 
@@ -31,8 +39,11 @@
 @media screen and (max-width: 767px){
 
     .button_books-load {
-        width: 35vw;
-        height: 7vw;
+        width: 40vw;
+        height: 8vw;
+
+        margin-right: 20vw;
+        margin-bottom: 5vw;
     
         font-size: 8px;
     }
