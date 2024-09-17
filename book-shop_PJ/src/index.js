@@ -1,25 +1,3 @@
-import './book.scss'
-import './books-block.scss'
-import './books-selections.scss'
-import './button_primary-type.scss'
-import './categories.scss'
-import './global.scss'
-import './header.scss'
-import './media_book.scss'
-import './media_books-block.scss'
-import './media_books-selections.scss'
-import './media_button_books-load.scss'
-import './media_categories.scss'
-import './media_header.scss'     
-import './media_slider.scss'
-import './slider.scss'
-
-import * as slider from './slider'
-import * as booksLoad from './books-load'
-
-const sliderBanners = [{url:'./assets/banner-0.png'},
-    {url:'./assets/banner-1.png'},
-    {url:'./assets/banner-2.png'},];
 import './scss/book.scss'
 import './scss/books-block.scss'
 import './scss/books-selections.scss'
