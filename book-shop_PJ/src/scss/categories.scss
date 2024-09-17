@@ -19,13 +19,13 @@ $primaryFontWeight_bold: 700;
             color: $primaryFontDarkColor;
             font-weight: $primaryFontWeight_bold;
         }
-        
-        .categories-ul__li:hover {
-            cursor: pointer;
-        }
-
-        .categories-ul__li:not(.active){
-            list-style: none;
-        }
     }
+}
+
+.categories-ul__li:hover {
+    cursor: pointer;
+}
+
+.categories-ul__li:not(.active){
+    list-style: none;
 }
