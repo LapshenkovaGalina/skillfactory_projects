@@ -8,7 +8,8 @@ const parseItem = (item) => {
         averageRating: item.volumeInfo?.averageRating,
         ratingsCount: item.volumeInfo?.ratingsCount,
         description: item.volumeInfo?.description,
-        retailPrice: item.saleInfo?.retailPrice?.amount
+        retailPrice: item.saleInfo?.retailPrice?.amount,
+        id: item.id
     }
 }
 

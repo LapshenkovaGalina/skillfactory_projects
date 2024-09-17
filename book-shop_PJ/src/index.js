@@ -43,8 +43,7 @@ const cartBooksCountDiv = document.querySelector('.acc-block__books-counter');
 
 let activeCategoryName;
 let cartBooksCounter = 0;
-let booksInfoObjectsArray = [];
-let localStorage = [];
+let booksInfoObjectsArr = [];
 
 async function booksLoad(booksLoadUrl) {
     try {
@@ -55,11 +54,11 @@ async function booksLoad(booksLoadUrl) {
         }
 
         let responseJson = await response.json();
-        let booksInfoObjectsArr = responseJson.items;
+        let infoItems = responseJson.items;
 
-        loadInfoToBookTags(booksInfoObjectsArr);
+        loadInfoToBookTags(infoItems);
         const loadedBooksInfo = parseBooksJSONItems(responseJson);
-        booksInfoObjectsArray = booksInfoObjectsArray.concat(loadedBooksInfo);
+        booksInfoObjectsArr = booksInfoObjectsArr.concat(loadedBooksInfo);
 
     } catch (error) {
         console.error(error);
@@ -176,19 +175,40 @@ function cartBooksCountFunc (){
     if(cartBooksCounter > 0){
         console.log('cartBooksCounter = ', cartBooksCounter);
         cartBooksCountDiv.textContent = `${cartBooksCounter}`;
+    } else {
+        cartBooksCountDiv.textContent = ``;
     }
 }
 
-function addBookToCart() {
-    const addToCartButton = booksBlock.querySelector('.add-to-cart');
-    console.log("booksInfoObjectsArray: ", booksInfoObjectsArray)
-    localStorage.push(booksInfoObjectsArray[addToCartButton.dataset.num]);
+function addBookToCart(addToCartButton) {
+    const localStorageJson = window.localStorage.getItem('cart');
 
-    cartBooksCounter += 1;
+    let storage = []
+
+    if (localStorageJson !== null) {
+        storage = JSON.parse(localStorageJson);
+    }
+
+    console.log('storage: ', storage)
+    
+    const bookInfo = booksInfoObjectsArr[addToCartButton.dataset.num];
+
+    if (storage.findIndex(el => String(el.id) === String(bookInfo.id)) !== -1) {
+        storage = storage.filter(el => String(el.id) !== String(bookInfo.id));
+        cartBooksCounter -= 1;
+    } else {
+        storage.push(bookInfo);
+        cartBooksCounter += 1;
+    }
+
+    window.localStorage.setItem("cart", JSON.stringify(storage));
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>', storage, bookInfo.id, addToCartButton.dataset.num);
+    
     cartBooksCountFunc();
 }
 
 function addToCartButtonDataSet() {
+    console.log("addToCartButtonDataSet >>>");
     let buttonsElemsArr = Array.from(booksBlock.querySelectorAll('.buy-button'));
     
     buttonsElemsArr.forEach((elem, index) => {
@@ -202,7 +222,7 @@ booksCategoriesUl.addEventListener('click', async (e) => {
         e.target.classList.add('active');
         booksBlock.innerHTML = '';
 
-        booksInfoObjectsArray = [];
+        booksInfoObjectsArr = [];
         
         activeCategoryName = e.target.textContent;
         await selectedCategoryBooksLoad(activeCategoryName, 'AIzaSyC1btnaqckrhX4nOaY2sJ76QQfNmXDlUb0', 6);
@@ -223,9 +243,9 @@ loadButton.addEventListener('click', async (e) => {
 
 booksBlock.addEventListener('click', (e) => {
     if(e.target.classList.contains('buy-button')) {
-        e.target.classList.add('add-to-cart', 'clicked');
+        e.target.classList.add('clicked');
 
-        addBookToCart();        
+        addBookToCart(e.target);        
     }
 });
 
