@@ -49,12 +49,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     booksLoad.booksInit();
     booksLoad.cartInit();
-    slider.sliderInit(sliderBanners);
-    slider.sliderNavDotsInit(sliderBanners);
-    
-    booksLoad.booksCategoriesListInit(booksCategoriesArr);
-    slider.sliderImgChange();
-
-    booksLoad.booksInit();
-    booksLoad.cartInit();
 });
