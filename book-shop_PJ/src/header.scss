@@ -20,61 +20,58 @@ header {
 
     font-family: $primaryFont;
     color: $primaryFontLightColor;
+}
 
-    .logo__img {
-        width: 100%;
+.logo__img {
+    width: 100%;
+}
+
+.logo,
+.header-nav,
+.header-nav__ul,
+.acc-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    column-gap: 2.7vw;
+}
+
+.header-nav__ul {
+    list-style-type: none;
+}
+
+.nav-ul__a {
+    text-decoration: none;
+    color: $primaryFontLightColor;
+
+    &.active {
+        font-weight: $primaryFontWeight_bold;
     }
-
-    .logo,
-    .header-nav,
-    .header-nav__ul,
-    .acc-block {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        column-gap: 2.7vw;
-    }
-
-    .header-nav__ul {
-        list-style-type: none;
-
-        .nav-ul__a {
-            text-decoration: none;
-            color: $primaryFontLightColor;
-
-            &.active {
-                font-weight: $primaryFontWeight_bold;
-            }
-        }
-    }
-
-}    
+}
 
 .acc-block__cart-icon{
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    position: relative;
-
-    .acc-block__cart-icon-img {
-        position: absolute;
-    }
-
-    .acc-block__books-counter {
-        position: absolute;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        color: white;
-        font-size: 1rem;
-        font-weight: 500;
-
-        background-color: #FF353A;
-        border-radius: 50%;
-    } 
+    position: relative; 
 }
 
+.acc-block__cart-icon-img {
+    position: absolute;
+}
+
+.acc-block__books-counter {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-weight: 500;
+
+    background-color: #FF353A;
+    border-radius: 50%;
+}

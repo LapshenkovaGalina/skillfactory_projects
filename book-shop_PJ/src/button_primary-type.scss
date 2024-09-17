@@ -8,12 +8,13 @@ $primaryFontWeight_bold: 700;
 
     background-color: white;
     border: 1px solid $primaryButtonTextColor;
+
+    &:active {
+        border: 1px solid #4d3db251;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.button_primary-type:active {
-    border: 1px solid #4d3db251;
-}
-
-.button_primary-type:hover {
-    cursor: pointer;
-}

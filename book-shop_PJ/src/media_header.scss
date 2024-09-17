@@ -3,7 +3,7 @@
         width: 78vw;
         height: 8vw;
 
-        font-size:calc(10px + 8 * (100vw - 1440px) / 1120);
+        font-size:calc(10px + 10 * (100vw - 1440px) / 1120);
 
         justify-content: space-between;
     }
@@ -27,6 +27,8 @@
 
         width: calc(12px + 6 * (100vw - 1440px) / 1120);
         height: calc(12px + 6 * (100vw - 1440px) / 1120);
+
+        font-size:calc(10px + 8 * (100vw - 1440px) / 1120);
     }
 }
 
@@ -50,8 +52,8 @@
         top: 0px;
         left: 6px;
 
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
     }
 }
 

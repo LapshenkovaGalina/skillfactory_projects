@@ -1,23 +1,17 @@
-$primaryFont: Montserrat, Arial, Helvetica, sans-serif;
-$primaryFontDarkColor: #1C2A39;
-$primaryFontLightColor: #5C6A79;
-$primaryButtonTextColor: #4C3DB2;
-$primaryFontWeight_bold: 700;
-
 * {
     margin: 0px;
     padding: 0px;
 }
 
-html {
+.html {
     font-size: 10px;
 }
 
-body {
+.body {
     color: #ffffff;
 }
 
-main {
+.main {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -65,7 +65,6 @@ $primaryFontWeight_bold: 700;
 
     .book__ratings-count {
         font-size: 1.2rem;
-        background-color: aqua;
     }
 }
 
@@ -79,6 +78,6 @@ $primaryFontWeight_bold: 700;
     -webkit-box-orient: vertical; 
 }
 
-.buy-button .clicked {
+.buy-button.clicked {
     border: 1px solid #EEEDF5;
 }
