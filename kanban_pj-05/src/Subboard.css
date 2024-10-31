@@ -1,0 +1,13 @@
+
+.Subboard {
+    width: 22.8%;
+    max-height: auto;
+
+    border-radius: 10px;
+
+    background-color: #EBECF0;
+}
+
+.SubboardBtn {
+    border-radius: 0px;
+}
