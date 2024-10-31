@@ -1,7 +1,6 @@
 
 .Subboard {
     width: 22.8%;
-    max-height: auto;
 
     border-radius: 10px;
 
@@ -9,5 +8,11 @@
 }
 
 .SubboardBtn {
-    border-radius: 0px;
+    border-width: 0px;
+    background-color: #EBECF0;
+}
+
+.SubboardBtn:hover {
+    border-radius: 5px;
+    background-color: #FFFFFF;
 }
