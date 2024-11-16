@@ -1,0 +1,22 @@
+import './Subboard.css';
+import type { RootState } from './store/index'
+import NewTaskForm from './NewTaskForm';
+import { useSelector } from 'react-redux';
+import { Task } from './store/backlogSlice';
+import TaskBlock from './Task';
+
+function BacklogSubboard() {
+  const backlogTasks = useSelector((state: RootState) => state.backlogTasks);
+
+  return (
+    <div className="BacklogSubboard">
+        <div>Backlog</div>
+        <div className='tasksBlock'>
+          {backlogTasks.tasks.map((task: Task) => <TaskBlock title={task.title}></TaskBlock>)}
+        </div>
+        <NewTaskForm/>
+    </div>
+  );
+}
+
+export default BacklogSubboard;

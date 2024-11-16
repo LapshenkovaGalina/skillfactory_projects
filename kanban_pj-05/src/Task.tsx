@@ -1,7 +1,7 @@
 import React from 'react';
 import './Task.css';
 
-function Task({title}:{title: string}) {
+function TaskBlock({title}:{title: string}) {
     return (
         <div className='Task'>
             <div>{title}</div>
@@ -9,4 +9,4 @@ function Task({title}:{title: string}) {
     );
 }
 
-export default Task;
+export default TaskBlock;
