@@ -15,45 +15,48 @@ const [task, setTask] = useState<string>('');
 
 const dispatch = useDispatch();
 
-function addNewTaskToReady(currentSubboardTitle: string){
-    let addNewTask: PayloadAction<addTaskPayloadType>;
-    if(currentSubboardTitle === 'Ready'){
-        addNewTask = addTaskToReady;
-    } else if (currentSubboardTitle === 'In Progress'){
-        addNewTask = addTaskToInProgress;
-    } else if (currentSubboardTitle === 'Finished'){
-        addNewTask = addTaskToFinished;
-    } else {
-        return;
-    }
-    dispatch(addNewTask)
-}
-// function addNewTaskToReady(){
-//   dispatch(addTaskToReady(
-//     {
-//       taskID: Date.now(),
-//       taskTitle: '',
-//       taskDescription: ""
-//     })
-// )};
+// function addNewTaskToReady(currentSubboardTitle: string){
+//     let addNewTask: PayloadAction<addTaskPayloadType>;
+//     if(currentSubboardTitle === 'Ready'){
+//         addNewTask = addTaskToReady;
+//     } else if (currentSubboardTitle === 'In Progress'){
+//         addNewTask = addTaskToInProgress;
+//     } else if (currentSubboardTitle === 'Finished'){
+//         addNewTask = addTaskToFinished;
+//     } else {
+//         return;
+//     }
+//     dispatch(addNewTask({
 
-// function addNewTaskToInProgress(){
-//     dispatch(addTaskToInProgress(
-//       {
-//         taskID: Date.now(),
-//         taskTitle: '',
-//         taskDescription: ""
-//       })
-//   )};
+//     }))
+// }
 
-//   function addNewTaskToFinished(){
-//     dispatch(addTaskToFinished(
-//       {
-//         taskID: Date.now(),
-//         taskTitle: '',
-//         taskDescription: ""
-//       })
-//   )};
+function addNewTaskToReady(){
+  dispatch(addTaskToReady(
+    {
+      taskID: Date.now(),
+      taskTitle: '',
+      taskDescription: ""
+    })
+)};
+
+function addNewTaskToInProgress(){
+    dispatch(addTaskToInProgress(
+      {
+        taskID: Date.now(),
+        taskTitle: '',
+        taskDescription: ""
+      })
+  )};
+
+  function addNewTaskToFinished(){
+    dispatch(addTaskToFinished(
+      {
+        taskID: Date.now(),
+        taskTitle: '',
+        taskDescription: ""
+      })
+  )};
 
 
 function addCardBtnHandler (){
