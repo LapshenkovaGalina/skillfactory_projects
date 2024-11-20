@@ -3,7 +3,9 @@ import './AppHeader.css';
 
 function AppHeader() {
   return (
-      <header className='AppHeader'></header>
+      <header className='AppHeader'>
+        <h1>Kanban Board</h1>
+      </header>
   );
 }
 

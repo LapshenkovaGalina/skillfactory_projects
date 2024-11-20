@@ -1,8 +1,22 @@
-.DropDownMenu {
-    width: 90%;
-    
+.dropDownMenu__select {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+    width: 98%;
+
+    margin-top: 12px;
+    padding: 6px 8px 6px 8px;
+    row-gap: 12px;
+
     border-radius: 10px;
     border-width: 0px;
 
     background-color: #FFFFFF;
+
+    font-size: calc(14px + 12 * (100vw - 320px) / 2240);
+}
+
+.dropDownMenu__option:hover {
+    background-color: #DEDEDE;
 }

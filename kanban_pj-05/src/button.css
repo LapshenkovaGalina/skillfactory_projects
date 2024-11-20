@@ -1,0 +1,31 @@
+.commonTypeBtn {
+    padding: 4px 8px 4px 8px;
+
+    width: max-content;
+
+    border-width: 0px;
+    border-radius: 5px;
+
+    font-size: calc(14px + 12 * (100vw - 320px) / 2240);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.commonTypeBtn:hover {
+    cursor: pointer;
+}
+
+.addCardBtn {
+    background-color: #EBECF0;
+}
+
+.addCardBtn:hover {
+    background-color: #FFFFFF;
+}
+
+.submitBtn {
+    background-color: #0079BF;
+}
+
+.submitBtn:hover {
+    color: #FFFFFF;
+}

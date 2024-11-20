@@ -1,5 +1,18 @@
 .Task {
+    box-sizing: border-box;
+    width: 98%;
+
+    word-wrap: break-word;
+
+    padding: 6px 8px 6px 8px;
+
     border-radius: 10px;
-    width: 90%;
+
     background-color: #FFFFFF;
+}
+
+.taskTitle {
+    cursor: pointer;
+    text-decoration: none;
+    color: #000000
 }

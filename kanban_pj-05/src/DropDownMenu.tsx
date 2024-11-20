@@ -1,87 +1,59 @@
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
 import './Task.css';
 import './DropDownMenu.css'
-import { useDispatch } from 'react-redux';
-import { addTask as addTaskToReady} from './store/readySlice';
-import { addTask as addTaskToInProgress} from './store/inProgressSlice';
-import { addTask as addTaskToFinished} from './store/finishedSlice';
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { addTaskPayloadType } from './store/backlogSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { addTaskByBoardTitle, getStoreStateByBoardTitle, removeTaskByBoardTitle } from './util';
+import { TaskType } from './store/backlogSlice';
 
-
-function DropDownMenu({ tasksArr, subboardTitle }: {tasksArr: string[], subboardTitle: string}) {
-const [showSelect, setShowSelect] = useState<boolean>(false);
-const [task, setTask] = useState<string>('');
-
-const dispatch = useDispatch();
-
-// function addNewTaskToReady(currentSubboardTitle: string){
-//     let addNewTask: PayloadAction<addTaskPayloadType>;
-//     if(currentSubboardTitle === 'Ready'){
-//         addNewTask = addTaskToReady;
-//     } else if (currentSubboardTitle === 'In Progress'){
-//         addNewTask = addTaskToInProgress;
-//     } else if (currentSubboardTitle === 'Finished'){
-//         addNewTask = addTaskToFinished;
-//     } else {
-//         return;
-//     }
-//     dispatch(addNewTask({
-
-//     }))
-// }
-
-function addNewTaskToReady(){
-  dispatch(addTaskToReady(
-    {
-      taskID: Date.now(),
-      taskTitle: '',
-      taskDescription: ""
-    })
-)};
-
-function addNewTaskToInProgress(){
-    dispatch(addTaskToInProgress(
-      {
-        taskID: Date.now(),
-        taskTitle: '',
-        taskDescription: ""
-      })
-  )};
-
-  function addNewTaskToFinished(){
-    dispatch(addTaskToFinished(
-      {
-        taskID: Date.now(),
-        taskTitle: '',
-        taskDescription: ""
-      })
-  )};
-
-
-function addCardBtnHandler (){
-    if (showSelect === true) {
-        if(task !== ''){
-          addNewTask();
-          setTask('');
-        }
-        setShowSelect(false)
-      } else {
-        setShowSelect(true);
-      }
+type Props = {
+    subboardTitle: string
 }
 
-function selectHandler(event: React.ChangeEvent<HTMLSelectElement>) {
-    setTask(event.target.value);
-  }
+function DropDownMenu({ subboardTitle }: Props) {
+    const [showSelect, setShowSelect] = useState<boolean>(false);
+
+    let sourceBoardTitle = "Ready";
+    switch(subboardTitle) {
+        case "Ready":
+            sourceBoardTitle = "Backlog";
+            break;
+        case "In Progress":
+            sourceBoardTitle = "Ready";
+            break;
+        case "Finished":
+            sourceBoardTitle = "In Progress";
+            break;
+    }
+
+    const tasksState = useSelector(getStoreStateByBoardTitle(sourceBoardTitle))
+    const dispatch = useDispatch();
+
+    const ref = useRef<HTMLSelectElement>(null)
+
+    function addCardBtnHandler() {
+        setShowSelect(!showSelect);
+
+        if (ref.current && tasksState) {
+            const task = tasksState.tasks[ref.current.selectedIndex]
+            addTaskByBoardTitle(dispatch, subboardTitle, task);
+            removeTaskByBoardTitle(dispatch, sourceBoardTitle, task.ID);
+        }
+    }
+    const tasksJSX = tasksState?.tasks.map((task: TaskType) => {
+        // addTaskByBoardTitle
+
+        return (
+            <option className='dropDownMenu__option' key={task.title}>{task.title}</option>
+        )
+    })
 
     return (
-        <div>
+        <div className='DropDownMenu'>
             {showSelect === true && 
-            <select className='DropDownMenu' onChange={selectHandler}>
-                {tasksArr.map((task: string) => <option>{task}</option>)}
+            <select ref={ref} className='dropDownMenu__select'>
+                { tasksJSX }
             </select>}
-            <button className='addCardBtn' onClick={addCardBtnHandler}>
+            <button className='addCardBtn commonTypeBtn' onClick={addCardBtnHandler}>
                 {showSelect === true && 'Submit' ||
                 showSelect === false && '+ Add card'}
             </button>

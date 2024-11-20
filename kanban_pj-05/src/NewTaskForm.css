@@ -1,4 +1,25 @@
 .NewTaskForm {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 12px;
+    row-gap: 10px;
+
     border-radius: 10px;
-    background-color: #FFFFFF;
+}
+
+.newTaskForm__input{
+    box-sizing: border-box;
+    width: 98%;
+
+    padding: 6px 8px 6px 8px;
+
+    border-radius: 10px;
+    border: 0px;
+
+    font-size: calc(14px + 12 * (100vw - 320px) / 2240);
+}
+
+.newTaskForm__input:focus {
+    outline: none;
 }

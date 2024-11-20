@@ -4,3 +4,9 @@
 
     background-color: #0067A3;
 }
+
+h1 {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: calc(12px + 14 * (100vw - 320px) / 2240);
+}

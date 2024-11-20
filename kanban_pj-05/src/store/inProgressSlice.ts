@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import { StoreState, Task, storeRedusers } from './backlogSlice';
+import { StoreState, storeRedusers } from './backlogSlice';
 
 const initialState: StoreState = {
     tasks: []

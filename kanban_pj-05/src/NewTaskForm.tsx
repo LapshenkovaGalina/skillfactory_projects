@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './NewTaskForm.css';
+import './button.css';
 import { useDispatch } from 'react-redux';
 import { addTask as addTaskToBacklog } from './store/backlogSlice';
 
@@ -12,9 +13,9 @@ function NewTaskForm() {
   function addNewTask(){
     dispatch(addTaskToBacklog(
       {
-        taskID: Date.now(),
-        taskTitle: inputValue,
-        taskDescription: ""
+        ID: Date.now(),
+        title: inputValue,
+        description: ""
       })
   )};
 
@@ -34,14 +35,23 @@ function NewTaskForm() {
     setInputValue(event.target.value);
   }
 
+  const submitButton = (
+    <button className='commonTypeBtn submitBtn' onClick={addCardBtnHandler}>
+      Submit
+    </button>
+  )
+
+  const addButton = (
+    <button className='commonTypeBtn addCardBtn' onClick={addCardBtnHandler}>
+      + Add card
+    </button>
+  )
+
   return (
     <div className="NewTaskForm">
-      {showInput === true && <input
-        onChange={inputHandler} />}
-      <button className='addCardBtn' onClick={addCardBtnHandler}>
-        {showInput === true && 'Submit' ||
-          showInput === false && '+ Add card'}
-      </button>
+      {showInput === true && <input className='newTaskForm__input'
+        onChange={inputHandler} autoFocus/>}
+      { showInput === true ? submitButton : addButton }
     </div>
   );
 }

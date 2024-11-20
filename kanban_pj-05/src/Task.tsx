@@ -1,12 +1,16 @@
 import React from 'react';
 import './Task.css';
+import { useNavigate } from 'react-router-dom';
 
-function TaskBlock({title}:{title: string}) {
+function Task({ title, route }:{title: string, route: string}) {
+    const navigate = useNavigate();
+    const goToTaskPage = () => navigate(route);
+
     return (
         <div className='Task'>
-            <div>{title}</div>
+            <div onClick={goToTaskPage}><a className='taskTitle'>{title}</a></div>
         </div>
     );
 }
 
-export default TaskBlock;
+export default Task;

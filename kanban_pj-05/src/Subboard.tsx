@@ -1,38 +1,29 @@
-import React, { useState } from 'react';
 import './Subboard.css';
+import './button.css';
 import DropDownMenu from './DropDownMenu';
-import { RootState } from './store';
 import { useSelector } from 'react-redux';
-import { Task } from './store/backlogSlice';
-import TaskBlock from './Task';
+import { getStoreStateByBoardTitle } from "./util"
+import Task from './Task';
 
-function Subboard({title}: {title: string}) {
-const [ btnClicked, setBtnClicked] = useState<number>(0);
-const allBacklogTasks = useSelector((state: RootState) => state.backlogTasks);
-const allReadyTasks = useSelector((state: RootState) => state.readyTasks);
-const allInProgressTasks = useSelector((state: RootState) => state.inProgressTasks);
-const allFinishedTasks = useSelector((state: RootState) => state.finishedTasks);
-
-function tasksStoreSelectFunc (currentSubboardTitle: string){
-  if(currentSubboardTitle === 'Ready'){
-    return allBacklogTasks.tasks.map((task: Task) => task.title);
-  } else if (currentSubboardTitle === 'In Progress'){
-    return allReadyTasks.tasks.map((task: Task) => task.title);
-  } else if (currentSubboardTitle === 'Finished'){
-    return allInProgressTasks.tasks.map((task: Task) => task.title);
-  } else {
-    return [];
-  }
+type SubboardProps = {
+  title: string
 }
+function Subboard({ title }: SubboardProps) {
+  const currentSubboardState = useSelector(getStoreStateByBoardTitle(title));
+
+  const tasksJSX = currentSubboardState?.tasks.map((task) => {
+    return (
+      <Task key={task.ID} route={`/task/${title}/${task.ID}`} title={task.title}/>
+    )
+  })
 
   return (
     <div className="Subboard">
         <div>{title}</div>
         <div className='tasksBlock'>
-          {tasksStoreSelectFunc(title).map((task: string) => <TaskBlock title={task}></TaskBlock>)}
+          { tasksJSX }
         </div>
-        <DropDownMenu tasksArr={tasksStoreSelectFunc(title)} 
-                      subboardTitle={title}/>
+        <DropDownMenu subboardTitle={title}/>
     </div>
   );
 }

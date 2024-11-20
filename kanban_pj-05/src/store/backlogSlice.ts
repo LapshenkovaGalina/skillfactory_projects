@@ -1,30 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-export type Task = {
+export type TaskType = {
     ID: number,
     title: string,
     description: string
 };
 export type StoreState = {
-  tasks: Array<Task>
-};
-
-export type addTaskPayloadType = {
-  taskID: number,
-  taskTitle: string,
-  taskDescription: string
+  tasks: Array<TaskType>
 };
 
 export const storeRedusers = {
-  addTask: (state: StoreState, action: PayloadAction<addTaskPayloadType>) => {
-      const { taskID, taskTitle, taskDescription } = action.payload;
-      const task : Task = {ID: taskID, title: taskTitle, description: taskDescription};
-      state.tasks.push(task)
+  addTask: (state: StoreState, action: PayloadAction<TaskType>) => {
+      state.tasks.push(action.payload)
   },
-  deleteTask: (state: StoreState, action: PayloadAction<{taskID: number}>) => {
-      const { taskID } = action.payload;
-      state.tasks = state.tasks.filter((task: Task) => task.ID === taskID);
+  deleteTask: (state: StoreState, action: PayloadAction<number>) => {
+      state.tasks = state.tasks.filter((task: TaskType) => task.ID !== action.payload);
   },
 }
 
