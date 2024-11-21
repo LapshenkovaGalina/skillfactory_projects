@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addTaskByBoardTitle, removeTaskByBoardTitle } from "./util";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./store";
+import { StoreState, TaskType } from "./store/backlogSlice";
 
 type ParsedTaskType = {
     ID: string,
@@ -8,27 +9,34 @@ type ParsedTaskType = {
     description: string
 }
 
+export function getTasksFromLocalStorage(subboardName: string) {
+    const json: string = localStorage.getItem(subboardName) || "[]"
+    const jsonTasks: Array<ParsedTaskType> = JSON.parse(json)
+    const tasks: Array<TaskType> = jsonTasks.map(task => ({
+        ID: +task.ID,
+        title: task.title,
+        description: task.description
+    }))
+
+    return tasks;
+}
+
 export function LocalStorageSync() {
     const dispatch = useDispatch();
+    const allBacklogTasks = useSelector((state: RootState) => state.backlogTasks.tasks);
+    const allReadyTasks = useSelector((state: RootState) => state.readyTasks.tasks);
+    const allInProgressTasks = useSelector((state: RootState) => state.inProgressTasks.tasks);
+    const allFinishedTasks = useSelector((state: RootState) => state.finishedTasks.tasks);
 
-    function syncBoard(boardName: string) {
-        const json: string = localStorage.getItem(boardName) || "[]"
-        const tasks: Array<ParsedTaskType> = JSON.parse(json)
-        console.log(tasks);
-        tasks.map(task => addTaskByBoardTitle(dispatch, boardName, {
-            ID: +task.ID,
-            title: task.title,
-            description: task.description
-        }))
-
-        const clean = () => tasks.map(task => removeTaskByBoardTitle(dispatch, boardName, +task.ID))
-        return clean as () => void
+    function setTasksToLocalStorage(subboardName: string, tasksArr: Array<TaskType>){
+        const json = JSON.stringify(tasksArr);
+        localStorage.setItem(subboardName, json);
     }
 
-    useEffect(() => syncBoard("Backlog"), []);
-    useEffect(() => syncBoard("Ready"), []);
-    useEffect(() => syncBoard("In Progress"), []);
-    useEffect(() => syncBoard("Finished"), []);
+    useEffect(() => setTasksToLocalStorage('Backlog', allBacklogTasks), [allBacklogTasks]);
+    useEffect(() => setTasksToLocalStorage('Ready', allReadyTasks), [allReadyTasks]);
+    useEffect(() => setTasksToLocalStorage('In Progress', allInProgressTasks), [allInProgressTasks]);
+    useEffect(() => setTasksToLocalStorage('Finished', allFinishedTasks), [allFinishedTasks]);
 
     return (
         <div></div>

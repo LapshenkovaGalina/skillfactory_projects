@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
+import { getTasksFromLocalStorage } from '../LocalStorageSync';
 
 export type TaskType = {
     ID: number,
@@ -20,7 +21,7 @@ export const storeRedusers = {
 }
 
 const initialState: StoreState = {
-  tasks: []
+  tasks: getTasksFromLocalStorage('Backlog')
 };
 
 export const backlogSlice = createSlice({

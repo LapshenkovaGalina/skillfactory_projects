@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { StoreState, storeRedusers } from './backlogSlice';
+import { getTasksFromLocalStorage } from '../LocalStorageSync';
 
 const initialState: StoreState = {
-    tasks: []
+    tasks: getTasksFromLocalStorage('In Progress')
   };
 
 export const inProgressSlice = createSlice({

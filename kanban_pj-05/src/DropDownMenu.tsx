@@ -39,9 +39,7 @@ function DropDownMenu({ subboardTitle }: Props) {
             removeTaskByBoardTitle(dispatch, sourceBoardTitle, task.ID);
         }
     }
-    const tasksJSX = tasksState?.tasks.map((task: TaskType) => {
-        // addTaskByBoardTitle
-
+    const tasksJSX = tasksState?.tasks?.map((task: TaskType) => {
         return (
             <option className='dropDownMenu__option' key={task.title}>{task.title}</option>
         )
