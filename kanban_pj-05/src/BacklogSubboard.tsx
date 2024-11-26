@@ -10,11 +10,13 @@ function BacklogSubboard() {
 
   return (
     <div className="BacklogSubboard Subboard">
-        <div>Backlog</div>
-        <div className='tasksBlock'>
+      <div className='Subboard__title'>Backlog</div>
+      <div className='Subboard__contentBlock'>
+        <div className='Subboard__tasksBlock'>
           {backlogTasks.tasks.map((task: TaskType) => <Task key={task.ID} route={`/task/${'Backlog'}/${task.ID}`} title={task.title}></Task>)}
         </div>
-        <NewTaskForm/>
+        <NewTaskForm />
+      </div>
     </div>
   );
 }

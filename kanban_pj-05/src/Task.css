@@ -11,7 +11,7 @@
     background-color: #FFFFFF;
 }
 
-.taskTitle {
+.Task__title {
     cursor: pointer;
     text-decoration: none;
     color: #000000

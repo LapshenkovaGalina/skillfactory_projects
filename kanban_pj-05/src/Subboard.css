@@ -1,31 +1,46 @@
-@media screen and (min-width: 769px){
+@media screen and (min-width: 1025px){
     .Subboard {
         width: 23%;
+        max-height: 90%;
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px) and (min-width: 769px){
     .Subboard {
-        width: 40%;
+        width: 45%;
+        max-height: 40%;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px){
+    .Subboard {
+        width: 45%;
+        max-height: 40%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .Subboard {
+        width: 90%;
+        max-height: 40%;
     }
 }
 
 .Subboard {
     box-sizing: border-box;
     height: min-content;
-    max-height: 90%;
-
-    overflow-y: auto;
 
     margin-top: 1%;
     padding: 1%;
+
+    overflow-y: auto;
 
     border-radius: 10px;
 
     background-color: #EBECF0;
 }
 
-.tasksBlock {
+.Subboard__tasksBlock {
     display: flex;
     flex-direction: column;
 

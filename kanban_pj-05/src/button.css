@@ -15,6 +15,7 @@
 }
 
 .addCardBtn {
+    color: #5E6C84;
     background-color: #EBECF0;
 }
 
@@ -23,9 +24,20 @@
 }
 
 .submitBtn {
-    background-color: #0079BF;
+    color: #5E6C84;
+    background-color: #FFFFFF;
 }
 
 .submitBtn:hover {
     color: #FFFFFF;
+    background-color: #0079BF;
+}
+
+.editBtn {
+    color: #5E6C84;
+}
+
+.commonTypeBtn:disabled {
+    cursor: default ;
+    background-color: #EBECF0;
 }

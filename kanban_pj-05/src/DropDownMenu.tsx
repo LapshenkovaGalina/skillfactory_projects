@@ -13,7 +13,7 @@ function DropDownMenu({ subboardTitle }: Props) {
     const [showSelect, setShowSelect] = useState<boolean>(false);
 
     let sourceBoardTitle = "Ready";
-    switch(subboardTitle) {
+    switch (subboardTitle) {
         case "Ready":
             sourceBoardTitle = "Backlog";
             break;
@@ -39,22 +39,32 @@ function DropDownMenu({ subboardTitle }: Props) {
             removeTaskByBoardTitle(dispatch, sourceBoardTitle, task.ID);
         }
     }
-    const tasksJSX = tasksState?.tasks?.map((task: TaskType) => {
+    const tasksJSX = tasksState?.tasks.map((task: TaskType) => {
         return (
-            <option className='dropDownMenu__option' key={task.title}>{task.title}</option>
+            <option className='DropDownMenu__option' key={task.title}>{task.title}</option>
         )
     })
 
+    const submitButton = (
+        <button className='commonTypeBtn submitBtn' onClick={addCardBtnHandler}>
+            Submit
+        </button>
+    )
+
+    const addButton = (
+        <button className='commonTypeBtn addCardBtn' onClick={addCardBtnHandler}
+            disabled={tasksState?.tasks.length ? false : true}>
+            + Add card
+        </button>
+    )
+
     return (
         <div className='DropDownMenu'>
-            {showSelect === true && 
-            <select ref={ref} className='dropDownMenu__select'>
-                { tasksJSX }
-            </select>}
-            <button className='addCardBtn commonTypeBtn' onClick={addCardBtnHandler}>
-                {showSelect === true && 'Submit' ||
-                showSelect === false && '+ Add card'}
-            </button>
+            {showSelect === true &&
+                <select ref={ref} className='DropDownMenu__select'>
+                    {tasksJSX}
+                </select>}
+            {showSelect === true ? submitButton : addButton}
         </div>
     );
 }
