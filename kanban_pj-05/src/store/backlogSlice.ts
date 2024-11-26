@@ -3,9 +3,9 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import { getTasksFromLocalStorage } from '../LocalStorageSync';
 
 export type TaskType = {
-    ID: number,
-    title: string,
-    description: string
+  ID: number,
+  title: string,
+  description: string
 };
 export type StoreState = {
   tasks: Array<TaskType>
@@ -13,10 +13,10 @@ export type StoreState = {
 
 export const storeRedusers = {
   addTask: (state: StoreState, action: PayloadAction<TaskType>) => {
-      state.tasks.push(action.payload)
+    state.tasks.push(action.payload)
   },
   deleteTask: (state: StoreState, action: PayloadAction<number>) => {
-      state.tasks = state.tasks.filter((task: TaskType) => task.ID !== action.payload);
+    state.tasks = state.tasks.filter((task: TaskType) => task.ID !== action.payload);
   },
 }
 

@@ -10,18 +10,19 @@ function NewTaskForm() {
 
   const dispatch = useDispatch();
 
-  function addNewTask(){
+  function addNewTask() {
     dispatch(addTaskToBacklog(
       {
         ID: Date.now(),
         title: inputValue,
         description: ""
       })
-  )};
+    )
+  };
 
   function addCardBtnHandler() {
     if (showInput === true) {
-      if(inputValue !== ''){
+      if (inputValue !== '') {
         addNewTask();
         setInputValue('');
       }
@@ -49,9 +50,9 @@ function NewTaskForm() {
 
   return (
     <div className="NewTaskForm">
-      {showInput === true && <input className='newTaskForm__input'
-        onChange={inputHandler} autoFocus/>}
-      { showInput === true ? submitButton : addButton }
+      {showInput === true && <input className='NewTaskForm__input'
+        onChange={inputHandler} autoFocus />}
+      {showInput === true ? submitButton : addButton}
     </div>
   );
 }

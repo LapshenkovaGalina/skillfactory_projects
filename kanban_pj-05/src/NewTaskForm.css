@@ -3,12 +3,12 @@
     flex-direction: column;
 
     margin-top: 12px;
-    row-gap: 10px;
+    row-gap: 12px;
 
     border-radius: 10px;
 }
 
-.newTaskForm__input{
+.NewTaskForm__input{
     box-sizing: border-box;
     width: 98%;
 
@@ -20,6 +20,6 @@
     font-size: calc(14px + 12 * (100vw - 320px) / 2240);
 }
 
-.newTaskForm__input:focus {
+.NewTaskForm__input:focus {
     outline: none;
 }

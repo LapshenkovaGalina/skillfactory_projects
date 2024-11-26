@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "./store";
-import { StoreState, TaskType } from "./store/backlogSlice";
+import { TaskType } from "./store/backlogSlice";
 
 type ParsedTaskType = {
     ID: string,
@@ -22,13 +22,12 @@ export function getTasksFromLocalStorage(subboardName: string) {
 }
 
 export function LocalStorageSync() {
-    const dispatch = useDispatch();
     const allBacklogTasks = useSelector((state: RootState) => state.backlogTasks.tasks);
     const allReadyTasks = useSelector((state: RootState) => state.readyTasks.tasks);
     const allInProgressTasks = useSelector((state: RootState) => state.inProgressTasks.tasks);
     const allFinishedTasks = useSelector((state: RootState) => state.finishedTasks.tasks);
 
-    function setTasksToLocalStorage(subboardName: string, tasksArr: Array<TaskType>){
+    function setTasksToLocalStorage(subboardName: string, tasksArr: Array<TaskType>) {
         const json = JSON.stringify(tasksArr);
         localStorage.setItem(subboardName, json);
     }

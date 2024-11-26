@@ -7,9 +7,9 @@ import AppFooter from './AppFooter';
 function App() {
   return (
     <div className="App">
-      <AppHeader/>
-      <AppMain/>
-      <AppFooter/>
+      <AppHeader />
+      <AppMain />
+      <AppFooter />
     </div>
   );
 }

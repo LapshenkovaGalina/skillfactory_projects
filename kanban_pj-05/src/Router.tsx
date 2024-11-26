@@ -7,8 +7,8 @@ export function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App/>}/>
-                <Route path="/task/:subboardTitle/:taskID" element={<TaskPage/>}/>
+                <Route path='/' element={<App />} />
+                <Route path="/task/:subboardTitle/:taskID" element={<TaskPage />} />
             </Routes>
         </BrowserRouter>
     )
