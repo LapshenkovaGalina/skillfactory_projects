@@ -1,0 +1,6 @@
+.AuthBlock {
+    display: flex;
+    flex-direction: row;
+
+    column-gap: 6vw;
+}

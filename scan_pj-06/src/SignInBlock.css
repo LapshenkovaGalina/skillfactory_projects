@@ -1,0 +1,50 @@
+@media screen and (max-width: 425px) {
+    .SignInBlock {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .SignInBlock {
+        display: flex;
+    }
+}
+
+.SignInBlock {
+    flex-direction: row;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    column-gap: 20px;
+}
+
+.SignInBlock__registrationA {
+    text-decoration: none;
+    color: #949494;
+}
+
+.SignInBlock__divider {
+    background-color: #029491;
+    width: 2px;
+    height: 30px;
+}
+
+.SignInBlock__signInA {
+    background-color: #7CE3E1;
+
+    text-decoration: none;
+    color: #000000;
+    font-weight: 500;
+
+    padding: 5px 12px;
+
+    border: 0px;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.SignInBlock__signInA:active {
+    background-color: rgba(137, 219, 218, 0.685);
+}

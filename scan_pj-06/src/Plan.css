@@ -1,0 +1,150 @@
+@media screen and (max-width: 425px) {
+  .Plan {
+    width: auto;
+  }
+
+  .Plan__head,
+  .Plan__body {
+    width: 100%;
+    padding: 6vw;
+  }
+
+  .head__img {
+    height: 60px;
+    margin-left: 3px;
+  }
+
+  .Plan__body {
+    row-gap: 6vh;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .Plan {
+    min-width: 27vw;
+    max-width: 45vw;
+  }
+
+  .Plan__head,
+  .Plan__body {
+    width: 100%;
+    padding: 2vw;
+  }
+
+  .head__img {
+    height: 80px;
+    margin-left: 10px;
+  }
+
+  .Plan__body {
+    row-gap: 6vh;
+  }
+
+  .priceInfo__priceBlock {
+    font-size: 30px;
+  }
+
+  .head__shortDescription,
+  .priceInfo__installmentInfo {
+    font-size: 18px;
+  }
+}
+
+.Plan,
+.head__textBlock,
+.Plan__body,
+.Plan__priceInfo,
+.Plan__description,
+.description__descriptionList {
+  display: flex;
+  flex-direction: column;
+}
+
+.Plan__head,
+.Plan__body {
+  box-sizing: border-box;
+}
+
+.Plan {
+  box-sizing: border-box;
+  height: min-content;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #00000033;
+}
+
+.Plan.active {
+  border: 2px solid;
+}
+
+.Plan__priceInfo,
+.Plan__description {
+  row-gap: 0.8rem;
+}
+
+.priceInfo__priceBlock,
+.description__listItem {
+  display: flex;
+  flex-direction: row;
+
+  column-gap: 1rem;
+}
+
+.Plan__priceInfo {
+  min-height: 4.5rem;
+}
+
+.Plan__priceInfo span {
+  display: inline-block;
+}
+
+.Plan__head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  min-height: 8rem;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.head__textBlock h3 {
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.head__textBlock {
+  row-gap: 0.8rem;
+}
+
+.description__intro {
+  font-size: calc(20px + 3 * (100vw - 320px) / 2240);
+  font-weight: 500;
+}
+
+.description__descriptionList {
+  list-style: none;
+  row-gap: 0.6rem;
+}
+
+.description__descriptionList img {
+  width: 20px;
+  height: 22px;
+}
+
+.description__listItem {
+  font-size: calc(18px + 3 * (100vw - 320px) / 2240);
+}
+
+.commonTypeBtn.moreBtn,
+.commonTypeBtn.goToPersonalAccBtn {
+  padding: 0px;
+  width: 100%;
+}
+
+.commonTypeBtn.goToPersonalAccBtn {
+  background-color: #D2D2D2;
+  color: #000000
+}

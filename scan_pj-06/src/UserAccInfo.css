@@ -1,0 +1,53 @@
+@media screen and (max-width: 425px) {
+    .UserAccInfo__companiesNum,
+    .UserAccInfo__companiesLimit {
+        align-items: start;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .UserAccInfo__companiesNum,
+    .UserAccInfo__companiesLimit {
+        justify-content: end;
+        flex-direction: row;
+    }
+}
+
+.UserAccInfo {
+    display: flex;
+    flex-direction: column;
+
+    width: min-content;
+    white-space: nowrap;
+
+    border-radius: 5px;
+
+    padding: 17px 12px;
+
+    color: #999999;
+    background-color: #f3f3f3;
+}
+
+.UserAccInfo span {
+    display: inline-block;
+}
+
+.UserAccInfo__companiesNum,
+.UserAccInfo__companiesLimit {
+    display: flex;
+    column-gap: 8px;
+    font-size: calc(10px + 10 * (100vw - 320px) / 2240);
+}
+
+.companiesNum__num {
+    color: #000000;
+    font-size: calc(14px + 10 * (100vw - 320px) / 2240);
+    font-weight: 700;
+}
+
+.companiesLimit__num {
+    color: #8AC540;
+    font-size: calc(14px + 10 * (100vw - 320px) / 2240);
+    font-weight: 700;
+}

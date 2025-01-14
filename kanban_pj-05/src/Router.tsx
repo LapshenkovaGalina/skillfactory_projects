@@ -4,6 +4,8 @@ import { TaskType } from "./store/backlogSlice";
 import App from "./App";
 
 export function Router() {
+    const authInfo = useContext(AuthContext);
+    
     return (
         <BrowserRouter>
             <Routes>

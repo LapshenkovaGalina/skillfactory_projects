@@ -1,0 +1,94 @@
+@media screen and (min-width: 1025px){ 
+    .AppHeader {
+      height: 10vh;
+      padding: 0vh 4vw 0vh 4vw;
+    }
+
+    .AppHeader__nav {
+      display: flex;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) and (min-width: 769px){
+    .AppHeader {
+      height: 10vh;
+      padding: 0vh 3vw 0vh 3vw;
+    }
+
+    .AppHeader__nav {
+      display: flex;
+    }
+  }
+  
+  @media screen and (max-width: 768px) and (min-width: 426px){
+    .AppHeader {
+      height: 15vh;
+      padding: 0vh 3vw 0vh 3vw;
+    }
+
+    .AppHeader__nav {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 425px){
+    .AppHeader {
+      height: 15vh;
+      padding: 0vh 5vw 0vh 5vw;
+    }
+
+    .AppHeader__logo {
+      height: 40%;
+    }
+
+    .AppHeader__nav {
+      display: none;
+    }
+
+    .AppHeader__burgerMenu {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 426px){
+    .AppHeader__logo {
+      height: 55%;
+    }
+
+    .AppHeader__burgerMenu {
+      display: none;
+    }
+  }
+  
+  .AppHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+  }
+
+  .AppHeader__rightBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    column-gap: 6vw;
+  }
+
+  .AppHeader__nav {
+    flex-direction: row;
+
+    column-gap: 49px;
+  }
+
+  .AppHeader__nav a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  .AppHeader__logo {
+    width: auto;
+  }

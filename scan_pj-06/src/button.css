@@ -1,0 +1,58 @@
+@media screen and (min-width: 1025px) {
+    .commonTypeBtn {
+        max-height: 8vh;
+        min-height: 7.5vh;
+        padding: 0vh 7vw;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .commonTypeBtn {
+        height: 5vh;
+        padding: 0vh 4vw;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    .commonTypeBtn {
+        height: 5vh;
+        padding: 0vh 4vw;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .commonTypeBtn {
+        font-size: 22px;
+    }
+} 
+
+@media screen and (max-width: 425px) {
+    .commonTypeBtn {
+        width: 100%;
+        font-size: 16px;
+    }
+} 
+
+
+.commonTypeBtn {
+    height: 59px;
+
+    background-color: #5970FF;
+
+    cursor: pointer;
+
+    border: 0px;
+    border-radius: 5px;
+
+    color: #FFFFFF;
+    font-family: Inter, 'Arial Narrow', Arial, sans-serif;
+}
+
+.commonTypeBtn:active {
+    background-color: #596fffc8;
+}
+
+.commonTypeBtn:disabled {
+    background-color: #596fff98;
+    cursor: default;
+}

@@ -1,0 +1,62 @@
+  @media screen and (min-width: 1025px){ 
+    .AppFooter {
+      height: 15vh;
+      padding: 0vh 4vw 0vh 4vw;
+    }
+  }
+  
+  @media screen and (max-width: 1024px) and (min-width: 769px){
+    .AppFooter {
+      height: 15vh;
+      padding: 0vh 3vw 0vh 3vw;
+    }
+  }
+  
+  @media screen and (max-width: 768px) and (min-width: 426px){
+    .AppFooter {
+      height: 18vh;
+      padding: 0vh 3vw 0vh 3vw;
+    }
+  }
+  
+  @media screen and (max-width: 425px){
+    .AppFooter {
+      height: 18vh;
+      padding: 0vh 5vw 0vh 5vw;
+    }
+
+    .AppFooter__logo {
+      height: 30%;
+    }
+  }
+
+  @media screen and (min-width: 426px){
+    .AppFooter__logo {
+      height: 35%;
+    }
+  }
+  
+  .AppFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    font-size: calc(14px + 4 * (100vw - 320px) / 2240);
+    font-weight: 200;
+    color: #FFFFFF;
+
+    background-color: #029491;
+  }
+
+  .AppFooter__rightBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .AppFooter__logo {
+    width: auto;
+  }

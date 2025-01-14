@@ -1,0 +1,93 @@
+@media screen and (min-width: 1025px){ 
+  .leftBlock__h1{
+    font-size: 50px;
+    line-height: 58px;
+  }
+
+  .leftBlock__img {
+    width: 35vh;
+    height: auto;
+    margin-left: 8vw;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px){
+  .leftBlock__h1{
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .leftBlock__img {
+    width: 25vh;
+    height: auto;
+    margin-left: 4vw;
+  }
+  }
+
+@media screen and (max-width: 768px) and (min-width: 426px){
+  .leftBlock__h1{
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .leftBlock__img {
+    width: 25vh;
+    height: auto;
+    margin-left: 4vw;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .AuthPage__main {
+    flex-direction: column;
+  }
+
+  .leftBlock__h1{
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .leftBlock__img {
+    margin-top: 4vh;
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .AuthPage__main {
+    flex-direction: row;
+  }
+
+  .AuthPage__leftBlock {
+    margin-right: 5vw;
+  }
+
+  .leftBlock__img {
+    margin-top: 1.5vh;
+  }
+}
+
+.AuthPage__main {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  
+}
+
+.AuthPage__leftBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftBlock__h1 {
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+}
+
+/* .AuthPage__decorImg {
+  align-self: flex-start;
+  margin-top: -50px;
+  margin-right: -30px;
+
+  width: 100px; 
+} */

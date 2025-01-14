@@ -1,0 +1,23 @@
+@media screen and (max-width: 425px){
+    .headerBlock__textPart {
+        width: 100%;
+    }
+
+    .headerBlock__textPart h1 {
+        font-size: calc(28px + 65 * (100vw - 320px) / 2240);
+        margin-bottom: 2vh;
+    }
+}
+
+@media screen and (min-width: 426px){
+    .headerBlock__textPart {
+        width: 60%;
+    }
+
+    .headerBlock__textPart h1 {
+        line-height: calc(72px + 40 * (100vw - 320px) / 2240);
+        font-size: calc(38px + 65 * (100vw - 320px) / 2240);
+        margin-bottom: 2vh;
+    }
+}
+

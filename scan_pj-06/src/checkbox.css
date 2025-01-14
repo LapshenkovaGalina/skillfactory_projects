@@ -1,0 +1,43 @@
+.customCheckbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.customCheckbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+  
+  .customCheckbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #adb5bd;
+    margin-right: 1em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  
+  /* стили при наведении курсора на checkbox */
+  .customCheckbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: gray;
+  }
+  
+  
+  /* стили для чекбокса, находящегося в состоянии checked */
+  .customCheckbox>input:checked+span::before {
+    border-color: #000000;
+    background-image: url("./assets/checkbox-img.png");
+    background-size: 20px 20px;
+  }
+  
+  /* стили для чекбокса, находящегося в состоянии disabled */
+  .customCheckbox>input:disabled+span::before {
+    background-color: #949494;
+  }

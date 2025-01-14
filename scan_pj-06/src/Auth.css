@@ -1,0 +1,148 @@
+@media screen and (min-width: 1025px) {
+    .Auth {
+        width: 28vw;
+    }
+
+    .form__input {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .Auth {
+        width: 45vw;
+    }
+
+    .form__input {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    .Auth {
+        width: 45vw;
+    }
+
+    .form__input {
+        padding: 14px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .Auth {
+        width: 100%;
+
+        padding: 4vw;
+        row-gap: 3vh;
+    }
+
+    .altAuth__variants {
+        justify-content: space-between;
+    }
+
+    .form__input {
+        padding: 14px;
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .Auth {
+        padding: 1.5vw;
+        row-gap: 2vh;
+    }
+
+    .altAuth__variants {
+        justify-content: start;
+    }
+}
+
+.Auth,
+.Auth__form,
+.Auth__altAuth {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.Auth {
+    align-items: center;
+
+    max-height: min-content;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #00000033;
+
+    color: #949494;
+}
+
+.Auth__head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: calc(12px + 10 * (100vw - 320px) / 2240);
+
+    width: 100%;
+}
+
+.head__block {
+    width: 48%;
+
+    cursor: pointer;
+
+    text-align: center;
+    
+    padding-bottom: 1rem;
+
+    border-bottom: 2px solid #C7C7C7;
+}
+
+.head__block.active {
+    border-bottom: 2px solid #029491;
+    color: #029491;
+}
+
+.head__block a{
+    text-decoration: none;
+    color: #C7C7C7;
+}
+
+.head__block.active a{
+    color: #029491;
+}
+
+.Auth__form,
+.Auth__altAuth {
+    width: 100%;
+    row-gap: 2vh;
+}
+
+.form__input {
+    border-radius: 5px;
+    border: 1px solid #C7C7C7;
+
+    font-size: calc(12px + 10 * (100vw - 320px) / 2240);
+
+    width: auto;
+}
+
+.Auth__resetPass {
+    color: #5970FF;
+}
+
+.altAuth__variants {
+    display: flex;
+    flex-direction: row;
+
+    column-gap: 2%;
+}
+
+.commonTypeBtn.signInBtn {
+    width: 100%;
+    margin-top: 1vh;
+}
+
+.authErrorMsg {
+    color: #FF5959;
+    justify-self: center;
+}

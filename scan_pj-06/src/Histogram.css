@@ -1,0 +1,69 @@
+@media screen and (max-width: 425px){
+    .Histogram__slider{
+        flex-direction: column;
+    }
+
+    .slider__leftBlock,
+    .slider__slide {
+        height: 5rem;
+        padding: 1rem;
+
+        flex-direction: row;
+    }
+  }
+
+  @media screen and (min-width: 426px){
+    .Histogram__slider {
+        flex-direction: row;
+    }
+
+    .slider__leftBlock,
+    .slider__slide {
+        height: 5rem;
+        padding: 1rem;
+
+        flex-direction: column;
+    }
+
+    .slider__divider {
+        height: 5.5rem;
+    }
+  }
+
+.Histogram {
+    display: flex;
+    flex-direction: row;
+
+    width: 100vw;
+}
+
+.Histogram__slider {
+    display: flex;
+
+    border: 2px solid #029491;
+    border-radius: 10px;
+}
+
+.slider__slides {
+    display: flex;
+    flex-direction: row;
+}
+
+.slider__leftBlock {
+    background-color: #029491;
+}
+
+.Histogram span {
+    display: inline-block;
+}
+
+.slider__leftBlock,
+.slider__slide {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__divider {
+    width: 2px;
+    background-color: #949494;
+}

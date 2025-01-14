@@ -1,0 +1,20 @@
+@media screen and (max-width: 425px){
+    .PlansBlock {
+        flex-direction: column;
+    }
+  }
+
+  @media screen and (min-width: 426px){
+    .PlansBlock {
+        flex-direction: row;
+        justify-content: center;
+    }
+  }
+
+.PlansBlock {
+    display: flex;
+    flex-wrap: wrap;
+
+    row-gap: 3vh;
+    column-gap: 3vw;
+}

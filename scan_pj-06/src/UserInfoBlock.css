@@ -1,0 +1,42 @@
+@media screen and (max-width: 425px){
+    .UserInfoBlock  {
+        display: none;
+      }
+  }
+
+  @media screen and (min-width: 426px){
+    .UserInfoBlock  {
+        display: flex;
+      }
+  }
+
+.UserInfoBlock {
+    flex-direction: row;
+    align-items: center;
+}
+
+.UserInfoBlock__userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    column-gap: 10px;
+
+    height: min-content;
+}
+
+.userInfo__text {
+    display: flex;
+    flex-direction: column;
+
+    white-space: nowrap;
+}
+
+.userInfo__text a {
+    text-decoration: none;
+    color: #949494;
+}
+
+.userInfo__userAvatar {
+    border-radius: 50%;
+}
