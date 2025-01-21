@@ -1,14 +1,14 @@
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
     .MainPage__img {
         width: 200%;
-      }
-  }
+    }
+}
 
-  @media screen and (min-width: 426px){
+@media screen and (min-width: 426px) {
     .MainPage__img {
         width: 100%;
-      }
-  }
+    }
+}
 
 .MainPage {
     display: flex;
@@ -18,7 +18,7 @@
 .MainPage__h2 {
     display: inline-block;
 
-    font-size: calc(28px + 40 * (100vw - 320px) / 2240);
+    font-size: calc(28px + 30 * (100vw - 320px) / 2240);
     text-transform: uppercase;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;

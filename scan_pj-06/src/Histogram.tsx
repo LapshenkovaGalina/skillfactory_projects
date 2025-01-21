@@ -2,62 +2,66 @@ import { useState } from 'react';
 import './Histogram.css'
 import { HandledHistogramReqData } from './ResultsPage';
 import { Slider } from './Slider/Slider';
+import Loader from './Loader';
 
 const arrowLeft = require('./assets/slider-arrow_left.png');
 const arrowRight = require('./assets/slider-arrow_right.png');
-const {DateTime} = require('luxon');
+const { DateTime } = require('luxon');
 
-function JSONdateToFormatedString(date: string) {
+export function JSONdateToFormatedString(date: string) {
     return (
-    DateTime.fromJSDate(
-        new Date(date)
-    ).toFormat('yyyy.mm.dd'))
+        DateTime.fromJSDate(
+            new Date(date)
+        ).toFormat('yyyy.MM.dd'))
 }
 
 type HistogramViewProps = {
     sliderDataArr: HandledHistogramReqData[]
 };
 
-function Slide ({slideData}: {slideData: HandledHistogramReqData}) {
+function Slide({ slideData }: { slideData: HandledHistogramReqData }) {
+    console.log("slide data", slideData);
     return (
-        <div className='slider__slide'>
-            <span>{JSONdateToFormatedString(`${slideData.date}`)}</span>
-            <span>{slideData.value}</span>
-            <span>{slideData.risks}</span>
-        </div>
+        <>
+            <div className='slider__slide'>
+                <div>{JSONdateToFormatedString(`${slideData.date}`)}</div>
+                <div>{slideData.value}</div>
+                <div>{slideData.risks}</div>
+            </div>
+            <div className='slider__divider'></div>
+        </>
     )
 }
 
 const HistogramSlider = Slider<HandledHistogramReqData>
 
-function Histogram({ sliderDataArr }
-    : {sliderDataArr: Array<HandledHistogramReqData>}
-) {
-    return (sliderDataArr.length > 0)
-        ? (<HistogramView sliderDataArr={sliderDataArr}/>)
-        : (<HistogramLoader />)
-}
-
-function HistogramLoader() {
-    return (<>
-        "Histogram loading"
-    </>)
-}
-
-function HistogramView({sliderDataArr}: HistogramViewProps) {
+function Histogram({ sliderDataArr }: HistogramViewProps) {
     const [firstSlideIndex, setFirstSlideIndex] = useState<number>(0);
     const incFirstSlideIndex = () => setFirstSlideIndex(firstSlideIndex + 1);
     const decFirstSlideIndex = () => setFirstSlideIndex(firstSlideIndex - 1)
 
     console.log('sliderDataArr = ', sliderDataArr);
 
+    const displayedSlidesNum = () => {
+        console.log('window.screen.width: ', window.screen.width);
+
+        if (window.screen.width <= 426) {
+            return 1;
+        } else if (window.screen.width <= 768) {
+            return 3;
+        } else if (window.screen.width <= 1024) {
+            return 5;
+        } else if (window.screen.width <= 1400) {
+            return 8;
+        } else return 10;
+    }
+
     return (
         <div className='Histogram'>
-            <img className='Histogram__arrowLeft'
+            <img className='Histogram__arrow'
                 src={arrowLeft}
                 alt='<'
-                onClick={decFirstSlideIndex}
-            ></img>
+                onClick={decFirstSlideIndex}></img>
             <div className='Histogram__slider'>
                 <div className='slider__leftBlock'>
                     <span>Период</span>
@@ -65,56 +69,20 @@ function HistogramView({sliderDataArr}: HistogramViewProps) {
                     <span>Риски</span>
                 </div>
                 <div className='slider__slides'>
-                    <HistogramSlider
-                        firstSlide={firstSlideIndex}
-                        slidesData={sliderDataArr}
-                        numOfSlidesToShow={5}
-                        SlideComponent={Slide}/>
-                    </div>
+                    {sliderDataArr.length > 0 ?
+                        <HistogramSlider
+                            firstSlide={firstSlideIndex}
+                            slidesData={sliderDataArr}
+                            numOfSlidesToShow={displayedSlidesNum()}
+                            SlideComponent={Slide} /> :
+                        <Loader />}
+                </div>
             </div>
-            <img className='Histogram__arrowRight'
+            <img className='Histogram__arrow'
                 src={arrowRight}
                 alt='>'
                 onClick={incFirstSlideIndex}
             ></img>
-        </div>
-    )
-}
-
-function Histogram2({ sliderDataArr }: { sliderDataArr: Array<HandledHistogramReqData>}) {
-
-    const JSONdateToFormatedString = (date: string) => {
-        return (
-        DateTime.fromJSDate(
-            new Date(date)
-        ).toFormat('yyyy.mm.dd'))
-    }
-
-    const slideJSX = (slideData: HandledHistogramReqData, ind: number) => {
-        return (
-            <div key={ind} className='slider__slide'>
-                <span>{JSONdateToFormatedString(`${slideData.date}`)}</span>
-                {/* <span>{slideData.date}</span> */}
-                <span>{slideData.value}</span>
-                <span>{slideData.risks}</span>
-            </div>
-        )
-    }
-    
-    return (
-        <div className='Histogram'>
-            <img className='Histogram__arrowLeft' src={arrowLeft} alt='<'></img>
-            <div className='Histogram__slider'>
-                <div className='slider__leftBlock'>
-                    <span>Период</span>
-                    <span>Всего</span>
-                    <span>Риски</span>
-                </div>
-                <div className='slider__slides'>
-                    {sliderDataArr.map( (slideData, ind) => slideJSX(slideData, ind))}
-                </div>
-            </div>
-            <img className='Histogram__arrowRight' src={arrowRight} alt='>'></img>
         </div>
     )
 }

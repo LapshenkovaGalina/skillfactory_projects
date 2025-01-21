@@ -1,15 +1,21 @@
-import { FormEvent, useState } from 'react';
+ import { FormEvent, useEffect, useState } from 'react';
 import './ArticlesSearch.css';
 import './checkbox.css'
 import './button.css'
 import validateInn from './validateInn';
 import { useNavigate } from 'react-router-dom';
 
-const articleTonality = [
-    'Позитивная',
-    'Негативная',
-    'Любая'
-];
+type ArticleTonality = 'positive' | 'negative' | 'any';
+
+const articleTonalityToRus = (tonality: ArticleTonality): string => {
+    switch(tonality) {
+        case 'positive': return 'Позитивная';
+        case 'negative': return 'Негативная';
+        case 'any': return 'Любая';
+    }
+}
+
+const articleTonalitys: ArticleTonality[] = ['positive', 'negative', 'any'];
 
 function ArticlesSearch() {
     const navigate = useNavigate();
@@ -22,7 +28,7 @@ function ArticlesSearch() {
     const [secondRangeNum, setSecondRangeNum] = useState(0);
 
     const [INN, setINN] = useState('');
-    const [tonality, setTonality] = useState('');
+    const [tonality, setTonality] = useState<ArticleTonality>('positive');
     const [limit, setLimit] = useState('');
     const [startDateJSON, setStartDateJSON] = useState('');
     const [startDate, setStartDate] = useState('');
@@ -65,7 +71,7 @@ function ArticlesSearch() {
         }
     }
 
-    const datesComparison = () => {
+    useEffect(() => {
         const currTime = new Date().getTime();
 
         if (firstRangeNum > currTime || secondRangeNum > currTime) {
@@ -77,7 +83,7 @@ function ArticlesSearch() {
                 setErrorMsg2('Дата начала не может быть позже даты конца');
             } 
         }
-    }
+    }, [firstRangeNum, secondRangeNum]);
 
     const searchRangeinput0onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const inputValue = event.target.value;
@@ -87,8 +93,6 @@ function ArticlesSearch() {
         setStartDate(inputValue);
         setStartDateJSON(inputValueJSONstr);   
         setFirstRangeNum(inputValueUnixFormat);
-
-        datesComparison();
     }
 
     const searchRangeinput1onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,13 +103,13 @@ function ArticlesSearch() {
         setEndDate(inputValue);
         setEndDateJSON(inputValueJSONstr);
         setSecondRangeNum(inputValueUnixFormat);
-
-        datesComparison();
     }
 
-    const optionJSX = articleTonality.map((tonality: string, ind) => {
+    const optionJSX = articleTonalitys.map((tonality: ArticleTonality, ind) => {
         return (
-            <option key={ind} className='leftBlock__option'>{tonality}</option>
+            <option key={ind} className='leftBlock__option' value={tonality}>
+                {articleTonalityToRus(tonality)}
+            </option>
         )
     })
 
@@ -115,21 +119,11 @@ function ArticlesSearch() {
     }
 
     const btnDisable = () => {
-        console.log('errorMsg0: ', errorMsg0);
-        console.log('errorMsg1: ', errorMsg1);
-        console.log('errorMsg2: ', errorMsg2);
-        console.log('INN: ', INN);
-        console.log('limit: ', limit);
-        console.log('startDate: ', startDate);
-        console.log('endDate: ', endDate);
         return (
             (errorMsg0 == null && errorMsg1 == null && errorMsg2 == null
                 && INN !== '' && limit !== '' && startDate !== '' && endDate !== '')? false : true
         )
     }
-
-    // console.log('firstRangeNum: ', firstRangeNum);
-    // console.log('secondRangeNum : ', secondRangeNum);
 
     return (
         <form id="form_articlesSearch" className='ArticlesSearch' onSubmit={(event) => (onSubmitHandler(event))}>
@@ -143,7 +137,7 @@ function ArticlesSearch() {
                 <legend className='leftBlock__legend'>Тональность</legend>
                 <select className='leftBlock__input select'
                     value={tonality}
-                    onChange={(event) => setTonality(event.target.value)}>
+                    onChange={(event) => setTonality(event.target.value as ArticleTonality)}>
                     {optionJSX}
                 </select>
                 <legend className='leftBlock__legend'>Количество документов в выдаче*</legend>

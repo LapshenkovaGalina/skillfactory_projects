@@ -6,7 +6,6 @@
   .Plan__head,
   .Plan__body {
     width: 100%;
-    padding: 6vw;
   }
 
   .head__img {
@@ -17,18 +16,28 @@
   .Plan__body {
     row-gap: 6vh;
   }
+
+  .description__intro {
+    font-size: 20px;
+  }
+
+  .description__listItem{
+    font-size: 18px;
+  }
 }
 
 @media screen and (min-width: 426px) {
   .Plan {
-    min-width: 27vw;
-    max-width: 45vw;
+    width: 25rem;
   }
 
   .Plan__head,
   .Plan__body {
     width: 100%;
-    padding: 2vw;
+  }
+
+  .head__textBlock {
+    height: 6rem;
   }
 
   .head__img {
@@ -37,15 +46,22 @@
   }
 
   .Plan__body {
-    row-gap: 6vh;
+    row-gap: 3rem;
   }
 
   .priceInfo__priceBlock {
     font-size: 30px;
   }
 
-  .head__shortDescription,
-  .priceInfo__installmentInfo {
+  .description__intro {
+    font-size: 18px;
+  }
+
+  .description__listItem{
+    font-size: 16px;
+  }
+
+  .head__shortDescription {
     font-size: 18px;
   }
 }
@@ -63,6 +79,7 @@
 .Plan__head,
 .Plan__body {
   box-sizing: border-box;
+  padding: 1.5rem;
 }
 
 .Plan {
@@ -91,7 +108,11 @@
 }
 
 .Plan__priceInfo {
-  min-height: 4.5rem;
+  height: 6rem;
+}
+
+.priceInfo__installmentInfo {
+  font-size: 18px;
 }
 
 .Plan__priceInfo span {
@@ -120,7 +141,6 @@
 }
 
 .description__intro {
-  font-size: calc(20px + 3 * (100vw - 320px) / 2240);
   font-weight: 500;
 }
 
@@ -132,10 +152,6 @@
 .description__descriptionList img {
   width: 20px;
   height: 22px;
-}
-
-.description__listItem {
-  font-size: calc(18px + 3 * (100vw - 320px) / 2240);
 }
 
 .commonTypeBtn.moreBtn,

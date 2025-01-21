@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
     .Auth {
-        width: 45vw;
+        width: 40vw;
     }
 
     .form__input {
@@ -80,7 +80,7 @@
     flex-direction: row;
     justify-content: space-between;
 
-    font-size: calc(12px + 10 * (100vw - 320px) / 2240);
+    font-size: calc(12px + 4 * (100vw - 320px) / 2240);
 
     width: 100%;
 }
@@ -91,7 +91,7 @@
     cursor: pointer;
 
     text-align: center;
-    
+
     padding-bottom: 1rem;
 
     border-bottom: 2px solid #C7C7C7;
@@ -102,12 +102,12 @@
     color: #029491;
 }
 
-.head__block a{
+.head__block a {
     text-decoration: none;
     color: #C7C7C7;
 }
 
-.head__block.active a{
+.head__block.active a {
     color: #029491;
 }
 

@@ -1,0 +1,27 @@
+@media screen and (max-width: 425px){
+    .commonTypeBtn.moreDetailedBtn{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 426px){
+    .Articles {
+        justify-content: space-between;
+    }
+
+    .commonTypeBtn.moreDetailedBtn{
+        width: 20rem;
+    }
+}
+
+.Articles {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: start;
+
+    row-gap: 2rem;
+}
+
+.commonTypeBtn.moreDetailedBtn{
+    margin-top: 2rem;
+}

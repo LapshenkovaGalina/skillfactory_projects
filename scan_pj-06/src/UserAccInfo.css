@@ -1,16 +1,28 @@
 @media screen and (max-width: 425px) {
+    .UserAccInfo {
+        min-width: 8rem;
+    }
+
     .UserAccInfo__companiesNum,
     .UserAccInfo__companiesLimit {
         align-items: start;
         flex-direction: column;
+
+        font-size: 10px;
     }
 }
 
 @media screen and (min-width: 426px) {
+    .UserAccInfo {
+        min-width: 10rem;
+    }
+
     .UserAccInfo__companiesNum,
     .UserAccInfo__companiesLimit {
         justify-content: end;
         flex-direction: row;
+
+        font-size: 12px;
     }
 }
 
@@ -37,7 +49,6 @@
 .UserAccInfo__companiesLimit {
     display: flex;
     column-gap: 8px;
-    font-size: calc(10px + 10 * (100vw - 320px) / 2240);
 }
 
 .companiesNum__num {

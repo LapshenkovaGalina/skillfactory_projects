@@ -1,26 +1,26 @@
-@media screen and (min-width: 1025px){ 
-    .textPart__h1{
-      font-size: 80px;
-      line-height: 98px;
+@media screen and (min-width: 1025px) {
+    .textPart__h1 {
+        font-size: 56px;
+        line-height: 72px;
     }
-  }
-  
-  @media screen and (max-width: 1024px) and (min-width: 769px){
-    .textPart__h1{
-      font-size: 40px;
-      line-height: 48px;
-    }
-    }
-  
-  @media screen and (max-width: 768px) and (min-width: 426px){
-    .textPart__h1{
-      font-size: 30px;
-      line-height: 38px;
-    }
-  }
-  
+}
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .textPart__h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+    .textPart__h1 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
     .AboutServiceBlock {
         flex-direction: column;
     }
@@ -28,6 +28,10 @@
     .AboutServiceBlock__textPart,
     .AboutServiceBlock__imgWrapper {
         width: 100%;
+    }
+
+    .textPart__p {
+        font-size: 20px;
     }
 
     .textPart__h1 {
@@ -43,7 +47,7 @@
     }
 }
 
-@media screen and (min-width: 426px){
+@media screen and (min-width: 426px) {
     .AboutServiceBlock {
         flex-direction: row;
         align-items: start;
@@ -59,6 +63,10 @@
         margin-bottom: 2vh;
     }
 
+    .textPart__p {
+        font-size: 18px;
+    }
+
     .AboutServiceBlock__imgWrapper {
         width: 50%;
     }
@@ -70,21 +78,22 @@
 
 .AboutServiceBlock {
     display: flex;
+    justify-content: space-between;
     box-sizing: border-box;
 
     width: 100%;
 }
 
-.textPart__h1{
+.textPart__h1 {
     text-transform: uppercase;
 
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
 }
 
-.AboutServiceBlock__textPart p{
+.textPart__p {
     font-weight: 400;
-    font-size: calc(18px + 14 * (100vw - 320px) / 2240);
+    width: 90%;
 }
 
 .AboutServiceBlock__textPart {

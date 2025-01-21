@@ -1,11 +1,7 @@
-@media screen and (min-width: 1025px){ 
+/* @media screen and (min-width: 1025px){ 
     .AppHeader {
       height: 10vh;
       padding: 0vh 4vw 0vh 4vw;
-    }
-
-    .AppHeader__nav {
-      display: flex;
     }
   }
   
@@ -14,10 +10,6 @@
       height: 10vh;
       padding: 0vh 3vw 0vh 3vw;
     }
-
-    .AppHeader__nav {
-      display: flex;
-    }
   }
   
   @media screen and (max-width: 768px) and (min-width: 426px){
@@ -25,24 +17,16 @@
       height: 15vh;
       padding: 0vh 3vw 0vh 3vw;
     }
-
-    .AppHeader__nav {
-      display: none;
-    }
-  }
+  } */
   
   @media screen and (max-width: 425px){
     .AppHeader {
-      height: 15vh;
-      padding: 0vh 5vw 0vh 5vw;
+      /* height: 15vh; */
+      padding: 0vh 3vw;
     }
 
     .AppHeader__logo {
       height: 40%;
-    }
-
-    .AppHeader__nav {
-      display: none;
     }
 
     .AppHeader__burgerMenu {
@@ -51,6 +35,11 @@
   }
 
   @media screen and (min-width: 426px){
+    .AppHeader {
+      /* height: 15vh; */
+      padding: 0vh 3vw;
+    }
+
     .AppHeader__logo {
       height: 55%;
     }
@@ -67,6 +56,7 @@
     align-items: center;
 
     box-sizing: border-box;
+    height: 6rem;
   }
 
   .AppHeader__rightBlock {
@@ -75,18 +65,7 @@
     justify-content: space-between;
     align-items: center;
 
-    column-gap: 6vw;
-  }
-
-  .AppHeader__nav {
-    flex-direction: row;
-
-    column-gap: 49px;
-  }
-
-  .AppHeader__nav a {
-    text-decoration: none;
-    color: #000000;
+    column-gap: 8vw;
   }
 
   .AppHeader__logo {

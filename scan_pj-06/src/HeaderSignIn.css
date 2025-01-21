@@ -1,16 +1,16 @@
 @media screen and (max-width: 425px) {
-    .SignInBlock {
+    .HeaderSignIn {
         display: none;
     }
 }
 
 @media screen and (min-width: 426px) {
-    .SignInBlock {
+    .HeaderSignIn {
         display: flex;
     }
 }
 
-.SignInBlock {
+.HeaderSignIn {
     flex-direction: row;
     align-items: center;
 
@@ -19,18 +19,18 @@
     column-gap: 20px;
 }
 
-.SignInBlock__registrationA {
+.HeaderSignIn__registrationA {
     text-decoration: none;
     color: #949494;
 }
 
-.SignInBlock__divider {
+.HeaderSignIn__divider {
     background-color: #029491;
     width: 2px;
     height: 30px;
 }
 
-.SignInBlock__signInA {
+.HeaderSignIn__signInA {
     background-color: #7CE3E1;
 
     text-decoration: none;
@@ -45,6 +45,6 @@
     cursor: pointer;
 }
 
-.SignInBlock__signInA:active {
+.HeaderSignIn__signInA:active {
     background-color: rgba(137, 219, 218, 0.685);
 }

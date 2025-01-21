@@ -8,20 +8,17 @@ export function Slider<SlideData>({
         slideData: SlideData
     }>
 }) {
-    console.log('slidesData.length:', slidesData.length);
+
     let slides = [];
-    console.log('first index', firstSlide);
+
     for (let i = firstSlide; i < (numOfSlidesToShow + firstSlide); i++) {
-        //const maxDataIndex = slidesData.length - 1;
-        //Math.min(numOfSlidesToShow, slidesData.length);
-        const index = i >= 0 
+        const index = i >= 0
             ? (Math.abs(i)) % slidesData.length
             : (((Math.floor(Math.abs(i) / slidesData.length)
-                 + 1) * slidesData.length) + i) % slidesData.length;
+                + 1) * slidesData.length) + i) % slidesData.length;
 
-        console.log("index = ", index);
         const data = slidesData[index];
-        const slide = (<SlideComponent slideData={data} key={i}/>);
+        const slide = (<SlideComponent slideData={data} key={i} />);
         slides.push(slide);
     }
 

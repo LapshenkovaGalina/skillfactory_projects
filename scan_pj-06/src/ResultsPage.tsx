@@ -5,7 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { histogramRequest, HistogramRespDataType } from "./requests";
 
-const resultsPageHeaderBlock = require('./assets/ResultsPage_img.png');
+import resultsPageHeaderBlockImg from './assets/resultsPage_img.png';
+import { Articles } from './Articles';
 
 type UseParams = { limit: string, startDateJSON: string, endDateJSON: string, INN: string, tonality: string, maxFullness: string, inBusinessNews: string, onlyMainRole: string, onlyWithRiskFactors: string, excludeTechNews: string, excludeAnnouncements: string, excludeDigests: string }
 
@@ -16,7 +17,7 @@ export type HandledHistogramReqData = {
 };
 
 function ResultsPage() {
-    const [ reqHandledData, setReqHandledData ] = useState<Array<HandledHistogramReqData>>([]);
+    const [reqHandledData, setReqHandledData] = useState<Array<HandledHistogramReqData>>([]);
 
     const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ function ResultsPage() {
     }
 
     const params = useParams<UseParams>() as UseParams;
-    
+
     const reqValues = {
         accessToken: accessToken,
         limit: +params.limit,
@@ -37,20 +38,20 @@ function ResultsPage() {
         endDate: params.endDateJSON,
         INN: +params.INN,
         tonality: params.tonality,
-        maxFullness: params.maxFullness == 'true'? true : false,
-        inBusinessNews: params.inBusinessNews == 'true'? true : false,
-        onlyMainRole: params.onlyMainRole == 'true'? true : false,
-        onlyWithRiskFactors: params.onlyWithRiskFactors == 'true'? true : false,
-        excludeTechNews: params.excludeTechNews == 'true'? true : false,
-        excludeAnnouncements: params.excludeAnnouncements == 'true'? true : false,
-        excludeDigests: params.excludeDigests == 'true'? true : false
+        maxFullness: params.maxFullness == 'true' ? true : false,
+        inBusinessNews: params.inBusinessNews == 'true' ? true : false,
+        onlyMainRole: params.onlyMainRole == 'true' ? true : false,
+        onlyWithRiskFactors: params.onlyWithRiskFactors == 'true' ? true : false,
+        excludeTechNews: params.excludeTechNews == 'true' ? true : false,
+        excludeAnnouncements: params.excludeAnnouncements == 'true' ? true : false,
+        excludeDigests: params.excludeDigests == 'true' ? true : false
     }
-    
-    function histogramReqDataHandler(reqData: Array<HistogramRespDataType>){
+
+    function histogramReqDataHandler(reqData: Array<HistogramRespDataType>) {
         let handledData: Array<HandledHistogramReqData> = [];
 
         reqData.forEach(reqDataInnerObj => {
-            if(reqDataInnerObj.histogramType === 'totalDocuments') {
+            if (reqDataInnerObj.histogramType === 'totalDocuments') {
                 reqDataInnerObj.data.forEach(dataInnerObj => {
                     handledData.push({
                         date: dataInnerObj.date,
@@ -58,24 +59,24 @@ function ResultsPage() {
                         risks: 0
                     });
                 });
-            } 
+            }
         });
 
         reqData.forEach(reqDataInnerObj => {
-            if(reqDataInnerObj.histogramType === 'riskFactors'){
+            if (reqDataInnerObj.histogramType === 'riskFactors') {
                 reqDataInnerObj.data.forEach((dataInnerObj, ind) => {
                     handledData[ind].risks = dataInnerObj.value;
                 });
             }
         });
-        
+
         return handledData;
     }
 
     useEffect(() => {
         (async () => {
             const histogramRequestResult = await histogramRequest(reqValues);
-            if(histogramRequestResult === null){
+            if (histogramRequestResult === null) {
                 navigate('/articlesSearch');
                 alert('UseEffect: ошибка');
             } else {
@@ -85,32 +86,43 @@ function ResultsPage() {
         })()
     }, []);
 
+    const articlesNum = () => {
+        let articlesNum = 0;
+        if (reqHandledData.length > 0) {
+            for (let dataObj of reqHandledData) {
+                articlesNum += dataObj.value;
+            }
+        }
+        return articlesNum;
+    }
+
     return (
         <div className="ResultsPage">
-            <main className="ResultsPage_main AppMain">
-                <div className="ResultsPage__headerBlock">
+            <main className="ResultsPage___main AppMain">
+                <div className={`ResultsPage__headerBlock ${reqHandledData.length == 0? 'invisible' : ''}`}>
                     <div className="headerBlock__textPart">
-                        <h1>Ищем. Скоро<br></br>
-                        будут результаты</h1>
-                        <p>Поиск может занять некоторое время,<br></br>
+                        <h1 className='headerBlock__h1'>Ищем. Скоро<br></br>
+                            будут результаты</h1>
+                        <p className='headerBlock__p'>Поиск может занять некоторое время,<br></br>
                             просим сохранять терпение.</p>
                     </div>
                     <div className="headerBlock__imgWrapper">
-                        <img className="headerBlock__img" src={resultsPageHeaderBlock}></img>
+                        <img className="headerBlock__image" src={resultsPageHeaderBlockImg} alt=''></img>
                     </div>
                 </div>
                 <div className="ResultsPage__histogrammBlock">
-                    <h4>Общая сводка</h4>
-                    <div>
-                        <span>Найдено</span>
-                        <span></span>
-                        <span>вариантов</span>
+                    <h2 className='ResultsPage__h2'>Общая сводка</h2>
+                    <div className='histogrammBlock__spanBlock'>
+                        <span>Найдено </span>
+                        <span className='histogrammBlock__resultsNum'>
+                            {articlesNum()}</span>
+                        <span> вариантов</span>
                     </div>
-                    <Histogram sliderDataArr={reqHandledData}/>
+                    <Histogram sliderDataArr={reqHandledData} />
                 </div>
                 <div className="ResultsPage__articlesBlock">
-                    <h4>Список документов</h4>
-                    <button className="commonTypeBtn">Показать больше</button>
+                    <h2 className='ResultsPage__h2'>Список документов</h2>
+                    <Articles reqValues={reqValues} />
                 </div>
             </main>
         </div>

@@ -88,14 +88,14 @@ function MainPage() {
     return (
         <div className='MainPage'>
             <main className="AppMain">
-                <AboutServiceBlock/>
+                <AboutServiceBlock />
                 <h2 className='MainPage__h2'>Почему именно мы</h2>
-                <Slider slidesArr={allSlides}/>
+                <Slider slidesArr={allSlides} />
                 <div className="MainPage__imgWrapper" >
                     <img className="MainPage__img" src={mainPageImg} alt="main page"></img>
                 </div>
                 <h2 className='MainPage__h2'>Наши тарифы</h2>
-                <PlansBlock plans={allPlans}/>
+                <PlansBlock plans={allPlans} />
             </main>
         </div>
     )

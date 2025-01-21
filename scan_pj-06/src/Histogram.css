@@ -1,32 +1,67 @@
 @media screen and (max-width: 425px){
+    .Histogram {
+        width: 100%;
+        align-items: end;
+    }
+
     .Histogram__slider{
         flex-direction: column;
     }
 
     .slider__leftBlock,
     .slider__slide {
-        height: 5rem;
-        padding: 1rem;
+        height: 4rem;
+        padding: 0rem 1rem;
 
         flex-direction: row;
+        align-items: center;
+    }
+
+    .slider__leftBlock {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .slider__divider {
+        display: none;
+    }
+
+    .Histogram__arrow {
+        height: 2rem;
+        margin-bottom: 1rem;
     }
   }
 
   @media screen and (min-width: 426px){
+    .Histogram {
+        width: 100%;
+        align-items: center;
+    }
+    
     .Histogram__slider {
         flex-direction: row;
     }
 
     .slider__leftBlock,
     .slider__slide {
-        height: 5rem;
-        padding: 1rem;
+        height: 10rem;
+        padding: 1.5rem 2rem;
 
         flex-direction: column;
     }
 
+    .slider__leftBlock {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
     .slider__divider {
-        height: 5.5rem;
+        display: block;
+        height: 10.5rem;
+    }
+
+    .Histogram__arrow {
+        height: 2.5rem;
     }
   }
 
@@ -34,11 +69,13 @@
     display: flex;
     flex-direction: row;
 
-    width: 100vw;
+    column-gap: 0.5rem;
 }
 
 .Histogram__slider {
     display: flex;
+    box-sizing: border-box;
+    width: 100%;
 
     border: 2px solid #029491;
     border-radius: 10px;
@@ -47,10 +84,22 @@
 .slider__slides {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+
+    font-weight: 400;
+    font-size: calc(14px + 14 * (100vw - 320px) / 2240);
 }
 
 .slider__leftBlock {
     background-color: #029491;
+
+    font-weight: 400;
+    font-size: calc(18px + 14 * (100vw - 320px) / 2240);
+    color: #FFFFFF;
 }
 
 .Histogram span {
@@ -63,7 +112,21 @@
     justify-content: space-between;
 }
 
+.slider__slide {
+    align-items: center;
+    width: 100%;
+}
+
+.slider__slide div{
+    width: 100%;
+    text-align: center;
+}
+
 .slider__divider {
-    width: 2px;
-    background-color: #949494;
+    width: 3px;
+    background-color: #C7C7C7;
+}
+
+.Histogram__arrow {
+    width: auto;
 }

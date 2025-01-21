@@ -12,7 +12,7 @@ function Slide({ slideData }: SlidePropsType) {
     return (
         <div className='Slide'>
             <img className='Slide__img' src={slideData.img} alt=''></img>
-            <p>{slideData.text}</p>
+            <div className='Slide__text'>{slideData.text}</div>
         </div>
     )
 }

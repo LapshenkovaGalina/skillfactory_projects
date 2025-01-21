@@ -1,12 +1,12 @@
 import './Slider.css';
 import Slide, { SlideDataType } from './Slide';
-import { ReactNode, useEffect, useRef, useState } from 'react';
-import {Slider as SliderComp} from '../Slider/Slider'
+import { useState } from 'react';
+import { Slider as SliderComp } from '../Slider/Slider'
 
 const arrowLeft = require('../assets/slider-arrow_left.png');
 const arrowRight = require('../assets/slider-arrow_right.png');
 
-const displayedSlidesNum = window.innerWidth < 426 ? 1 : 3
+const displayedSlidesNum = window.screen.width < 426 ? 1 : 3;
 
 const MainPageSlider = SliderComp<SlideDataType>;
 
@@ -16,7 +16,6 @@ function Slider({ slidesArr }: { slidesArr: Array<SlideDataType> }) {
     const rightArrowOnClick = () => setFirstSlide(firstSlide + displayedSlidesNum);
     const leftArrowOnClick = () => setFirstSlide(firstSlide - displayedSlidesNum);
 
-    console.log('slidesArr: ', slidesArr);
     return (
         <div className='Slider'>
             <img className='Slider__sliderArrow' src={arrowLeft} alt='<'
@@ -26,8 +25,7 @@ function Slider({ slidesArr }: { slidesArr: Array<SlideDataType> }) {
                     firstSlide={firstSlide}
                     numOfSlidesToShow={displayedSlidesNum}
                     slidesData={slidesArr}
-                    SlideComponent={Slide}
-                    />
+                    SlideComponent={Slide} />
             </div>
             <img className='Slider__sliderArrow' src={arrowRight} alt='>'
                 onClick={rightArrowOnClick}></img>

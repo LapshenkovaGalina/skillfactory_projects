@@ -11,9 +11,14 @@
     }
   }
 
+  @media screen and (max-width: 1024px){
+    .PlansBlock {
+        flex-wrap: wrap;
+    }
+  }  
+
 .PlansBlock {
     display: flex;
-    flex-wrap: wrap;
 
     row-gap: 3vh;
     column-gap: 3vw;

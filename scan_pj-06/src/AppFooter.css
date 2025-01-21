@@ -1,6 +1,6 @@
-  @media screen and (min-width: 1025px){ 
+  /* @media screen and (min-width: 1025px){ 
     .AppFooter {
-      height: 15vh;
+      height: 26vh;
       padding: 0vh 4vw 0vh 4vw;
     }
   }
@@ -17,12 +17,12 @@
       height: 18vh;
       padding: 0vh 3vw 0vh 3vw;
     }
-  }
-  
+  }*/
+   
   @media screen and (max-width: 425px){
     .AppFooter {
-      height: 18vh;
-      padding: 0vh 5vw 0vh 5vw;
+      /* height: 18vh; */
+      padding: 0vh 3vw;
     }
 
     .AppFooter__logo {
@@ -31,6 +31,11 @@
   }
 
   @media screen and (min-width: 426px){
+    .AppFooter {
+      /* height: 18vh; */
+      padding: 0vh 3vw;
+    }
+
     .AppFooter__logo {
       height: 35%;
     }
@@ -43,6 +48,7 @@
     align-items: center;
 
     box-sizing: border-box;
+    height: 9rem;
 
     font-size: calc(14px + 4 * (100vw - 320px) / 2240);
     font-weight: 200;
@@ -59,4 +65,8 @@
 
   .AppFooter__logo {
     width: auto;
+  }
+
+  .AppFooter__copyright {
+    margin-top: 2rem;
   }

@@ -52,7 +52,7 @@ function Plan({ planInfo }: PlanPropsType) {
             <div className='Plan__body'>
                 <div className='Plan__priceInfo'>
                     <div className='priceInfo__priceBlock'>
-                        <span style={{ fontWeight: 'bold' }}>{planInfo.price} ₽</span>
+                        <span style={{ fontWeight: '500' }}>{planInfo.price} ₽</span>
                         <span style={{ fontStyle: 'strikeThrought' }}>{planInfo.oldPrice} ₽</span>
                     </div>
                     <p className='priceInfo__installmentInfo'>{planInfo.installmentInfo}</p>

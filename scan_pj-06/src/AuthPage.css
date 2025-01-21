@@ -1,39 +1,60 @@
-@media screen and (min-width: 1025px){ 
-  .leftBlock__h1{
-    font-size: 50px;
-    line-height: 58px;
+@media screen and (min-width: 1025px) {
+  .leftBlock__h1 {
+    font-size: 40px;
+    line-height: 48px;
   }
 
   .leftBlock__img {
-    width: 35vh;
-    height: auto;
+    width: 55vh;
     margin-left: 8vw;
+  }
+
+  .rightBlock__img {
+    display: none;
+  }
+
+  .AuthPage__decorImg {
+    margin: -55px -25px auto 0px;
   }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px){
-  .leftBlock__h1{
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  .leftBlock__h1 {
     font-size: 40px;
     line-height: 48px;
   }
 
   .leftBlock__img {
     width: 25vh;
-    height: auto;
     margin-left: 4vw;
   }
+
+  .rightBlock__img {
+    display: none;
   }
 
-@media screen and (max-width: 768px) and (min-width: 426px){
-  .leftBlock__h1{
+  .AuthPage__decorImg {
+    margin: -25px -20px auto 0px;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .leftBlock__h1 {
     font-size: 30px;
     line-height: 38px;
   }
 
   .leftBlock__img {
     width: 25vh;
-    height: auto;
     margin-left: 4vw;
+  }
+
+  .rightBlock__img {
+    display: none;
+  }
+
+  .AuthPage__decorImg {
+    margin: 5vh 0px -10px 30vw;
   }
 }
 
@@ -42,13 +63,25 @@
     flex-direction: column;
   }
 
-  .leftBlock__h1{
+  .leftBlock__h1 {
     font-size: 22px;
     line-height: 26px;
   }
 
   .leftBlock__img {
+    display: none;
+  }
+
+  .rightBlock__img {
     margin-top: 4vh;
+  }
+
+  .AuthPage__rightBlock {
+    width: 100%;
+  }
+
+  .AuthPage__decorImg {
+    margin: 5vh auto -10px 30vw;
   }
 }
 
@@ -66,11 +99,16 @@
   }
 }
 
+.AuthPage {
+  display: flex;
+  flex-grow: 1;
+}
+
 .AuthPage__main {
   display: flex;
   align-items: center;
   justify-content: start;
-  
+  flex-grow: 1;
 }
 
 .AuthPage__leftBlock {
@@ -84,10 +122,7 @@
   font-weight: 900;
 }
 
-/* .AuthPage__decorImg {
+.AuthPage__decorImg {
   align-self: flex-start;
-  margin-top: -50px;
-  margin-right: -30px;
-
-  width: 100px; 
-} */
+  width: 75px; 
+}

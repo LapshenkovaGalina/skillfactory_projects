@@ -2,7 +2,7 @@ import './AuthPage.css'
 import Auth from "./Auth";
 
 const authPageImg = require('./assets/auth-page-img.png');
-// const authDecorImg = require('./assets/auth-component-decor.png');
+const authDecorImg = require('./assets/auth-component-decor.png');
 
 function AuthPage() {
     return (
@@ -13,11 +13,12 @@ function AuthPage() {
                     на тариф, необходимо<br></br>
                     авторизоваться.
                     </h1>
-                    <img className="leftBlock__img" src={authPageImg} alt="auth page"></img>
+                    <img className="leftBlock__img" src={authPageImg} alt=''></img>
                 </div>
-                {/* <img className='AuthPage__decorImg' src={authDecorImg} alt=''></img> */}
                 <div className="AuthPage__rightBlock">
+                    <img className='AuthPage__decorImg' src={authDecorImg} alt=''></img>
                     <Auth/>
+                    <img className="rightBlock__img" src={authPageImg} alt=''></img>
                 </div>
             </main>
         </div>

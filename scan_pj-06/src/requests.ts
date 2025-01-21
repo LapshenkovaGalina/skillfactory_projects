@@ -107,6 +107,7 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
         let result = await response.json();
 
         if (!result.data) {
+            console.debug("result" , result);
             throw new Error('data is not found');
         } else {
             console.log(result.data);
@@ -119,7 +120,20 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
     }
 }
 
-export async function objectSearchRequest(requestValues: HistogramReqValues) {
+export type ArticleItem = {
+    encodedId: string,
+    influence: number,
+    similarCount: number
+}
+export type ArticleObjects  = {
+    items: ArticleItem[],
+    mappings: [
+        inn: "string",
+        entityIds: number[]
+    ]
+}
+
+export async function objectSearchRequest(requestValues: HistogramReqValues): Promise<ArticleObjects> {
     try {
         let response = await fetch('https://gateway.scan-interfax.ru/api/v1/objectsearch', {
             method: 'POST',
@@ -196,20 +210,92 @@ export async function objectSearchRequest(requestValues: HistogramReqValues) {
             })
         });
 
-        let result = await response.json();
-
-        if (!result.items) {
-            throw new Error("'items' is not found");
+        if (response.ok) {
+            return response.json();
         } else {
-            console.log(result.items);
+            return Promise.reject(response.statusText);
         }
+
     } catch (e) {
         console.log(e);
-        return null;
+        return Promise.reject(e);
     }
 }
 
-export async function documentRequest(requestValues: ObjectSearchReqValues) {
+export type ArticleData = {
+    ok: {
+        attributes: {
+            coverage: {
+                state: string,
+            },
+            influence: number,
+            isAnnouncement: boolean,
+            isDigest: false,
+            isReducedContent: boolean,
+            isSpeechRecognition: boolean,
+            isTechNews: boolean,
+            wordCount: number
+        },
+        content: {
+            markup: string,
+        },
+        dedupClusterId: string,
+        entities: {
+            companies: {
+                entityId: number,
+                isMainRole: boolean,
+                isSpeechAuthor: boolean,
+                localId: 6,
+                name: string,
+                suggestedCompanies: [],
+                tags: string[]
+            }[],
+            locations: {
+                code: {
+                    countryCode: string,
+                    isMainRole: boolean,
+                    localId: number,
+                    name: string
+                }
+            }[],
+            people: {
+                isMainRole: boolean,
+                isSpeechAuthor: boolean,
+                localId: number,
+                name: string,
+                rotatedName: string,
+                tags: string[]
+            }[],
+            themes: {
+                entityId: number,
+                localId: number,
+                name: string,
+                tonality: string
+            }[],
+        },
+        id: string,
+        issueDate: string,
+        language: string,
+        plotClusterId: string,
+        schemaVersion: string,
+        source: {
+            categoryId: number,
+            distributionMethodId: number,
+            groupId: number,
+            id: number,
+            levelId: number,
+            name: string
+        },
+        title: {
+            markup: string,
+            text: string
+        },
+        url: string,
+        version: number
+    }
+}
+
+export async function documentRequest(requestValues: ObjectSearchReqValues): Promise<ArticleData[]> {
     try {
         let response = await fetch('https://gateway.scan-interfax.ru/api/v1/documents', {
             method: 'POST',
@@ -219,18 +305,50 @@ export async function documentRequest(requestValues: ObjectSearchReqValues) {
                 'Authorization': `Bearer ${requestValues.accessToken}`
             },
             body: JSON.stringify({
-                ids: ['1:0JPQqdGM0JNWCdCzf2Jt0LHQotGV0ZUh0ZbRlBXCt0Je0JHQruKAnDcUXkZQ0YvQscKnehLRnNC1KtGK0Ll9BWLigLo/HXXCrhw='
-            ]})
+                ids: requestValues.IDs
+            })
         });
 
-        let result = await response.json();
-
-        if (!result.items) {
-            throw new Error("mes");
+        if (response.ok) {
+            return await response.json();
         } else {
-            console.log(result.items);
+            return Promise.reject(response.statusText)
         }
     } catch (e) {
         console.log(Error);
+        return Promise.reject(e)
+    }
+}
+
+
+
+type AccessData = {
+    accessToken: string,
+    expire: string
+}
+export async function loginRequest({
+    login,
+    password}
+    : {login: string, password: string}): Promise<AccessData> {
+    try {
+        let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify({
+                login, password
+            })
+        });
+
+        if (response.ok) {
+            return await response.json();
+        } else {
+            return Promise.reject(response.statusText)
+        }
+    } catch (e) {
+        console.log(Error);
+        return Promise.reject(e)
     }
 }

@@ -1,6 +1,6 @@
-.AuthBlock {
+.HeaderAuthCheck {
     display: flex;
     flex-direction: row;
 
-    column-gap: 6vw;
+    column-gap: 8vw;
 }
