@@ -99,7 +99,7 @@ function ResultsPage() {
     return (
         <div className="ResultsPage">
             <main className="ResultsPage___main AppMain">
-                <div className={`ResultsPage__headerBlock ${reqHandledData.length == 0? 'invisible' : ''}`}>
+                <div className={`ResultsPage__headerBlock ${reqHandledData.length > 0? 'invisible' : ''}`}>
                     <div className="headerBlock__textPart">
                         <h1 className='headerBlock__h1'>Ищем. Скоро<br></br>
                             будут результаты</h1>

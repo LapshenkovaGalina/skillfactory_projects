@@ -1,3 +1,36 @@
+@media screen and (min-width: 426px){
+    .Histogram {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .Histogram__slider {
+        flex-direction: row;
+    }
+
+    .slider__leftBlock,
+    .slider__slide {
+        height: 10rem;
+        flex-direction: column;
+    }
+
+    .slider__leftBlock {
+        padding: 1.5rem 2rem;
+        
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .slider__divider {
+        display: block;
+        height: 10.5rem;
+    }
+
+    .Histogram__arrow {
+        height: 2.5rem;
+    }
+  }
+
 @media screen and (max-width: 425px){
     .Histogram {
         width: 100%;
@@ -11,13 +44,14 @@
     .slider__leftBlock,
     .slider__slide {
         height: 4rem;
-        padding: 0rem 1rem;
 
         flex-direction: row;
         align-items: center;
     }
 
     .slider__leftBlock {
+        padding: 0rem 1rem;
+
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
@@ -29,39 +63,6 @@
     .Histogram__arrow {
         height: 2rem;
         margin-bottom: 1rem;
-    }
-  }
-
-  @media screen and (min-width: 426px){
-    .Histogram {
-        width: 100%;
-        align-items: center;
-    }
-    
-    .Histogram__slider {
-        flex-direction: row;
-    }
-
-    .slider__leftBlock,
-    .slider__slide {
-        height: 10rem;
-        padding: 1.5rem 2rem;
-
-        flex-direction: column;
-    }
-
-    .slider__leftBlock {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
-
-    .slider__divider {
-        display: block;
-        height: 10.5rem;
-    }
-
-    .Histogram__arrow {
-        height: 2.5rem;
     }
   }
 

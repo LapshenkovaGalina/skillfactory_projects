@@ -51,9 +51,11 @@ function Histogram({ sliderDataArr }: HistogramViewProps) {
             return 3;
         } else if (window.screen.width <= 1024) {
             return 5;
-        } else if (window.screen.width <= 1400) {
+        } else if (window.screen.width <= 1440) {
             return 8;
-        } else return 10;
+        } else {
+            return 10;
+        }
     }
 
     return (
