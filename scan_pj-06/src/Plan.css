@@ -8,9 +8,14 @@
     width: 100%;
   }
 
+  .head__textBlock {
+    height: 5rem;
+    margin-right: -50px;
+  }
+
   .head__img {
-    height: 60px;
-    margin-left: 3px;
+    height: 50px;
+    margin-top: -10px;
   }
 
   .Plan__body {
@@ -24,11 +29,15 @@
   .description__listItem{
     font-size: 18px;
   }
+
+  .isActivePlanMarker {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 426px) {
   .Plan {
-    width: 25rem;
+    min-width: 23rem;
   }
 
   .Plan__head,
@@ -36,21 +45,13 @@
     width: 100%;
   }
 
-  .head__textBlock {
-    height: 6rem;
-  }
-
   .head__img {
     height: 80px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
 
   .Plan__body {
-    row-gap: 3rem;
-  }
-
-  .priceInfo__priceBlock {
-    font-size: 30px;
+    row-gap: 2.5rem;
   }
 
   .description__intro {
@@ -61,8 +62,17 @@
     font-size: 16px;
   }
 
-  .head__shortDescription {
-    font-size: 18px;
+  .isActivePlanMarker {
+    background-color: #3BA5E0;
+
+    height: min-content;
+    margin-top: -1rem;
+    padding: 3px 13px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    color: #FFFFFF;
   }
 }
 
@@ -100,6 +110,7 @@
 }
 
 .priceInfo__priceBlock,
+.priceBlock__wrapper,
 .description__listItem {
   display: flex;
   flex-direction: row;
@@ -111,42 +122,58 @@
   height: 6rem;
 }
 
-.priceInfo__installmentInfo {
-  font-size: 18px;
+.priceInfo__priceBlock {
+  display: flex;
+  justify-content: space-between;
 }
 
-.Plan__priceInfo span {
-  display: inline-block;
+.priceInfo__installmentInfo,
+.head__shortDescription {
+  font-size: 18px;
 }
 
 .Plan__head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
   min-height: 8rem;
 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 
-.head__textBlock h3 {
-  font-weight: 500;
+.head__textBlock h3,
+.priceBlock__price {
   font-size: 30px;
+}
+
+.priceBlock__oldPrice {
+  align-self: center;
+
+  text-decoration: line-through;
+  font-size: 25px;
+  color: #949494;
+}
+
+.Plan__priceInfo span {
+  display: inline-block;
 }
 
 .head__textBlock {
   row-gap: 0.8rem;
 }
 
-.description__intro {
+.description__intro,
+.head__textBlock h3,
+.priceBlock__price {
   font-weight: 500;
 }
 
 .description__descriptionList {
   list-style: none;
-  row-gap: 0.6rem;
+  row-gap: 0.2rem;
 }
 
 .description__descriptionList img {
@@ -156,7 +183,6 @@
 
 .commonTypeBtn.moreBtn,
 .commonTypeBtn.goToPersonalAccBtn {
-  padding: 0px;
   width: 100%;
 }
 
