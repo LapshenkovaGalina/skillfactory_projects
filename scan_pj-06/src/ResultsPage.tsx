@@ -78,9 +78,7 @@ function ResultsPage() {
             const histogramRequestResult = await histogramRequest(reqValues);
             if (histogramRequestResult === null) {
                 navigate('/articlesSearch');
-                alert('UseEffect: ошибка');
             } else {
-                console.log('useEffect: всё ок')
                 setReqHandledData(histogramReqDataHandler(histogramRequestResult));
             }
         })()

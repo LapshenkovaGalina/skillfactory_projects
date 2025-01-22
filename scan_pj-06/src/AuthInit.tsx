@@ -11,7 +11,6 @@ function AuthInit() {
 
         if(expireDate.getTime() > currTime.getTime()){
           authInfo?.setAccessToken(localStorage.getItem('accessToken') || null);
-          console.log('Auth is ok!'); 
         } else {
             console.log('Auth is not ok!');
         }

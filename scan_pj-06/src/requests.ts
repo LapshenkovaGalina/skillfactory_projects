@@ -110,7 +110,6 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
             console.debug("result" , result);
             throw new Error('data is not found');
         } else {
-            console.log(result.data);
             return result.data;
         }
 

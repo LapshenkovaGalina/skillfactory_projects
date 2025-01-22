@@ -5,8 +5,7 @@ import { HistogramReqValues, ArticleData, documentRequest, objectSearchRequest }
 import { JSONdateToFormatedString } from "./Histogram";
 import Loader from "./Loader";
 
-const requestURL = "http://localhost:3000/searchResults/3/2024-10-01T00:00:00.000Z/2024-12-22T00:00:00.000Z/7721546864/any/false/false/false/false/false/false/false"
-const log = console.log;
+const requestURL = "http://localhost:3000/searchResults/3/2024-10-01T00:00:00.000Z/2024-12-22T00:00:00.000Z/7721546864/any/false/false/false/false/false/false/false";
 
 type ArticlesProps = {
     reqValues: HistogramReqValues
@@ -81,7 +80,7 @@ function Article({accessToken, id}: ArticleProps) {
                 IDs: [id]
             });
         
-            log('articles: ', articles[0]);
+            console.log('articles: ', articles[0]);
             setPubData(articles[0]);
         })()
     }, [id, accessToken]);
@@ -103,22 +102,17 @@ function ArticleView({data}:ArticleViewProps) {
 
     const parser = new DOMParser();
     const doc = parser.parseFromString(data.ok.content.markup, "application/xhtml+xml");
-    log(doc.querySelectorAll('sentence')[0].textContent)
 
     let text = ''
     doc.querySelectorAll('sentence').forEach(e => text += e.textContent)
 
 
     const result = /img src="(\S+?)"/.exec(text)
-    if (result && result.length > 0) {
-        log('[LUP] img URL', result[1])
-    }
 
     const img = result && result[1]
         ? (<img src={result[1]} className="articleImg"></img>)
         : null
 
-    //const text = data.ok.content.markup
     text = text
         .replace(/<.*?>/g, '')
         .replace(/<[^>]*>/g, '')

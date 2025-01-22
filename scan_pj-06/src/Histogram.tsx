@@ -20,7 +20,6 @@ type HistogramViewProps = {
 };
 
 function Slide({ slideData }: { slideData: HandledHistogramReqData }) {
-    console.log("slide data", slideData);
     return (
         <>
             <div className='slider__slide'>
@@ -38,13 +37,9 @@ const HistogramSlider = Slider<HandledHistogramReqData>
 function Histogram({ sliderDataArr }: HistogramViewProps) {
     const [firstSlideIndex, setFirstSlideIndex] = useState<number>(0);
     const incFirstSlideIndex = () => setFirstSlideIndex(firstSlideIndex + 1);
-    const decFirstSlideIndex = () => setFirstSlideIndex(firstSlideIndex - 1)
-
-    console.log('sliderDataArr = ', sliderDataArr);
+    const decFirstSlideIndex = () => setFirstSlideIndex(firstSlideIndex - 1);
 
     const displayedSlidesNum = () => {
-        console.log('window.screen.width: ', window.screen.width);
-
         if (window.screen.width <= 426) {
             return 1;
         } else if (window.screen.width <= 768) {
