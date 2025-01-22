@@ -1,14 +1,14 @@
- import { FormEvent, useEffect, useState } from 'react';
 import './ArticlesSearch.css';
-import './checkbox.css'
-import './button.css'
+import './checkbox.css';
+import './button.css';
+import { FormEvent, useEffect, useState } from 'react';
 import validateInn from './validateInn';
 import { useNavigate } from 'react-router-dom';
 
 type ArticleTonality = 'positive' | 'negative' | 'any';
 
 const articleTonalityToRus = (tonality: ArticleTonality): string => {
-    switch(tonality) {
+    switch (tonality) {
         case 'positive': return 'Позитивная';
         case 'negative': return 'Негативная';
         case 'any': return 'Любая';
@@ -81,7 +81,7 @@ function ArticlesSearch() {
                 setErrorMsg2(null);
             } else if (firstRangeNum > secondRangeNum) {
                 setErrorMsg2('Дата начала не может быть позже даты конца');
-            } 
+            }
         }
     }, [firstRangeNum, secondRangeNum]);
 
@@ -91,7 +91,7 @@ function ArticlesSearch() {
         const inputValueJSONstr = `${new Date(inputValue).toJSON()}`;
 
         setStartDate(inputValue);
-        setStartDateJSON(inputValueJSONstr);   
+        setStartDateJSON(inputValueJSONstr);
         setFirstRangeNum(inputValueUnixFormat);
     }
 
@@ -121,7 +121,7 @@ function ArticlesSearch() {
     const btnDisable = () => {
         return (
             (errorMsg0 == null && errorMsg1 == null && errorMsg2 == null
-                && INN !== '' && limit !== '' && startDate !== '' && endDate !== '')? false : true
+                && INN !== '' && limit !== '' && startDate !== '' && endDate !== '') ? false : true
         )
     }
 
@@ -159,8 +159,8 @@ function ArticlesSearch() {
                 </div>
                 {errorMsg2 && <span className='errorMsg2'>{errorMsg2}</span>}
             </div>
-                <div className="ArticlesSearch__rightBlock">
-                    <div className='rightBlock__checkboxes'>
+            <div className="ArticlesSearch__rightBlock">
+                <div className='rightBlock__checkboxes'>
                     <label className='customCheckbox'>
                         <input type='checkbox' onChange={(event) => setMaxFullness(event.target.checked)}></input><span>Признак максимальной полноты</span></label>
                     <label className='customCheckbox'>
@@ -175,15 +175,14 @@ function ArticlesSearch() {
                         <input type='checkbox' onChange={(event) => setIncludeAnnouncements(!event.target.checked)}></input><span>Включать анонсы и календари</span></label>
                     <label className='customCheckbox'>
                         <input type='checkbox' onChange={(event) => setIncludeDigests(!event.target.checked)}></input><span>Включать сводки новостей</span></label>
-                    </div>
-                    
-                    <div className='searchBtnBlock'>
-                    <button form='form_articlesSearch' 
-                    className='commonTypeBtn searchBtn' 
-                    type='submit'
-                    disabled={btnDisable()}>Поиск</button>
+                </div>
+                <div className='searchBtnBlock'>
+                    <button form='form_articlesSearch'
+                        className='commonTypeBtn searchBtn'
+                        type='submit'
+                        disabled={btnDisable()}>Поиск</button>
                     <div className='searchBtnBlock__note'>*Обязательные к заполнению поля</div>
-            </div>
+                </div>
             </div>
         </form>
     )
