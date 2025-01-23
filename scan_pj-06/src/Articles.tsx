@@ -80,7 +80,8 @@ function Article({accessToken, id}: ArticleProps) {
                 IDs: [id]
             });
         
-            console.log('articles: ', articles[0]);
+            // console.log('articles: ', articles[0]);
+            console.log('isTechNews: ', articles[0].ok.attributes.isTechNews);
             setPubData(articles[0]);
         })()
     }, [id, accessToken]);
