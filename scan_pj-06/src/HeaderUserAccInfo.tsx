@@ -1,4 +1,3 @@
-import UserAccInfo from './UserAccInfo';
 import './HeaderUserAccInfo.css'
 
 const userAvatar = require('./assets/user-avatar.png');

@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "./App";
 import HeaderUserAccInfo from "./HeaderUserAccInfo";
 import HeaderSignIn from "./HeaderSignIn";
-import UserAccInfo from "./UserAccInfo";
+import UserAccInfo from "./UserPlanInfo";
 
 function HeaderAuthCheck() {
     const authInfo = useContext(AuthContext);

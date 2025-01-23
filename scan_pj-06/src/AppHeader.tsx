@@ -5,7 +5,9 @@ import HeaderNav from './HeaderNav';
 import HeaderUserAccInfo from './HeaderUserAccInfo';
 
 const SCANlogo = require('./assets/SCAN-logo.png');
-const burgerMenu = require('./assets/burger-button_img.png');
+const MobileMenuSCANlogo = require('./assets/SCAN-logo_footer.png');
+const burgerMenuImg = require('./assets/burger-menu-button_img.png');
+const burgerMenuExitImg = require('./assets/burger-menu_exit-button_img.png');
 
 function AppHeaderDesktop() {
     console.log("AppHeaderDesktop");
@@ -16,7 +18,7 @@ function AppHeaderDesktop() {
                 <HeaderNav isMobile={false}/>
                 <HeaderAuthCheck/>
             </div>
-            <img className='AppHeader__burgerMenu' src={burgerMenu} alt='MENU'></img>
+            {/* <img className='AppHeader__burgerMenu' src={burgerMenuImg} alt='MENU'></img> */}
         </header>
     )
 }
@@ -43,27 +45,24 @@ function AppHeaderMobile() {
 
     return !opened ? (
             <header className='AppHeader'>
-                <a href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img></a>
+                <a className='AppHeader__mainPageRef' href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img></a>
                 <div className='AppHeader__rightBlock'>
-                    <HeaderNav isMobile={true}/>
-                    <HeaderAuthCheck />
+                    {/* <HeaderNav isMobile={true}/> */}
+                    {/* <HeaderAuthCheck /> */}
                 </div>
-                <img className='AppHeader__burgerMenu' onClick={toggleOpened} src={burgerMenu} alt='MENU'></img>
+                <img className='AppHeader__burgerBtn' onClick={toggleOpened} src={burgerMenuImg} alt='MENU'></img>
             </header>
         )
         : (
-            <header className='AppHeader' style={{
-                    display: "flex",
-                    flexDirection: "column"
-                }}>
-                <div className={"mobile_header"} style={{
-                        height: "50%",
-                        backgroundColor: "red",
-                        width: "100%",
-                        }}>
-                    <a href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img></a>
-                    <HeaderNav isMobile={true}/>
-                    <HeaderUserAccInfo isMobile={true}/>
+            <header className='AppHeader burgerMenuOpened'>
+                <div className='AppHeader__burgerMenu'>
+                    <div className='burgerMenu__top'>
+                        <a className='burgerMenu__mainPageRef' href=''><img className='AppHeader__logo' src={MobileMenuSCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img></a>
+                        <img className='burgerMenu__burgerMenuExit' onClick={toggleOpened} src={burgerMenuExitImg} alt='EXIT'></img>
+                    </div>
+                    <HeaderNav isMobile={true} />
+                    {/* <HeaderUserAccInfo isMobile={true} /> */}
+                    <HeaderAuthCheck/> 
                 </div>
             </header>
         )

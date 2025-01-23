@@ -38,7 +38,7 @@ function ArticlesSearch() {
     const [inBusinessNews, setInBusinessNews] = useState(false);
     const [onlyMainRole, setOnlyMainRole] = useState(false);
     const [onlyWithRiskFactors, setOnlyWithRiskFactors] = useState(false);
-    const [excludeTechNews, setIncludeTechNews] = useState(true);
+    const [excludeTechNews, setExcludeTechNews] = useState(true);
     const [excludeAnnouncements, setIncludeAnnouncements] = useState(true);
     const [excludeDigests, setIncludeDigests] = useState(true);
 
@@ -170,7 +170,7 @@ function ArticlesSearch() {
                     <label className='customCheckbox'>
                         <input type='checkbox' onChange={(event) => setOnlyWithRiskFactors(event.target.checked)}></input><span>Публикации только с риск-факторами</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => {setIncludeTechNews(event.target.checked); console.log('TECH: ', excludeTechNews);}}></input><span>Включать технические новости рынков</span></label>
+                        <input type='checkbox' onChange={(event) => {setExcludeTechNews(event.target.checked); console.log('TECH: ', excludeTechNews);}}></input><span>Включать технические новости рынков</span></label>
                     <label className='customCheckbox'>
                         <input type='checkbox' onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input><span>Включать анонсы и календари</span></label>
                     <label className='customCheckbox'>
