@@ -4,14 +4,14 @@ import './HeaderSignInMobile.css'
 function HeaderSignIn({isMobile} : {isMobile: boolean}) {
     let className = '';
     if (isMobile) {
-        className = 'mobile'
+        className = 'Mobile'
     }
 
     return (
-        <div className={`HeaderSignIn ${className}`}>
-            <a className='HeaderSignIn__registrationA' href="">Зарегистрироваться</a>
-            <div className='HeaderSignIn__divider'></div>
-            <a className="HeaderSignIn__signInA" href='/auth'>Войти</a>
+        <div className={`HeaderSignIn${className}`}>
+            <a className={`HeaderSignIn${className}__registrationA`} href="">Зарегистрироваться</a>
+            {!isMobile && <div className='HeaderSignIn__divider'></div>}
+            <a className={`HeaderSignIn${className}__signInA`} href='/auth'>Войти</a>
         </div>
     )
 }
