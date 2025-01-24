@@ -1,8 +1,8 @@
 import './AppHeader.css';
 import { useState } from 'react';
-import HeaderAuthCheck from './HeaderAuthCheck';
+import { HeaderAuthCheckDesktop, HeaderAuthCheckMobile } from './HeaderAuthCheck';
 import HeaderNav from './HeaderNav';
-import HeaderUserAccInfo from './HeaderUserAccInfo';
+import HeaderUserInfo from './HeaderUserInfo';
 
 const SCANlogo = require('./assets/SCAN-logo.png');
 const MobileMenuSCANlogo = require('./assets/SCAN-logo_footer.png');
@@ -16,9 +16,8 @@ function AppHeaderDesktop() {
             <a href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img></a>
             <div className='AppHeader__rightBlock'>
                 <HeaderNav isMobile={false}/>
-                <HeaderAuthCheck/>
+                <HeaderAuthCheckDesktop />
             </div>
-            {/* <img className='AppHeader__burgerMenu' src={burgerMenuImg} alt='MENU'></img> */}
         </header>
     )
 }
@@ -47,8 +46,7 @@ function AppHeaderMobile() {
             <header className='AppHeader'>
                 <a className='AppHeader__mainPageRef' href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img></a>
                 <div className='AppHeader__rightBlock'>
-                    {/* <HeaderNav isMobile={true}/> */}
-                    {/* <HeaderAuthCheck /> */}
+                    <HeaderAuthCheckMobile isMenuOpened={false}/>
                 </div>
                 <img className='AppHeader__burgerBtn' onClick={toggleOpened} src={burgerMenuImg} alt='MENU'></img>
             </header>
@@ -61,8 +59,7 @@ function AppHeaderMobile() {
                         <img className='burgerMenu__burgerMenuExit' onClick={toggleOpened} src={burgerMenuExitImg} alt='EXIT'></img>
                     </div>
                     <HeaderNav isMobile={true} />
-                    {/* <HeaderUserAccInfo isMobile={true} /> */}
-                    <HeaderAuthCheck/> 
+                    <HeaderAuthCheckMobile isMenuOpened={true} /> 
                 </div>
             </header>
         )

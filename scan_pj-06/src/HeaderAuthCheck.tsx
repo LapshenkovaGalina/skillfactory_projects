@@ -1,28 +1,42 @@
 import './HeaderAuthCheck.css'
 import { useContext } from "react";
 import { AuthContext } from "./App";
-import HeaderUserAccInfo from "./HeaderUserAccInfo";
 import HeaderSignIn from "./HeaderSignIn";
-import UserAccInfo from "./UserPlanInfo";
+import UserPlanInfo from "./UserPlanInfo";
+import HeaderUserInfo from './HeaderUserInfo';
 
-function HeaderAuthCheck() {
+export function HeaderAuthCheckDesktop() {
     const authInfo = useContext(AuthContext);
     const loggedIn = !!authInfo?.accessToken;
 
-    if(loggedIn) {
-        return (
-            <div className="HeaderAuthCheck">
-                <UserAccInfo/>
-                <HeaderUserAccInfo isMobile={window.screen.width <= 425? true : false}/>
-            </div>
-        )
-    } else {
-        return (
-            <div className="HeaderAuthCheck">
-                <HeaderSignIn isMobile={window.screen.width <= 425? true : false}/>
-            </div>
-        )
-    }
+    return (
+        <div className="HeaderAuthCheck">
+            {loggedIn ?
+                <>
+                    <UserPlanInfo/>
+                    <HeaderUserInfo isMobile={false}/>
+                </>
+                : <HeaderSignIn isMobile={false}/>
+            }
+        </div>
+    )
 }
 
-export default HeaderAuthCheck;
+export function HeaderAuthCheckMobile({isMenuOpened} : {isMenuOpened: boolean}) {
+    const authInfo = useContext(AuthContext);
+    const loggedIn = !!authInfo?.accessToken;
+
+    return (
+        <div className="HeaderAuthCheck">
+            {loggedIn ?
+                <>
+                    {!isMenuOpened && <UserPlanInfo/>}
+                    {isMenuOpened && <HeaderUserInfo isMobile={true}/>}
+                </>
+                : <>
+                    {isMenuOpened && <HeaderSignIn isMobile={true}/>}
+                </>
+            }
+        </div>
+    )
+}

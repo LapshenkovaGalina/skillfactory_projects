@@ -38,7 +38,7 @@ function ArticlesSearch() {
     const [inBusinessNews, setInBusinessNews] = useState(false);
     const [onlyMainRole, setOnlyMainRole] = useState(false);
     const [onlyWithRiskFactors, setOnlyWithRiskFactors] = useState(false);
-    const [excludeTechNews, setExcludeTechNews] = useState(true);
+    const [includeTechNews, setIncludeTechNews] = useState(false);
     const [excludeAnnouncements, setIncludeAnnouncements] = useState(true);
     const [excludeDigests, setIncludeDigests] = useState(true);
 
@@ -115,7 +115,7 @@ function ArticlesSearch() {
 
     const onSubmitHandler = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        navigate(`/searchResults/${limit}/${startDateJSON}/${endDateJSON}/${INN}/${tonality}/${maxFullness}/${inBusinessNews}/${onlyMainRole}/${onlyWithRiskFactors}/${excludeTechNews}/${excludeAnnouncements}/${excludeDigests}`);
+        navigate(`/searchResults/${limit}/${startDateJSON}/${endDateJSON}/${INN}/${tonality}/${maxFullness}/${inBusinessNews}/${onlyMainRole}/${onlyWithRiskFactors}/${!includeTechNews}/${excludeAnnouncements}/${excludeDigests}`);
     }
 
     const btnDisable = () => {
@@ -162,19 +162,26 @@ function ArticlesSearch() {
             <div className="ArticlesSearch__rightBlock">
                 <div className='rightBlock__checkboxes'>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setMaxFullness(event.target.checked)}></input><span>Признак максимальной полноты</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setMaxFullness(event.target.checked)}></input><span>Признак максимальной полноты</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setInBusinessNews(event.target.checked)}></input><span>Упоминания в бизнес-контексте</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setInBusinessNews(event.target.checked)}></input><span>Упоминания в бизнес-контексте</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setOnlyMainRole(event.target.checked)}></input><span>Главная роль в публикации</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setOnlyMainRole(event.target.checked)}></input><span>Главная роль в публикации</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setOnlyWithRiskFactors(event.target.checked)}></input><span>Публикации только с риск-факторами</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setOnlyWithRiskFactors(event.target.checked)}></input><span>Публикации только с риск-факторами</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => {setExcludeTechNews(event.target.checked); console.log('TECH: ', excludeTechNews);}}></input><span>Включать технические новости рынков</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setIncludeTechNews(event.target.checked)}></input><span>Включать технические новости рынков</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input><span>Включать анонсы и календари</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input><span>Включать анонсы и календари</span></label>
                     <label className='customCheckbox'>
-                        <input type='checkbox' onChange={(event) => setIncludeDigests(event.target.checked)}></input><span>Включать сводки новостей</span></label>
+                        <input type='checkbox'
+                            onChange={(event) => setIncludeDigests(event.target.checked)}></input><span>Включать сводки новостей</span></label>
                 </div>
                 <div className='searchBtnBlock'>
                     <button form='form_articlesSearch'

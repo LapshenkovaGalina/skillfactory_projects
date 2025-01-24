@@ -3,16 +3,16 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './App';
 import Loader from './Loader';
 
-function UserAccInfo() {
+function UserPlanInfo() {
 
-    const [ companiesNum, setCompaniesNum ] = useState(0);
-    const [ companiesLimit, setCompaniesLimit ] = useState(0);
-    const [ userAccInfoLoaded, setUserAccInfoLoaded ] = useState(false);
+    const [companiesNum, setCompaniesNum] = useState(0);
+    const [companiesLimit, setCompaniesLimit] = useState(0);
+    const [userAccInfoLoaded, setUserPlanInfoLoaded] = useState(false);
 
     const authInfo = useContext(AuthContext);
     const accessToken = authInfo?.accessToken;
 
-    async function getUserAccInfo() {
+    async function getUserPlanInfo() {
         try {
             let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/info', {
                 method: 'GET',
@@ -30,7 +30,7 @@ function UserAccInfo() {
             } else {
                 setCompaniesNum(result.eventFiltersInfo.usedCompanyCount);
                 setCompaniesLimit(result.eventFiltersInfo.companyLimit);
-                setUserAccInfoLoaded(true);
+                setUserPlanInfoLoaded(true);
             }
 
         } catch (e) {
@@ -39,31 +39,18 @@ function UserAccInfo() {
     }
 
     useEffect(() => {
-        getUserAccInfo();
+        getUserPlanInfo();
     }, []);
 
-    // return (
-    //     <div className="UserAccInfo">
-    //             <div className='UserAccInfo__companiesNum'>
-    //                 <span>Использовано компаний</span>
-    //                 <span className='companiesNum__num'>{companiesNum}</span>
-    //             </div>
-    //             <div className='UserAccInfo__companiesLimit'>
-    //                 <span>Лимит по компаниям</span>
-    //                 <span className='companiesLimit__num'>{companiesLimit}</span>
-    //             </div>
-    //     </div>
-    // )
-
     return (
-        <div className="UserAccInfo">
-            {userAccInfoLoaded?
-                <div className='UserAccInfo__content'>
-                    <div className='UserAccInfo__companiesNum'>
+        <div className="UserPlanInfo">
+            {userAccInfoLoaded ?
+                <div className='UserPlanInfo__content'>
+                    <div className='UserPlanInfo__companiesNum'>
                         <span>Использовано компаний</span>
                         <span className='companiesNum__num'>{companiesNum}</span>
                     </div>
-                    <div className='UserAccInfo__companiesLimit'>
+                    <div className='UserPlanInfo__companiesLimit'>
                         <span>Лимит по компаниям</span>
                         <span className='companiesLimit__num'>{companiesLimit}</span>
                     </div>
@@ -74,4 +61,4 @@ function UserAccInfo() {
 
 }
 
-export default UserAccInfo;
+export default UserPlanInfo;

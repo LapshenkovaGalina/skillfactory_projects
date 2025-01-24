@@ -1,7 +1,7 @@
 import './HeaderSignIn.css'
 import './HeaderSignInMobile.css'
 
-function HeaderSignIn({isMobile} : {isMobile: boolean}) {
+function HeaderSignIn({isMobile} : {isMobile?: boolean}) {
     let className = '';
     if (isMobile) {
         className = 'Mobile'

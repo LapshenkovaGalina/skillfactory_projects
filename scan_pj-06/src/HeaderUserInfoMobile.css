@@ -1,0 +1,39 @@
+.HeaderUserInfoMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.HeaderUserInfoMobile__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    column-gap: 10px;
+
+    height: min-content;
+}
+
+.HeaderUserInfoMobile .info__text {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+
+    row-gap: 1rem;
+
+    white-space: nowrap;
+
+    color: #7CE3E1;
+}
+
+.HeaderUserInfoMobile .info__text a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.HeaderUserInfoMobile .info__avatar {
+    width: 40px;
+    height: auto;
+
+    border-radius: 50%;
+}
