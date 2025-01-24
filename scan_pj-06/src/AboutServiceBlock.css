@@ -1,41 +1,16 @@
-@media screen and (min-width: 1025px) {
-    .textPart__h1 {
-        font-size: 56px;
-        line-height: 72px;
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .textPart__h1 {
-        font-size: 40px;
-        line-height: 48px;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 426px) {
-    .textPart__h1 {
+@media screen and (max-width: 425px) {
+    .AboutServiceBlock__headerBlock .headerBlock__h1 {
         font-size: 30px;
         line-height: 38px;
     }
-}
 
-
-@media screen and (max-width: 425px) {
     .AboutServiceBlock {
         flex-direction: column;
     }
 
-    .AboutServiceBlock__textPart,
+    .AboutServiceBlock__headerBlock,
     .AboutServiceBlock__imgWrapper {
         width: 100%;
-    }
-
-    .textPart__p {
-        font-size: 20px;
-    }
-
-    .textPart__h1 {
-        margin-bottom: 2vh;
     }
 
     .dataRequestBtn {
@@ -48,23 +23,20 @@
 }
 
 @media screen and (min-width: 426px) {
+    .AboutServiceBlock__headerBlock .headerBlock__h1 {
+        font-size: calc(40px + 40 * (100vw - 426px) / 2240);
+        line-height: calc(38px + 78 * (100vw - 426px) / 2240);
+    }
+    
     .AboutServiceBlock {
         flex-direction: row;
         align-items: start;
     }
 
-    .AboutServiceBlock__textPart {
+    .AboutServiceBlock__headerBlock {
         width: 60%;
         margin-right: -8%;
         z-index: 1;
-    }
-
-    .textPart__h1 {
-        margin-bottom: 2vh;
-    }
-
-    .textPart__p {
-        font-size: 18px;
     }
 
     .AboutServiceBlock__imgWrapper {
@@ -84,19 +56,7 @@
     width: 100%;
 }
 
-.textPart__h1 {
-    text-transform: uppercase;
-
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
-}
-
-.textPart__p {
-    font-weight: 400;
-    width: 90%;
-}
-
-.AboutServiceBlock__textPart {
+.AboutServiceBlock__headerBlock {
     box-sizing: border-box;
 }
 

@@ -24,8 +24,8 @@ function ArticlesSearch() {
     const [errorMsg1, setErrorMsg1] = useState<string | null>(null);
     const [errorMsg2, setErrorMsg2] = useState<string | null>(null);
 
-    const [firstRangeNum, setFirstRangeNum] = useState(0);
-    const [secondRangeNum, setSecondRangeNum] = useState(0);
+    const [firstRangeNum, setFirstRangeNum] = useState(new Date().getTime());
+    const [secondRangeNum, setSecondRangeNum] = useState(new Date().getTime());
 
     const [INN, setINN] = useState('');
     const [tonality, setTonality] = useState<ArticleTonality>('positive');
@@ -73,13 +73,15 @@ function ArticlesSearch() {
 
     useEffect(() => {
         const currTime = new Date().getTime();
+        const endDate = new Date(secondRangeNum).setHours(0);
+        const startDate = new Date(firstRangeNum).setHours(0);
 
-        if (firstRangeNum > currTime || secondRangeNum > currTime) {
+        if (startDate > currTime || endDate > currTime) {
             setErrorMsg2('Даты не должны быть в будущем времени')
         } else {
-            if (firstRangeNum < secondRangeNum || firstRangeNum === secondRangeNum) {
+            if (startDate < endDate || startDate === endDate) {
                 setErrorMsg2(null);
-            } else if (firstRangeNum > secondRangeNum) {
+            } else if (startDate > endDate) {
                 setErrorMsg2('Дата начала не может быть позже даты конца');
             }
         }

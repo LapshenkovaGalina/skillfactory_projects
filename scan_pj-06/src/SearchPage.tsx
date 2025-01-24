@@ -14,7 +14,7 @@ function SearchPage() {
                         <div>
                             <h1 className="headerBlock__h1">Найдите необходимые<br></br>
                             данные в пару кликов.</h1>
-                        <p>Задайте параметры поиска.<br></br>
+                        <p className="headerBlock__p">Задайте параметры поиска.<br></br>
                             Чем больше заполните, тем точнее поиск</p>
                         </div>
                         <div>

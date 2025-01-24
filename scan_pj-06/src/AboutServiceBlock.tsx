@@ -1,4 +1,5 @@
 import './AboutServiceBlock.css';
+import './headerBlock.css';
 import './button.css';
 import { useContext } from 'react';
 import { AuthContext } from './App';
@@ -14,12 +15,12 @@ function AboutServiceBlock() {
 
     return (
         <div className="AboutServiceBlock">
-            <div className="AboutServiceBlock__textPart">
-                <h1 className='textPart__h1'>сервис по поиску <br></br>
+            <div className="AboutServiceBlock__headerBlock">
+                <h1 className='headerBlock__h1'>сервис по поиску <br></br>
                 публикаций <br></br>
                 компании <br></br>
                 по его ИНН</h1>
-                <p className='textPart__p'>Комплексный анализ публикаций, получение данных <br></br>
+                <p className='headerBlock__p'>Комплексный анализ публикаций, получение данных <br></br>
                 в формате PDF на электронную почту.</p>
                 {loggedIn && <button className="commonTypeBtn dataRequestBtn"
                 onClick={() => navigate('/articlesSearch')}>Запросить данные</button>}

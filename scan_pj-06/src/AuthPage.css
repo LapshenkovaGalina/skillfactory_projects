@@ -1,10 +1,5 @@
 @media screen and (min-width: 1025px) {
-  .leftBlock__h1 {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  .leftBlock__img {
+  .AuthPage__img {
     width: 55vh;
     margin-left: 8vw;
   }
@@ -16,15 +11,10 @@
   .AuthPage__decorImg {
     margin: -55px -25px auto 0px;
   }
-}
+} 
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-  .leftBlock__h1 {
-    font-size: 40px;
-    line-height: 48px;
-  }
-
-  .leftBlock__img {
+  .AuthPage__img {
     width: 25vh;
     margin-left: 4vw;
   }
@@ -39,12 +29,7 @@
 }
 
 @media screen and (max-width: 768px) and (min-width: 426px) {
-  .leftBlock__h1 {
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .leftBlock__img {
+  .AuthPage__img {
     width: 25vh;
     margin-left: 4vw;
   }
@@ -63,12 +48,7 @@
     flex-direction: column;
   }
 
-  .leftBlock__h1 {
-    font-size: 22px;
-    line-height: 26px;
-  }
-
-  .leftBlock__img {
+  .AuthPage__img {
     display: none;
   }
 
@@ -90,36 +70,29 @@
     flex-direction: row;
   }
 
-  .AuthPage__leftBlock {
+  .AuthPage__headerBlock {
     margin-right: 5vw;
   }
 
-  .leftBlock__img {
+  .AuthPage__img {
     margin-top: 1.5vh;
   }
 }
 
-.AuthPage {
+.AuthPage,
+.AuthPage__main {
   display: flex;
   flex-grow: 1;
 }
 
 .AuthPage__main {
-  display: flex;
   align-items: center;
   justify-content: start;
-  flex-grow: 1;
 }
 
-.AuthPage__leftBlock {
+.AuthPage__headerBlock {
   display: flex;
   flex-direction: column;
-}
-
-.leftBlock__h1 {
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 900;
 }
 
 .AuthPage__decorImg {

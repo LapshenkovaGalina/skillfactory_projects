@@ -1,4 +1,5 @@
 import './ResultsPage.css'
+import './headerBlock.css'
 import Histogram from "./Histogram";
 import { AuthContext } from "./App";
 import { useNavigate, useParams } from "react-router-dom";

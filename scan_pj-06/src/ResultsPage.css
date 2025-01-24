@@ -1,34 +1,10 @@
 @media screen and (min-width: 1025px) {
-    .headerBlock__h1 {
-        font-size: 40px;
-        line-height: 48px; 
-      }
-
       .headerBlock__textPart {
         margin-top: 2rem;
       }
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .headerBlock__h1 {
-        font-size: 40px;
-        line-height: 48px;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 426px) {
-    .headerBlock__h1 {
-        font-size: 30px;
-        line-height: 38px;
-    }
-}
-
 @media screen and (max-width: 425px) {
-    .headerBlock__h1 {
-        font-size: 30px;
-        line-height: 38px;
-    }
-
     .ResultsPage__headerBlock {
         flex-direction: column;
         align-items: center;
@@ -60,10 +36,6 @@
         align-items: start;
     }
 
-    .headerBlock__h1 {
-        margin-bottom: 3rem;
-    }
-
     .headerBlock__imgWrapper {
         width: 45%;
         height: auto;
@@ -89,19 +61,6 @@
 
 .ResultsPage__headerBlock.invisible {
     display: none;
-}
-
-.headerBlock__h1 {
-    text-transform: uppercase;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
-
-    margin-bottom: 2rem;
-}
-
-.headerBlock__p {
-    font-weight: 400;
-    font-size: calc(18px + 14 * (100vw - 320px) / 2240);
 }
 
 .ResultsPage__histogrammBlock {
