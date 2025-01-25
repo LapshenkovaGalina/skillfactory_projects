@@ -34,7 +34,7 @@ function Slide({ slideData }: { slideData: HandledHistogramReqData }) {
     )
 }
 
-const HistogramSlider = Slider<HandledHistogramReqData>
+const HistogramSlider = Slider<HandledHistogramReqData>;
 
 function Histogram({ sliderDataArr }: HistogramViewProps) {
     const [firstSlideIndex, setFirstSlideIndex] = useState<number>(0);

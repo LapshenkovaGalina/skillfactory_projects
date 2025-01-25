@@ -2,7 +2,7 @@ import './Slider.css';
 
 import { useState } from 'react';
 import Slide, { SlideDataType } from './Slide';
-import { Slider as SliderComp } from '../Slider/Slider'
+import { Slider as SliderComp } from '../Slider/Slider';
 
 const arrowLeft = require('../assets/slider-arrow_left.png');
 const arrowRight = require('../assets/slider-arrow_right.png');

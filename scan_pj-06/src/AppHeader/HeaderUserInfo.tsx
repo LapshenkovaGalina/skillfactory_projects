@@ -1,5 +1,5 @@
-import './HeaderUserInfo.css'
-import './HeaderUserInfoMobile.css'
+import './HeaderUserInfo.css';
+import './HeaderUserInfoMobile.css';
 
 const userAvatar = require('../assets/user-avatar.png');
 

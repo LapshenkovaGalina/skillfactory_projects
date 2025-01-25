@@ -1,14 +1,14 @@
 import './Articles.css';
 import './Article.css';
 
-import Loader from "../Loader";
-import { useEffect, useRef, useState } from "react";
-import { JSONdateToFormatedString } from "./Histogram";
+import Loader from '../Loader';
+import { useEffect, useRef, useState } from 'react';
+import { JSONdateToFormatedString } from './Histogram';
 import { HistogramReqValues, ArticleData, documentRequest, objectSearchRequest } from './requests';
 
 type ArticlesProps = {
     reqValues: HistogramReqValues
-}
+};
 
 const nextStep = 4;
 
@@ -52,7 +52,7 @@ type ArticlesViewProps = {
     numOfArticlesToShow: number,
     ids: string[],
     reqValues: HistogramReqValues
-}
+};
 
 function ArticlesView({ numOfArticlesToShow, ids, reqValues }: ArticlesViewProps) {
 
@@ -61,7 +61,7 @@ function ArticlesView({ numOfArticlesToShow, ids, reqValues }: ArticlesViewProps
 
     return (
         <>
-            <div className="Articles">
+            <div className='Articles'>
                 {articles}
             </div>
         </>
@@ -69,9 +69,9 @@ function ArticlesView({ numOfArticlesToShow, ids, reqValues }: ArticlesViewProps
 }
 
 type ArticleProps = {
-    id: string,// ArticleData
+    id: string, // ArticleData
     accessToken: string
-}
+};
 
 function Article({ accessToken, id }: ArticleProps) {
     const [pubData, setPubData] = useState<ArticleData | null>(null);
@@ -90,11 +90,13 @@ function Article({ accessToken, id }: ArticleProps) {
 
     return pubData
         ? (<ArticleView data={pubData} />)
-        : (<>
-            <div className="Article">
-                {<Loader />}
-            </div>
-        </>)
+        : (
+            <>
+                <div className='Article'>
+                    {<Loader />}
+                </div>
+            </>
+        )
 }
 
 type ArticleViewProps = {
@@ -105,16 +107,16 @@ function ArticleView({ data }: ArticleViewProps) {
     const ref = useRef<HTMLDivElement>(null);
 
     const parser = new DOMParser();
-    const doc = parser.parseFromString(data.ok.content.markup, "application/xhtml+xml");
+    const doc = parser.parseFromString(data.ok.content.markup, 'application/xhtml+xml');
 
-    let text = '';
+    let text = ''
     doc.querySelectorAll('sentence').forEach(e => text += e.textContent);
 
 
-    const result = /img src="(\S+?)"/.exec(text);
+    const result = /img src='(\S+?)'/.exec(text);
 
     const img = result && result[1]
-        ? (<img src={result[1]} className="articleImg"></img>)
+        ? (<img src={result[1]} className='articleImg'></img>)
         : null;
 
     text = text
@@ -125,18 +127,18 @@ function ArticleView({ data }: ArticleViewProps) {
         .replace(/\&gt;/g, '');
 
     return (
-        <div className="Article" ref={ref}>
-            <div className="Article__sourceBlock">
-                <span className="date">{JSONdateToFormatedString(data.ok.issueDate)}</span>
-                <span className="source">{data.ok.source.name}</span>
+        <div className='Article' ref={ref}>
+            <div className='Article__sourceBlock'>
+                <span className='date'>{JSONdateToFormatedString(data.ok.issueDate)}</span>
+                <span className='source'>{data.ok.source.name}</span>
             </div>
-            <div className="title">{data.ok.title.text}</div>
-            <div className="techNewsMarker">{data.ok.attributes.isTechNews ? "технические новости" : null}</div>
+            <div className='title'>{data.ok.title.text}</div>
+            <div className='techNewsMarker'>{data.ok.attributes.isTechNews ? 'технические новости' : null}</div>
             {img}
-            <div className="articleText">{text}</div>
-            <div className="footer">
+            <div className='articleText'>{text}</div>
+            <div className='footer'>
                 <button className='readInTheSourseBtn' onClick={() => window.open(data.ok.url, '_blank')} >Читать в источнике</button>
-                <div className="articleWordsNum">{`${data.ok.attributes.wordCount} слова`}</div>
+                <div className='articleWordsNum'>{`${data.ok.attributes.wordCount} слова`}</div>
             </div>
         </div>
     )

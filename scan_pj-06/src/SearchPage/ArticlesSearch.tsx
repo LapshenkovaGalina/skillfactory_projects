@@ -129,8 +129,8 @@ function ArticlesSearch() {
     }
 
     return (
-        <form id="form_articlesSearch" className='ArticlesSearch' onSubmit={(event) => (onSubmitHandler(event))}>
-            <div className="ArticlesSearch__leftBlock">
+        <form id='form_articlesSearch' className='ArticlesSearch' onSubmit={(event) => (onSubmitHandler(event))}>
+            <div className='ArticlesSearch__leftBlock'>
                 <legend className='leftBlock__legend'>ИНН компании*</legend>
                 <input className={`leftBlock__input input ${errorMsg0 && 'errorMsgInput'}`}
                     placeholder='10 цифр'
@@ -162,7 +162,7 @@ function ArticlesSearch() {
                 </div>
                 {errorMsg2 && <span className='errorMsg2'>{errorMsg2}</span>}
             </div>
-            <div className="ArticlesSearch__rightBlock">
+            <div className='ArticlesSearch__rightBlock'>
                 <div className='rightBlock__checkboxes'>
                     <label className='customCheckbox'>
                         <input type='checkbox'

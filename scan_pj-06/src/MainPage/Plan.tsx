@@ -1,5 +1,5 @@
-import './Plan.css'
-import '../button.css'
+import './Plan.css';
+import '../button.css';
 
 const listItemPointer = require('../assets/list-pointer.png');
 
@@ -14,10 +14,11 @@ export type PlanInfoType = {
     color: string,
     img: any,
     fontColor: string
-}
+};
+
 export type PlanPropsType = {
     planInfo: PlanInfoType
-}
+};
 
 function Plan({ planInfo }: PlanPropsType) {
 

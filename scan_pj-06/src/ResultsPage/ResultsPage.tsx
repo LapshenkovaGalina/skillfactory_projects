@@ -1,17 +1,16 @@
 import './ResultsPage.css';
 import '../headerBlock.css';
 
-
-import Histogram from "./Histogram";
+import Histogram from './Histogram';
 import { Articles } from './Articles';
-import { AuthContext } from "../App";
-import { useNavigate, useParams } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import { histogramRequest, HistogramRespDataType } from "./requests";
+import { AuthContext } from '../App';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useContext, useEffect, useState } from 'react';
+import { histogramRequest, HistogramRespDataType } from './requests';
 
 import resultsPageHeaderBlockImg from '../assets/resultsPage_img.png';
 
-type UseParams = { limit: string, startDateJSON: string, endDateJSON: string, INN: string, tonality: string, maxFullness: string, inBusinessNews: string, onlyMainRole: string, onlyWithRiskFactors: string, excludeTechNews: string, excludeAnnouncements: string, excludeDigests: string }
+type UseParams = { limit: string, startDateJSON: string, endDateJSON: string, INN: string, tonality: string, maxFullness: string, inBusinessNews: string, onlyMainRole: string, onlyWithRiskFactors: string, excludeTechNews: string, excludeAnnouncements: string, excludeDigests: string };
 
 export type HandledHistogramReqData = {
     date: string,
@@ -98,20 +97,20 @@ function ResultsPage() {
     }
 
     return (
-        <div className="ResultsPage">
-            <main className="ResultsPage___main AppMain">
+        <div className='ResultsPage'>
+            <main className='ResultsPage___main AppMain'>
                 <div className={`ResultsPage__headerBlock ${reqHandledData.length > 0 ? 'invisible' : ''}`}>
-                    <div className="headerBlock__textPart">
+                    <div className='headerBlock__textPart'>
                         <h1 className='headerBlock__h1'>Ищем. Скоро<br></br>
                             будут результаты</h1>
                         <p className='headerBlock__p'>Поиск может занять некоторое время,<br></br>
                             просим сохранять терпение.</p>
                     </div>
-                    <div className="headerBlock__imgWrapper">
-                        <img className="headerBlock__image" src={resultsPageHeaderBlockImg} alt=''></img>
+                    <div className='headerBlock__imgWrapper'>
+                        <img className='headerBlock__image' src={resultsPageHeaderBlockImg} alt=''></img>
                     </div>
                 </div>
-                <div className="ResultsPage__histogrammBlock">
+                <div className='ResultsPage__histogrammBlock'>
                     <h2 className='ResultsPage__h2'>Общая сводка</h2>
                     <div className='histogrammBlock__spanBlock'>
                         <span>Найдено </span>
@@ -121,7 +120,7 @@ function ResultsPage() {
                     </div>
                     <Histogram sliderDataArr={reqHandledData} />
                 </div>
-                <div className="ResultsPage__articlesBlock">
+                <div className='ResultsPage__articlesBlock'>
                     <h2 className='ResultsPage__h2'>Список документов</h2>
                     <Articles reqValues={reqValues} />
                 </div>

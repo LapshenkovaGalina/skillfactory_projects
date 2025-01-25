@@ -27,7 +27,7 @@ function UserPlanInfo() {
             let result = await response.json();
 
             if (!result.eventFiltersInfo) {
-                throw new Error("eventFiltersInfo is not found");
+                throw new Error('eventFiltersInfo is not found');
             } else {
                 setCompaniesNum(result.eventFiltersInfo.usedCompanyCount);
                 setCompaniesLimit(result.eventFiltersInfo.companyLimit);
@@ -44,7 +44,7 @@ function UserPlanInfo() {
     }, []);
 
     return (
-        <div className="UserPlanInfo">
+        <div className='UserPlanInfo'>
             {userAccInfoLoaded ?
                 <div className='UserPlanInfo__content'>
                     <div className='UserPlanInfo__companiesNum'>

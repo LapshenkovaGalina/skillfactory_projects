@@ -1,9 +1,9 @@
-import beginnerPlanImg from "../assets/beginner-plan_img.png"
-import proPlanImg from "../assets/pro-plan_img.png"
-import businessPlanImg from "../assets/business-plan_img.png"
-import mainPageSlide0 from "../assets/mainPageSlide0_img.png"
-import mainPageSlide1 from "../assets/mainPageSlide1_img.png"
-import mainPageSlide2 from "../assets/mainPageSlide2_img.png"
+import beginnerPlanImg from '../assets/beginner-plan_img.png'
+import proPlanImg from '../assets/pro-plan_img.png'
+import businessPlanImg from '../assets/business-plan_img.png'
+import mainPageSlide0 from '../assets/mainPageSlide0_img.png'
+import mainPageSlide1 from '../assets/mainPageSlide1_img.png'
+import mainPageSlide2 from '../assets/mainPageSlide2_img.png'
 
 export const mainPageSlides = [
     {

@@ -1,5 +1,5 @@
-import './Auth.css'
-import '../button.css'
+import './Auth.css';
+import '../button.css';
 
 import { AuthContext } from '../App';
 import { useContext, useState } from 'react';
@@ -46,7 +46,7 @@ function Auth() {
 
             if (!result.accessToken) {
                 if (result.message) setAuthErrorMsg(result.message);
-                else throw new Error("mes");
+                else throw new Error('mes');
             } else {
                 setAuthErrorMsg('');
                 authInfo?.setAccessToken(result.accessToken);
@@ -70,7 +70,7 @@ function Auth() {
                 <div className='head__block'><a href='/auth'>Зарегистрироваться</a></div>
             </div>
             {authErrorMsg !== '' && <span className='authErrorMsg'>{authErrorMsg}</span>}
-            <form className="Auth__form" onSubmit={authAttempt}>
+            <form className='Auth__form' onSubmit={authAttempt}>
                 <legend className='form__legend'>Логин или номер телефона:</legend>
                 <input className='form__input' value={login} onChange={onChange}></input>
                 <legend className='form__legend'>Пароль:</legend>

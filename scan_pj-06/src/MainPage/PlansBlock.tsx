@@ -1,4 +1,4 @@
-import './PlansBlock.css'
+import './PlansBlock.css';
 import Plan, { PlanInfoType } from './Plan';
 
 function PlansBlock({ plans }: { plans: Array<PlanInfoType> }) {

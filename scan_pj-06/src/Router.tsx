@@ -1,14 +1,14 @@
-import { AuthContext } from "./App";
-import MainPage from "./MainPage/MainPage";
-import AuthPage from "./AuthPage/AuthPage";
-import SearchPage from "./SearchPage/SearchPage";
-import ResultsPage from "./ResultsPage/ResultsPage";
-import { useContext, useEffect } from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { AuthContext } from './App';
+import MainPage from './MainPage/MainPage';
+import AuthPage from './AuthPage/AuthPage';
+import SearchPage from './SearchPage/SearchPage';
+import ResultsPage from './ResultsPage/ResultsPage';
+import { useContext, useEffect } from 'react';
+import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
 function GoToAuth() {
     const navigate = useNavigate();
-    useEffect(() => void navigate('/'))
+    useEffect(() => void navigate('/'));
     return (<></>)
 }
 

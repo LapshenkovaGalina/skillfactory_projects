@@ -1,4 +1,4 @@
-import './Loader.css'
+import './Loader.css';
 import loaderImg from './assets/loader_img.png';
 
 function Loader() {

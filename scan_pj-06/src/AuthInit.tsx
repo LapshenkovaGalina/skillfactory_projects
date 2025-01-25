@@ -1,5 +1,5 @@
-import { AuthContext } from "./App";
-import { useContext, useEffect } from "react";
+import { AuthContext } from './App';
+import { useContext, useEffect } from 'react';
 
 function AuthInit() {
     const authInfo = useContext(AuthContext);

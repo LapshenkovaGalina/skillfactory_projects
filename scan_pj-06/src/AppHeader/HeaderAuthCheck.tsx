@@ -1,9 +1,9 @@
-import './HeaderAuthCheck.css'
+import './HeaderAuthCheck.css';
 
-import { useContext } from "react";
-import { AuthContext } from "../App";
-import HeaderSignIn from "./HeaderSignIn";
-import UserPlanInfo from "./UserPlanInfo";
+import { useContext } from 'react';
+import { AuthContext } from '../App';
+import HeaderSignIn from './HeaderSignIn';
+import UserPlanInfo from './UserPlanInfo';
 import HeaderUserInfo from './HeaderUserInfo';
 
 export function HeaderAuthCheckDesktop() {
@@ -11,7 +11,7 @@ export function HeaderAuthCheckDesktop() {
     const loggedIn = !!authInfo?.accessToken;
 
     return (
-        <div className="HeaderAuthCheck">
+        <div className='HeaderAuthCheck'>
             {loggedIn ?
                 <>
                     <UserPlanInfo />
@@ -28,7 +28,7 @@ export function HeaderAuthCheckMobile({ isMenuOpened }: { isMenuOpened: boolean 
     const loggedIn = !!authInfo?.accessToken;
 
     return (
-        <div className="HeaderAuthCheck">
+        <div className='HeaderAuthCheck'>
             {loggedIn ?
                 <>
                     {!isMenuOpened && <UserPlanInfo />}

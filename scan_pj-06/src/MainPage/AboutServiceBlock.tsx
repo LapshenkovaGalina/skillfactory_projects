@@ -15,19 +15,19 @@ function AboutServiceBlock() {
     const navigate = useNavigate();
 
     return (
-        <div className="AboutServiceBlock">
-            <div className="AboutServiceBlock__headerBlock">
+        <div className='AboutServiceBlock'>
+            <div className='AboutServiceBlock__headerBlock'>
                 <h1 className='headerBlock__h1'>сервис по поиску <br></br>
                     публикаций <br></br>
                     компании <br></br>
                     по его ИНН</h1>
                 <p className='headerBlock__p'>Комплексный анализ публикаций, получение данных <br></br>
                     в формате PDF на электронную почту.</p>
-                {loggedIn && <button className="commonTypeBtn dataRequestBtn"
+                {loggedIn && <button className='commonTypeBtn dataRequestBtn'
                     onClick={() => navigate('/articlesSearch')}>Запросить данные</button>}
             </div>
-            <div className="AboutServiceBlock__imgWrapper">
-                <img className="AboutServiceBlock__img" src={aboutServiceBlockImage} alt=''></img>
+            <div className='AboutServiceBlock__imgWrapper'>
+                <img className='AboutServiceBlock__img' src={aboutServiceBlockImage} alt=''></img>
             </div>
         </div>
     )

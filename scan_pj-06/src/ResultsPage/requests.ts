@@ -38,8 +38,8 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
             },
             body: JSON.stringify({
                 limit: requestValues.limit,
-                sortType: "sourceInfluence",
-                sortDirectionType: "desc",
+                sortType: 'sourceInfluence',
+                sortDirectionType: 'desc',
                 intervalType: 'month',
                 histogramTypes: [
                     'totalDocuments',
@@ -107,7 +107,7 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
         let result = await response.json();
 
         if (!result.data) {
-            console.debug("result", result);
+            console.debug('result', result);
             throw new Error('data is not found');
         } else {
             return result.data;
@@ -127,7 +127,7 @@ export type ArticleItem = {
 export type ArticleObjects = {
     items: ArticleItem[],
     mappings: [
-        inn: "string",
+        inn: 'string',
         entityIds: number[]
     ]
 }
@@ -143,8 +143,8 @@ export async function objectSearchRequest(requestValues: HistogramReqValues): Pr
             },
             body: JSON.stringify({
                 limit: requestValues.limit,
-                sortType: "sourceInfluence",
-                sortDirectionType: "desc",
+                sortType: 'sourceInfluence',
+                sortDirectionType: 'desc',
                 intervalType: 'month',
                 histogramTypes: [
                     'totalDocuments',
