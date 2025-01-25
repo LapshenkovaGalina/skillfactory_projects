@@ -1,14 +1,14 @@
 .HeaderNavMobile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    width: 100%;
+  width: 100%;
 
-    row-gap: 1.5rem;
-  }
+  row-gap: 1.5rem;
+}
 
-  .HeaderNavMobile a {
-    text-decoration: none;
-    color: #FFFFFF;
-  }
+.HeaderNavMobile a {
+  text-decoration: none;
+  color: #FFFFFF;
+}

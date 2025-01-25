@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react"
 import { AuthContext } from "./App";
+import { useContext, useEffect } from "react";
 
 function AuthInit() {
     const authInfo = useContext(AuthContext);
@@ -9,13 +9,13 @@ function AuthInit() {
         const expireDate = new Date(storageValue);
         const currTime = new Date();
 
-        if(expireDate.getTime() > currTime.getTime()){
-          authInfo?.setAccessToken(localStorage.getItem('accessToken') || null);
+        if (expireDate.getTime() > currTime.getTime()) {
+            authInfo?.setAccessToken(localStorage.getItem('accessToken') || null);
         } else {
             console.log('Auth is not ok!');
         }
-    },[]);
-            
+    }, []);
+
     return (
         <div></div>
     )

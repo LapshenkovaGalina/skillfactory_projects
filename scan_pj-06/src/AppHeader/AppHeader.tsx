@@ -1,7 +1,8 @@
 import './AppHeader.css';
+
 import { useState } from 'react';
-import { HeaderAuthCheckDesktop, HeaderAuthCheckMobile } from './HeaderAuthCheck';
 import HeaderNav from './HeaderNav';
+import { HeaderAuthCheckDesktop, HeaderAuthCheckMobile } from './HeaderAuthCheck';
 
 const SCANlogo = require('../assets/SCAN-logo.png');
 const MobileMenuSCANlogo = require('../assets/SCAN-logo_footer.png');
@@ -14,7 +15,7 @@ function AppHeaderDesktop() {
         <header className='AppHeader'>
             <a href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img></a>
             <div className='AppHeader__rightBlock'>
-                <HeaderNav isMobile={false}/>
+                <HeaderNav isMobile={false} />
                 <HeaderAuthCheckDesktop />
             </div>
         </header>
@@ -27,7 +28,7 @@ function AppHeader() {
 
     if (isMobile) {
         return <AppHeaderMobile />
-    }  else {
+    } else {
         return <AppHeaderDesktop />
     }
 }
@@ -42,14 +43,14 @@ function AppHeaderMobile() {
     }
 
     return !opened ? (
-            <header className='AppHeader'>
-                <a className='AppHeader__mainPageRef' href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img></a>
-                <div className='AppHeader__rightBlock'>
-                    <HeaderAuthCheckMobile isMenuOpened={false}/>
-                </div>
-                <img className='AppHeader__burgerBtn' onClick={toggleOpened} src={burgerMenuImg} alt='MENU'></img>
-            </header>
-        )
+        <header className='AppHeader'>
+            <a className='AppHeader__mainPageRef' href=''><img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img></a>
+            <div className='AppHeader__rightBlock'>
+                <HeaderAuthCheckMobile isMenuOpened={false} />
+            </div>
+            <img className='AppHeader__burgerBtn' onClick={toggleOpened} src={burgerMenuImg} alt='MENU'></img>
+        </header>
+    )
         : (
             <header className='AppHeader burgerMenuOpened'>
                 <div className='AppHeader__burgerMenu'>
@@ -58,7 +59,7 @@ function AppHeaderMobile() {
                         <img className='burgerMenu__burgerMenuExit' onClick={toggleOpened} src={burgerMenuExitImg} alt='EXIT'></img>
                     </div>
                     <HeaderNav isMobile={true} />
-                    <HeaderAuthCheckMobile isMenuOpened={true} /> 
+                    <HeaderAuthCheckMobile isMenuOpened={true} />
                 </div>
             </header>
         )

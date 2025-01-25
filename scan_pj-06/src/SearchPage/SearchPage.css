@@ -16,7 +16,7 @@
   .smallImg0 {
     width: 91px;
   }
-} 
+}
 
 @media screen and (max-width: 1024px) and (min-width: 426px) {
   .headerBlock__img {
@@ -31,7 +31,7 @@
 @media screen and (max-width: 425px) {
   .headerBlock__img {
     width: 58px;
-  }  
+  }
 }
 
 @media screen and (max-width: 1025px) {

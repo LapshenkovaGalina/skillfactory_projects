@@ -1,9 +1,10 @@
 import './ArticlesSearch.css';
 import './checkbox.css';
 import '../button.css';
-import { FormEvent, useEffect, useState } from 'react';
+
 import validateInn from './validateInn';
 import { useNavigate } from 'react-router-dom';
+import { FormEvent, useEffect, useState } from 'react';
 
 type ArticleTonality = 'positive' | 'negative' | 'any';
 
@@ -12,7 +13,7 @@ const articleTonalityToRus = (tonality: ArticleTonality): string => {
         case 'positive': return 'Позитивная';
         case 'negative': return 'Негативная';
         case 'any': return 'Любая';
-    }
+    };
 }
 
 const articleTonalitys: ArticleTonality[] = ['positive', 'negative', 'any'];
@@ -168,22 +169,34 @@ function ArticlesSearch() {
                             onChange={(event) => setMaxFullness(event.target.checked)}></input><span>Признак максимальной полноты</span></label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setInBusinessNews(event.target.checked)}></input><span>Упоминания в бизнес-контексте</span></label>
+                            onChange={(event) => setInBusinessNews(event.target.checked)}></input>
+                        <span>Упоминания в бизнес-контексте</span>
+                    </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setOnlyMainRole(event.target.checked)}></input><span>Главная роль в публикации</span></label>
+                            onChange={(event) => setOnlyMainRole(event.target.checked)}></input>
+                        <span>Главная роль в публикации</span>
+                    </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setOnlyWithRiskFactors(event.target.checked)}></input><span>Публикации только с риск-факторами</span></label>
+                            onChange={(event) => setOnlyWithRiskFactors(event.target.checked)}></input>
+                        <span>Публикации только с риск-факторами</span>
+                    </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeTechNews(event.target.checked)}></input><span>Включать технические новости рынков</span></label>
+                            onChange={(event) => setIncludeTechNews(event.target.checked)}></input>
+                        <span>Включать технические новости рынков</span>
+                    </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input><span>Включать анонсы и календари</span></label>
+                            onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input>
+                        <span>Включать анонсы и календари</span>
+                    </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeDigests(event.target.checked)}></input><span>Включать сводки новостей</span></label>
+                            onChange={(event) => setIncludeDigests(event.target.checked)}></input>
+                        <span>Включать сводки новостей</span>
+                    </label>
                 </div>
                 <div className='searchBtnBlock'>
                     <button form='form_articlesSearch'

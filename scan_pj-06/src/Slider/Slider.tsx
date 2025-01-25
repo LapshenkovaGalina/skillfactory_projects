@@ -19,10 +19,13 @@ export function Slider<SlideData>({
 
         const data = slidesData[index];
         const slide = (<SlideComponent slideData={data} key={i} />);
+
         slides.push(slide);
     }
 
-    return (<>
-        {slides}
-    </>)
+    return (
+        <>
+            {slides}
+        </>
+    )
 }

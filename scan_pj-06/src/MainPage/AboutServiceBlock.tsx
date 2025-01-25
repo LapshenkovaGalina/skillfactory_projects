@@ -1,11 +1,12 @@
 import './AboutServiceBlock.css';
 import '../headerBlock.css';
 import '../button.css';
+
 import { useContext } from 'react';
 import { AuthContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
-const AboutServiceBlockImage = require('../assets/aboutServiceBlock-img.png');
+const aboutServiceBlockImage = require('../assets/aboutServiceBlock-img.png');
 
 function AboutServiceBlock() {
     const authInfo = useContext(AuthContext);
@@ -17,16 +18,16 @@ function AboutServiceBlock() {
         <div className="AboutServiceBlock">
             <div className="AboutServiceBlock__headerBlock">
                 <h1 className='headerBlock__h1'>сервис по поиску <br></br>
-                публикаций <br></br>
-                компании <br></br>
-                по его ИНН</h1>
+                    публикаций <br></br>
+                    компании <br></br>
+                    по его ИНН</h1>
                 <p className='headerBlock__p'>Комплексный анализ публикаций, получение данных <br></br>
-                в формате PDF на электронную почту.</p>
+                    в формате PDF на электронную почту.</p>
                 {loggedIn && <button className="commonTypeBtn dataRequestBtn"
-                onClick={() => navigate('/articlesSearch')}>Запросить данные</button>}
+                    onClick={() => navigate('/articlesSearch')}>Запросить данные</button>}
             </div>
             <div className="AboutServiceBlock__imgWrapper">
-                <img className="AboutServiceBlock__img" src={AboutServiceBlockImage} alt=''></img>
+                <img className="AboutServiceBlock__img" src={aboutServiceBlockImage} alt=''></img>
             </div>
         </div>
     )

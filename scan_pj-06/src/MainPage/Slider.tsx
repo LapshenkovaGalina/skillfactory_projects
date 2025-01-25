@@ -1,6 +1,7 @@
 import './Slider.css';
-import Slide, { SlideDataType } from './Slide';
+
 import { useState } from 'react';
+import Slide, { SlideDataType } from './Slide';
 import { Slider as SliderComp } from '../Slider/Slider'
 
 const arrowLeft = require('../assets/slider-arrow_left.png');

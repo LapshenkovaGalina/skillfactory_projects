@@ -1,7 +1,9 @@
-import './ResultsPage.css'
-import '../headerBlock.css'
-import { Articles } from './Articles';
+import './ResultsPage.css';
+import '../headerBlock.css';
+
+
 import Histogram from "./Histogram";
+import { Articles } from './Articles';
 import { AuthContext } from "../App";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
@@ -46,7 +48,7 @@ function ResultsPage() {
         excludeTechNews: params.excludeTechNews == 'true' ? true : false,
         excludeAnnouncements: params.excludeAnnouncements == 'true' ? true : false,
         excludeDigests: params.excludeDigests == 'true' ? true : false
-    }
+    };
 
     function histogramReqDataHandler(reqData: Array<HistogramRespDataType>) {
         let handledData: Array<HandledHistogramReqData> = [];
@@ -98,7 +100,7 @@ function ResultsPage() {
     return (
         <div className="ResultsPage">
             <main className="ResultsPage___main AppMain">
-                <div className={`ResultsPage__headerBlock ${reqHandledData.length > 0? 'invisible' : ''}`}>
+                <div className={`ResultsPage__headerBlock ${reqHandledData.length > 0 ? 'invisible' : ''}`}>
                     <div className="headerBlock__textPart">
                         <h1 className='headerBlock__h1'>Ищем. Скоро<br></br>
                             будут результаты</h1>

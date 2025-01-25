@@ -4,10 +4,6 @@
     margin-left: 8vw;
   }
 
-  .rightBlock__img {
-    display: none;
-  }
-
   .AuthPage__decorImg {
     margin: -55px -25px auto 0px;
   }
@@ -19,10 +15,6 @@
     margin-left: 4vw;
   }
 
-  .rightBlock__img {
-    display: none;
-  }
-
   .AuthPage__decorImg {
     margin: -25px -20px auto 0px;
   }
@@ -32,10 +24,6 @@
   .AuthPage__img {
     width: 25vh;
     margin-left: 4vw;
-  }
-
-  .rightBlock__img {
-    display: none;
   }
 
   .AuthPage__decorImg {
@@ -76,6 +64,10 @@
 
   .AuthPage__img {
     margin-top: 1.5vh;
+  }
+
+  .rightBlock__img {
+    display: none;
   }
 }
 

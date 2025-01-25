@@ -12,12 +12,12 @@ export type HistogramReqValues = {
     excludeTechNews: boolean,
     excludeAnnouncements: boolean,
     excludeDigests: boolean
-}
+};
 
 export type ObjectSearchReqValues = {
     accessToken: string,
     IDs: Array<string>
-}
+};
 
 export type HistogramRespDataType = {
     data: [{
@@ -25,7 +25,7 @@ export type HistogramRespDataType = {
         value: number
     }],
     histogramType: string
-}
+};
 
 export async function histogramRequest(requestValues: HistogramReqValues): Promise<Array<HistogramRespDataType> | null> {
     try {
@@ -107,7 +107,7 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
         let result = await response.json();
 
         if (!result.data) {
-            console.debug("result" , result);
+            console.debug("result", result);
             throw new Error('data is not found');
         } else {
             return result.data;
@@ -124,7 +124,7 @@ export type ArticleItem = {
     influence: number,
     similarCount: number
 }
-export type ArticleObjects  = {
+export type ArticleObjects = {
     items: ArticleItem[],
     mappings: [
         inn: "string",
@@ -327,8 +327,8 @@ type AccessData = {
 }
 export async function loginRequest({
     login,
-    password}
-    : {login: string, password: string}): Promise<AccessData> {
+    password }
+    : { login: string, password: string }): Promise<AccessData> {
     try {
         let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/login', {
             method: 'POST',

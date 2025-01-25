@@ -1,25 +1,3 @@
-/* @media screen and (min-width: 1025px) {
-    .commonTypeBtn {
-        max-height: 8vh;
-        min-height: 7.5vh;
-        padding: 0vh 7vw;
-    }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-    .commonTypeBtn {
-        height: 5vh;
-        padding: 0vh 4vw;
-    }
-}
-
-@media screen and (max-width: 768px) and (min-width: 426px) {
-    .commonTypeBtn {
-        height: 5vh;
-        padding: 0vh 4vw;
-    }
-} */
-
 @media screen and (min-width: 426px) {
     .commonTypeBtn {
         width: 20rem;

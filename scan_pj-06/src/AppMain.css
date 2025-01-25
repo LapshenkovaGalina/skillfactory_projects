@@ -1,40 +1,3 @@
-/* @media screen and (min-width: 1025px) {
-  .AppMain {
-    min-height: 64vh;
-    padding: 7vh 4vw 10vh 4vw;
-  }
-}
-
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-  .AppMain {
-    min-height: 75vh;
-    padding: 7vh 3vw 10vh 3vw;
-  }
-}
-
-@media screen and (max-width: 768px) and (min-width: 426px) {
-  .AppMain {
-    min-height:67vh;
-    padding: 2vh 3vw 3vh 3vw;
-  }
-} */
-
-@media screen and (max-width: 425px) {
-  .AppMain {
-    /* min-height: 37vh; */
-    padding: 2rem 3vw;
-  }
-}
-
-@media screen and (min-width: 426px) {
-  .AppMain {
-    /* min-height: 37vh; */
-    /* padding: 3vh 5vw 3vh 5vw; */
-    /* height: 82.4vh; */
-    padding: 2rem 3vw;
-  }
-}
-
 .AppMain {
   display: flex;
   flex-direction: column;
@@ -42,7 +5,8 @@
   max-width: 100vw;
   box-sizing: border-box;
 
-  /* min-height: min-content; */
+  padding: 2rem 3vw;
+
   flex-grow: 1;
 
   background-color: #FFFFFF;

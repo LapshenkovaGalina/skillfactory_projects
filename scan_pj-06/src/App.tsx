@@ -1,13 +1,14 @@
 import './App.css';
+
+import { Router } from './Router';
+import AuthInit from './AuthInit';
 import AppFooter from './AppFooter';
 import AppHeader from './AppHeader/AppHeader';
-import AuthInit from './AuthInit';
-import { Router } from './Router';
 import { createContext, Dispatch, useState } from 'react';
 
 export type AccessTokenType = string | null;
 export type AuthContextType = {accessToken: AccessTokenType, setAccessToken: Dispatch<React.SetStateAction<AccessTokenType>>} | null;
-export const AuthContext = createContext<AuthContextType>(null)
+export const AuthContext = createContext<AuthContextType>(null);
 
 function App() {
   const [accessToken, setAccessToken] = useState<AccessTokenType>(null);

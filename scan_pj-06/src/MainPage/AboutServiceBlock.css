@@ -27,7 +27,7 @@
         font-size: calc(40px + 40 * (100vw - 426px) / 2240);
         line-height: calc(38px + 78 * (100vw - 426px) / 2240);
     }
-    
+
     .AboutServiceBlock {
         flex-direction: row;
         align-items: start;

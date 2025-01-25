@@ -1,67 +1,65 @@
-@media screen and (max-width: 425px){
-    .AppHeader {
-      /* height: 15vh; */
-      padding: 0vh 3vw;
-    }
-
-    .AppHeader.burgerMenuOpened{
-      padding: 0vh 0vw;
-      background-color: #029491;
-    }
-
-    .AppHeader__logo {
-      height: 40%;
-    }
-  }
-
-  @media screen and (min-width: 426px){
-    .AppHeader {
-      /* height: 15vh; */
-      padding: 0vh 3vw;
-    }
-
-    .AppHeader__logo {
-      height: 55%;
-    }
-  }
-
-  .AppHeader__burgerMenu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+@media screen and (max-width: 425px) {
+  .AppHeader {
     padding: 0vh 3vw;
-    row-gap: 3.5rem;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+  }
 
+  .AppHeader.burgerMenuOpened {
+    padding: 0vh 0vw;
     background-color: #029491;
   }
 
-  .AppHeader,
-  .AppHeader__rightBlock,
-  .burgerMenu__top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .AppHeader__logo {
+    height: 40%;
   }
-  
+}
+
+@media screen and (min-width: 426px) {
   .AppHeader {
-    min-height: 6rem;
-    max-height: max-content;
-  }
-
-  .burgerMenu__top,
-  .AppHeader__burgerMenu {
-    width: 100%;
-    height: 100%;
-  }
-
-  .AppHeader__rightBlock {
-    column-gap: 8vw;
+    padding: 0vh 3vw;
   }
 
   .AppHeader__logo {
-    width: auto;
+    height: 55%;
   }
+}
+
+.AppHeader__burgerMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0vh 3vw;
+  row-gap: 3.5rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+
+  background-color: #029491;
+}
+
+.AppHeader,
+.AppHeader__rightBlock,
+.burgerMenu__top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AppHeader {
+  min-height: 6rem;
+  max-height: max-content;
+}
+
+.burgerMenu__top,
+.AppHeader__burgerMenu {
+  width: 100%;
+  height: 100%;
+}
+
+.AppHeader__rightBlock {
+  column-gap: 8vw;
+}
+
+.AppHeader__logo {
+  width: auto;
+}

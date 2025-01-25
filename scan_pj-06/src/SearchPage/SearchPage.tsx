@@ -13,12 +13,12 @@ function SearchPage() {
                     <div className="leftBlock__headerBlock">
                         <div>
                             <h1 className="headerBlock__h1">Найдите необходимые<br></br>
-                            данные в пару кликов.</h1>
-                        <p className="headerBlock__p">Задайте параметры поиска.<br></br>
-                            Чем больше заполните, тем точнее поиск</p>
+                                данные в пару кликов.</h1>
+                            <p className="headerBlock__p">Задайте параметры поиска.<br></br>
+                                Чем больше заполните, тем точнее поиск</p>
                         </div>
                         <div>
-                        <img className="headerBlock__img smalImg0" src={smallImg0} alt=""></img>
+                            <img className="headerBlock__img smalImg0" src={smallImg0} alt=""></img>
                         </div>
                     </div>
                     <ArticlesSearch />

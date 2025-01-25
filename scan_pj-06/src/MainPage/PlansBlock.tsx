@@ -2,7 +2,7 @@ import './PlansBlock.css'
 import Plan, { PlanInfoType } from './Plan';
 
 function PlansBlock({ plans }: { plans: Array<PlanInfoType> }) {
-    function plansGenerator(plansInfo: Array<PlanInfoType>) {
+    function displayPlans(plansInfo: Array<PlanInfoType>) {
         return (
             plansInfo.map((planInfoObj, ind) =>
                 <Plan key={ind} planInfo={planInfoObj} />
@@ -12,7 +12,7 @@ function PlansBlock({ plans }: { plans: Array<PlanInfoType> }) {
 
     return (
         <div className='PlansBlock'>
-            {plansGenerator(plans)}
+            {displayPlans(plans)}
         </div>
     )
 }

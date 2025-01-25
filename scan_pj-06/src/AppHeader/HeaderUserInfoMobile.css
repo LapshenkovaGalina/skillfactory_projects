@@ -1,16 +1,12 @@
-.HeaderUserInfoMobile {
+.HeaderUserInfoMobile,
+.HeaderUserInfoMobile__info {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
 .HeaderUserInfoMobile__info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
     column-gap: 10px;
-
     height: min-content;
 }
 

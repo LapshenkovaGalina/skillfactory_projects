@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import './Histogram.css'
-import { HandledHistogramReqData } from './ResultsPage';
-import { Slider } from '../Slider/Slider';
+import './Histogram.css';
+
 import Loader from '../Loader';
+import { useState } from 'react';
+import { Slider } from '../Slider/Slider';
+import { HandledHistogramReqData } from './ResultsPage';
 
 const arrowLeft = require('../assets/slider-arrow_left.png');
 const arrowRight = require('../assets/slider-arrow_right.png');
@@ -12,7 +13,8 @@ export function JSONdateToFormatedString(date: string) {
     return (
         DateTime.fromJSDate(
             new Date(date)
-        ).toFormat('yyyy.MM.dd'))
+        ).toFormat('yyyy.MM.dd')
+    )
 }
 
 type HistogramViewProps = {
@@ -78,8 +80,7 @@ function Histogram({ sliderDataArr }: HistogramViewProps) {
             <img className='Histogram__arrow'
                 src={arrowRight}
                 alt='>'
-                onClick={incFirstSlideIndex}
-            ></img>
+                onClick={incFirstSlideIndex}></img>
         </div>
     )
 }

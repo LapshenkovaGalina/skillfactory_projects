@@ -56,7 +56,7 @@ function Plan({ planInfo }: PlanPropsType) {
                             <span className='priceBlock__price'>{planInfo.price} ₽</span>
                             <span className='priceBlock__oldPrice'>{planInfo.oldPrice} ₽</span>
                         </div>
-                    {planInfo.active && <div className='isActivePlanMarker'>Текущий тариф</div>}
+                        {planInfo.active && <div className='isActivePlanMarker'>Текущий тариф</div>}
                     </div>
                     <p className='priceInfo__installmentInfo'>{planInfo.installmentInfo}</p>
                 </div>

@@ -1,21 +1,19 @@
-.Slider {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-
-    width: 100%;
-} 
-
+.Slider,
 .Slider__slidesBlock {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
 
+.Slider {
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+} 
+
+.Slider__slidesBlock {
     margin: 0 1vw 0 1vw;
-
     width: 100%;
 }
 

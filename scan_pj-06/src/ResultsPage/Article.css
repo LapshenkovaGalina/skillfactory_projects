@@ -2,30 +2,18 @@
     .Article {
         width: 44vw;
     }
-
-    .title {
-        font-size: 26px;
-    } 
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px){
     .Article {
         width: 45vw;
     }
-
-    .title {
-        font-size: 24px;
-    } 
 }
   
 @media screen and (max-width: 768px) and (min-width: 426px){
     .Article {
         width: 100%;
     }
-
-    .title {
-        font-size: 24px;
-    } 
 } 
 
 @media screen and (max-width: 425px){
@@ -37,16 +25,14 @@
     .title {
         margin-top: 2vh;
         margin-bottom: 1vh;
-
-        font-size: 18px;
     }
 
     .techNewsMarker {
-        margin-bottom: 3vh;
+        margin-bottom: 0.5rem;
     }
 
     .articleImg {
-        margin-bottom: 3vh;
+        margin-bottom: 1rem;
     }
     
     .Article__sourceBlock,
@@ -55,7 +41,7 @@
     }
 
     .articleText {
-        margin-bottom: 3vh;
+        margin-bottom: 1.5rem;
     }
 
     .readInTheSourseBtn {
@@ -75,11 +61,11 @@
     }
 
     .techNewsMarker {
-        margin-bottom: 1vh;
+        margin-bottom: 0.5;
     }
 
     .articleImg {
-        margin-bottom: 2vh;
+        margin-bottom: 1.2rem;
     }
 
     .Article__sourceBlock,
@@ -88,7 +74,7 @@
     }
 
     .articleText {
-        margin-bottom: 3vh;
+        margin-bottom: 1.8rem;
     }
 
     .readInTheSourseBtn {
@@ -128,18 +114,23 @@
 
 .title {
     height: min-content;
+
+    font-size: calc(18px + 16 * (100vw - 320px) / 2240);
     font-weight: 500;
 }
 
 .articleText {
     overflow: hidden;
     text-overflow: ellipsis;
+
     display: -moz-box;
     display: -webkit-box;
+
     line-clamp: 12;
+    -webkit-line-clamp: 12;
+
     box-orient: vertical;
     -moz-box-orient: vertical;
-    -webkit-line-clamp: 12;
     -webkit-box-orient: vertical;
 }
 

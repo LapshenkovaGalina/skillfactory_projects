@@ -13,7 +13,6 @@ function AppFooter() {
                 <span className='AppFooter__copyright'>Copyright. 2022</span>
             </div>
         </footer>
-
     )
 }
 

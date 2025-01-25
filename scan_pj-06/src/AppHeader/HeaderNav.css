@@ -1,33 +1,21 @@
-@media screen and (min-width: 1025px){ 
-    .HeaderNav {
-      display: flex;
-    }
-  }
-  
-  @media screen and (max-width: 1024px) and (min-width: 769px){
-    .HeaderNav {
-      display: flex;
-    }
-  }
-  
-  @media screen and (max-width: 768px) and (min-width: 426px){
-    .HeaderNav {
-      display: none;
-    }
-  }
-  
-  @media screen and (max-width: 425px){
-    .HeaderNav {
-      display: none;
-    }
-  }
-
+@media screen and (min-width: 1025px) {
   .HeaderNav {
-    flex-direction: row;
-    column-gap: 4vw;
+    display: flex;
   }
+}
 
-  .HeaderNav a {
-    text-decoration: none;
-    color: #000000;
+@media screen and (max-width: 768px) {
+  .HeaderNav {
+    display: none;
   }
+}
+
+.HeaderNav {
+  flex-direction: row;
+  column-gap: 4vw;
+}
+
+.HeaderNav a {
+  text-decoration: none;
+  color: #000000;
+}

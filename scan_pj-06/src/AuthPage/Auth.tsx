@@ -1,7 +1,8 @@
 import './Auth.css'
 import '../button.css'
-import { useContext, useState } from 'react';
+
 import { AuthContext } from '../App';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const googleAuthImg = require('../assets/google-auth-img.png');
@@ -27,7 +28,7 @@ function Auth() {
 
     async function authAttempt(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        
+
         try {
             let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/login', {
                 method: 'POST',

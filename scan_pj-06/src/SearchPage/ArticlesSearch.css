@@ -1,6 +1,5 @@
 @media screen and (min-width: 1025px) {
     .ArticlesSearch {
-        /* width: 58vw; */
         width: 46rem;
         padding: 0vw 3vw 2vw 3vw;
         flex-direction: row;
@@ -59,8 +58,7 @@
     .ArticlesSearch__leftBlock,
     .ArticlesSearch__rightBlock,
     .searchRange__input,
-    .searchBtnBlock
-     {
+    .searchBtnBlock {
         width: 100%;
     }
 
@@ -69,7 +67,6 @@
     }
 
     .searchBtnBlock {
-        width: 100%;
         margin-top: 2rem;
     }
 
@@ -83,13 +80,13 @@
         display: flex;
     }
 
-    .ArticlesSearch__leftBlock{
+    .ArticlesSearch__leftBlock {
         width: 50%;
     }
 
-    .ArticlesSearch__rightBlock{
+    .ArticlesSearch__rightBlock {
         width: 55%;
-    }    
+    }
 
     .searchRange__input {
         width: 46%;

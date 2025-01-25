@@ -1,9 +1,9 @@
-@media screen and (min-width: 426px){
+@media screen and (min-width: 426px) {
     .Histogram {
         width: 100%;
         align-items: center;
     }
-    
+
     .Histogram__slider {
         flex-direction: row;
     }
@@ -16,7 +16,7 @@
 
     .slider__leftBlock {
         padding: 1.5rem 2rem;
-        
+
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
     }
@@ -29,15 +29,15 @@
     .Histogram__arrow {
         height: 2.5rem;
     }
-  }
+}
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
     .Histogram {
         width: 100%;
         align-items: end;
     }
 
-    .Histogram__slider{
+    .Histogram__slider {
         flex-direction: column;
     }
 
@@ -64,7 +64,7 @@
         height: 2rem;
         margin-bottom: 1rem;
     }
-  }
+}
 
 .Histogram {
     display: flex;
@@ -118,7 +118,7 @@
     width: 100%;
 }
 
-.slider__slide div{
+.slider__slide div {
     width: 100%;
     text-align: center;
 }
