@@ -133,7 +133,7 @@ function ArticleView({ data }: ArticleViewProps) {
                 <span className='source'>{data.ok.source.name}</span>
             </div>
             <div className='title'>{data.ok.title.text}</div>
-            <div className='techNewsMarker'>{data.ok.attributes.isTechNews ? 'технические новости' : null}</div>
+            {data.ok.attributes.isTechNews ? <div className='techNewsMarker'>Технические новости</div> : null }
             {img}
             <div className='articleText'>{text}</div>
             <div className='footer'>

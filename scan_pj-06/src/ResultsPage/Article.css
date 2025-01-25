@@ -23,12 +23,13 @@
     }
 
     .title {
-        margin-top: 2vh;
-        margin-bottom: 1vh;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .techNewsMarker {
         margin-bottom: 0.5rem;
+        font-size: 10px;
     }
 
     .articleImg {
@@ -56,12 +57,13 @@
     }
 
     .title {
-        margin-top: 2vh;
-        margin-bottom: 1vh;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
     .techNewsMarker {
-        margin-bottom: 0.5;
+        margin-bottom: 0.7rem;
+        font-size: 12px;
     }
 
     .articleImg {
@@ -154,4 +156,15 @@
 
     border-radius: 5px;
     border: 0px;
+}
+
+.techNewsMarker {
+    background-color: #FFB64F;
+    border-radius: 5px;
+
+    width: min-content;
+
+    padding: 0.2rem 1rem;
+
+    white-space: nowrap;
 }
