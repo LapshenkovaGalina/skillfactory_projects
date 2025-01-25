@@ -5,7 +5,7 @@ import Histogram from './Histogram';
 import { Articles } from './Articles';
 import { AuthContext } from '../App';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import { histogramRequest, HistogramRespDataType } from './requests';
 
 import resultsPageHeaderBlockImg from '../assets/resultsPage_img.png';
@@ -25,7 +25,7 @@ function ResultsPage() {
 
     const authInfo = useContext(AuthContext);
     let accessToken: string;
-    if (authInfo?.accessToken != undefined) {
+    if (authInfo?.accessToken) {
         accessToken = authInfo.accessToken;
     } else {
         accessToken = '';
@@ -33,21 +33,39 @@ function ResultsPage() {
 
     const params = useParams<UseParams>() as UseParams;
 
-    const reqValues = {
-        accessToken: accessToken,
-        limit: +params.limit,
-        startDate: params.startDateJSON,
-        endDate: params.endDateJSON,
-        INN: +params.INN,
-        tonality: params.tonality,
-        maxFullness: params.maxFullness == 'true' ? true : false,
-        inBusinessNews: params.inBusinessNews == 'true' ? true : false,
-        onlyMainRole: params.onlyMainRole == 'true' ? true : false,
-        onlyWithRiskFactors: params.onlyWithRiskFactors == 'true' ? true : false,
-        excludeTechNews: params.excludeTechNews == 'true' ? true : false,
-        excludeAnnouncements: params.excludeAnnouncements == 'true' ? true : false,
-        excludeDigests: params.excludeDigests == 'true' ? true : false
-    };
+    const reqValues = useMemo(() => {
+        return {
+            accessToken: accessToken,
+            limit: +params.limit,
+            startDate: params.startDateJSON,
+            endDate: params.endDateJSON,
+            INN: +params.INN,
+            tonality: params.tonality,
+            maxFullness: params.maxFullness === 'true' ? true : false,
+            inBusinessNews: params.inBusinessNews === 'true' ? true : false,
+            onlyMainRole: params.onlyMainRole === 'true' ? true : false,
+            onlyWithRiskFactors: params.onlyWithRiskFactors === 'true' ? true : false,
+            excludeTechNews: params.excludeTechNews === 'true' ? true : false,
+            excludeAnnouncements: params.excludeAnnouncements === 'true' ? true : false,
+            excludeDigests: params.excludeDigests === 'true' ? true : false
+        };
+    }, [params, accessToken]);
+
+    // const reqValues = {
+    //     accessToken: accessToken,
+    //     limit: +params.limit,
+    //     startDate: params.startDateJSON,
+    //     endDate: params.endDateJSON,
+    //     INN: +params.INN,
+    //     tonality: params.tonality,
+    //     maxFullness: params.maxFullness === 'true' ? true : false,
+    //     inBusinessNews: params.inBusinessNews === 'true' ? true : false,
+    //     onlyMainRole: params.onlyMainRole === 'true' ? true : false,
+    //     onlyWithRiskFactors: params.onlyWithRiskFactors === 'true' ? true : false,
+    //     excludeTechNews: params.excludeTechNews === 'true' ? true : false,
+    //     excludeAnnouncements: params.excludeAnnouncements === 'true' ? true : false,
+    //     excludeDigests: params.excludeDigests === 'true' ? true : false
+    // };
 
     function histogramReqDataHandler(reqData: Array<HistogramRespDataType>) {
         let handledData: Array<HandledHistogramReqData> = [];
@@ -84,7 +102,7 @@ function ResultsPage() {
                 setReqHandledData(histogramReqDataHandler(histogramRequestResult));
             }
         })()
-    }, []);
+    }, [navigate, reqValues]);
 
     const articlesNum = () => {
         let articlesNum = 0;
@@ -95,6 +113,7 @@ function ResultsPage() {
         }
         return articlesNum;
     }
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
 
     return (
         <div className='ResultsPage'>
