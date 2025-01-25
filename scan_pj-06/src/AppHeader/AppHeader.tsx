@@ -2,12 +2,11 @@ import './AppHeader.css';
 import { useState } from 'react';
 import { HeaderAuthCheckDesktop, HeaderAuthCheckMobile } from './HeaderAuthCheck';
 import HeaderNav from './HeaderNav';
-import HeaderUserInfo from './HeaderUserInfo';
 
-const SCANlogo = require('./assets/SCAN-logo.png');
-const MobileMenuSCANlogo = require('./assets/SCAN-logo_footer.png');
-const burgerMenuImg = require('./assets/burger-menu-button_img.png');
-const burgerMenuExitImg = require('./assets/burger-menu_exit-button_img.png');
+const SCANlogo = require('../assets/SCAN-logo.png');
+const MobileMenuSCANlogo = require('../assets/SCAN-logo_footer.png');
+const burgerMenuImg = require('../assets/burger-menu-button_img.png');
+const burgerMenuExitImg = require('../assets/burger-menu_exit-button_img.png');
 
 function AppHeaderDesktop() {
     console.log("AppHeaderDesktop");

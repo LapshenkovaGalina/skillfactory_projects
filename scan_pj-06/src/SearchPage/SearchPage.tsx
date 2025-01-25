@@ -1,9 +1,9 @@
 import './SearchPage.css';
 import ArticlesSearch from "./ArticlesSearch";
 
-const bigImg = require('./assets/search-page_big-img.png');
-const smallImg0 = require('./assets/search-page_small-img0.png');
-const smallImg1 = require('./assets/search-page_small-img1.png');
+const bigImg = require('../assets/search-page_big-img.png');
+const smallImg0 = require('../assets/search-page_small-img0.png');
+const smallImg1 = require('../assets/search-page_small-img1.png');
 
 function SearchPage() {
     return (

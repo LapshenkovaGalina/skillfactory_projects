@@ -1,8 +1,8 @@
 import '../AppMain.css'
 import './MainPage.css'
 import Slider from "./Slider";
-import PlansBlock from "../PlansBlock";
-import AboutServiceBlock from "../AboutServiceBlock";
+import PlansBlock from "./PlansBlock";
+import AboutServiceBlock from "./AboutServiceBlock";
 
 import mainPageImg from "../assets/main_page_img.png";
 import beginnerPlanImg from "../assets/beginner-plan_img.png"

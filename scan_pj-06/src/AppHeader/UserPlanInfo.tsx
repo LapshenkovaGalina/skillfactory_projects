@@ -1,7 +1,7 @@
 import './UserPlanInfo.css';
 import { useContext, useEffect, useState } from 'react';
-import { AuthContext } from './App';
-import Loader from './Loader';
+import { AuthContext } from '../App';
+import Loader from '../Loader';
 
 function UserPlanInfo() {
 

@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import './Histogram.css'
 import { HandledHistogramReqData } from './ResultsPage';
-import { Slider } from './Slider/Slider';
-import Loader from './Loader';
+import { Slider } from '../Slider/Slider';
+import Loader from '../Loader';
 
-const arrowLeft = require('./assets/slider-arrow_left.png');
-const arrowRight = require('./assets/slider-arrow_right.png');
+const arrowLeft = require('../assets/slider-arrow_left.png');
+const arrowRight = require('../assets/slider-arrow_right.png');
 const { DateTime } = require('luxon');
 
 export function JSONdateToFormatedString(date: string) {

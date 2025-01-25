@@ -1,11 +1,11 @@
 import './AboutServiceBlock.css';
-import './headerBlock.css';
-import './button.css';
+import '../headerBlock.css';
+import '../button.css';
 import { useContext } from 'react';
-import { AuthContext } from './App';
+import { AuthContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
-const AboutServiceBlockImage = require('./assets/aboutServiceBlock-img.png');
+const AboutServiceBlockImage = require('../assets/aboutServiceBlock-img.png');
 
 function AboutServiceBlock() {
     const authInfo = useContext(AuthContext);

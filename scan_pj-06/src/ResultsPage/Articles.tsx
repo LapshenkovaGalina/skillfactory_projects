@@ -3,7 +3,7 @@ import './Article.css'
 import { useEffect, useRef, useState } from "react"
 import { HistogramReqValues, ArticleData, documentRequest, objectSearchRequest } from './requests';
 import { JSONdateToFormatedString } from "./Histogram";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 const requestURL = "http://localhost:3000/searchResults/3/2024-10-01T00:00:00.000Z/2024-12-22T00:00:00.000Z/7721546864/any/false/false/false/false/false/false/false";
 

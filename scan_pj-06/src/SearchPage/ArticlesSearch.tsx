@@ -1,6 +1,6 @@
 import './ArticlesSearch.css';
 import './checkbox.css';
-import './button.css';
+import '../button.css';
 import { FormEvent, useEffect, useState } from 'react';
 import validateInn from './validateInn';
 import { useNavigate } from 'react-router-dom';

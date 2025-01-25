@@ -1,6 +1,6 @@
 import './HeaderAuthCheck.css'
 import { useContext } from "react";
-import { AuthContext } from "./App";
+import { AuthContext } from "../App";
 import HeaderSignIn from "./HeaderSignIn";
 import UserPlanInfo from "./UserPlanInfo";
 import HeaderUserInfo from './HeaderUserInfo';

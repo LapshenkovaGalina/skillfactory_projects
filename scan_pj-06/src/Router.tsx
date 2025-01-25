@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { AuthContext } from "./App";
 import { useContext, useEffect } from "react";
 import MainPage from "./MainPage/MainPage";
-import AuthPage from "./AuthPage";
-import SearchPage from "./SearchPage";
-import ResultsPage from "./ResultsPage";
+import AuthPage from "./AuthPage/AuthPage";
+import SearchPage from "./SearchPage/SearchPage";
+import ResultsPage from "./ResultsPage/ResultsPage";
 /**
  * * If acess tocken is available
  * main page

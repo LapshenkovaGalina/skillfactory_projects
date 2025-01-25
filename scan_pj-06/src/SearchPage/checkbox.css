@@ -33,7 +33,7 @@
   /* стили для чекбокса, находящегося в состоянии checked */
   .customCheckbox>input:checked+span::before {
     border-color: #000000;
-    background-image: url("./assets/checkbox-img.png");
+    background-image: url("../assets/checkbox-img.png");
     background-size: 20px 20px;
   }
   

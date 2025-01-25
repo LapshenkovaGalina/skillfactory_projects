@@ -1,6 +1,6 @@
 import './App.css';
 import AppFooter from './AppFooter';
-import AppHeader from './AppHeader';
+import AppHeader from './AppHeader/AppHeader';
 import AuthInit from './AuthInit';
 import { Router } from './Router';
 import { createContext, Dispatch, useState } from 'react';

@@ -1,13 +1,13 @@
 import './ResultsPage.css'
-import './headerBlock.css'
+import '../headerBlock.css'
+import { Articles } from './Articles';
 import Histogram from "./Histogram";
-import { AuthContext } from "./App";
+import { AuthContext } from "../App";
 import { useNavigate, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { histogramRequest, HistogramRespDataType } from "./requests";
 
-import resultsPageHeaderBlockImg from './assets/resultsPage_img.png';
-import { Articles } from './Articles';
+import resultsPageHeaderBlockImg from '../assets/resultsPage_img.png';
 
 type UseParams = { limit: string, startDateJSON: string, endDateJSON: string, INN: string, tonality: string, maxFullness: string, inBusinessNews: string, onlyMainRole: string, onlyWithRiskFactors: string, excludeTechNews: string, excludeAnnouncements: string, excludeDigests: string }
 

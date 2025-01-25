@@ -1,12 +1,12 @@
 import './Auth.css'
-import './button.css'
+import '../button.css'
 import { useContext, useState } from 'react';
-import { AuthContext } from './App';
+import { AuthContext } from '../App';
 import { useNavigate } from 'react-router-dom';
 
-const googleAuthImg = require('./assets/google-auth-img.png');
-const facebookAuthImg = require('./assets/facebook-auth-img.png');
-const yandexAuthImg = require('./assets/yandex-auth-img.png');
+const googleAuthImg = require('../assets/google-auth-img.png');
+const facebookAuthImg = require('../assets/facebook-auth-img.png');
+const yandexAuthImg = require('../assets/yandex-auth-img.png');
 
 function Auth() {
     const [login, setLogin] = useState('');

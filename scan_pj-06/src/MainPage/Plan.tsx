@@ -1,7 +1,7 @@
 import './Plan.css'
-import './button.css'
+import '../button.css'
 
-const listItemPointer = require('./assets/list-pointer.png');
+const listItemPointer = require('../assets/list-pointer.png');
 
 export type PlanInfoType = {
     planName: string,

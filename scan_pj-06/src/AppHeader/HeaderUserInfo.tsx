@@ -1,7 +1,7 @@
 import './HeaderUserInfo.css'
 import './HeaderUserInfoMobile.css'
 
-const userAvatar = require('./assets/user-avatar.png');
+const userAvatar = require('../assets/user-avatar.png');
 
 function HeaderUserInfo({isMobile} : {isMobile?: boolean}) {
     let className = '';
