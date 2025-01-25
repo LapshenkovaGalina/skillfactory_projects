@@ -3,10 +3,6 @@
     width: 55vh;
     margin-left: 8vw;
   }
-
-  .AuthPage__decorImg {
-    margin: -55px -25px auto 0px;
-  }
 } 
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
@@ -14,20 +10,12 @@
     width: 25vh;
     margin-left: 4vw;
   }
-
-  .AuthPage__decorImg {
-    margin: -25px -20px auto 0px;
-  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 426px) {
   .AuthPage__img {
     width: 25vh;
     margin-left: 4vw;
-  }
-
-  .AuthPage__decorImg {
-    margin: 5vh 0px -10px 30vw;
   }
 }
 
@@ -68,6 +56,10 @@
 
   .rightBlock__img {
     display: none;
+  }
+
+  .AuthPage__decorImg {
+    margin: 0px 0px -35px -50px;
   }
 }
 
