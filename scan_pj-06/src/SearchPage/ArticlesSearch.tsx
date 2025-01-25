@@ -35,13 +35,13 @@ function ArticlesSearch() {
     const [startDate, setStartDate] = useState('');
     const [endDateJSON, setEndDateJSON] = useState('');
     const [endDate, setEndDate] = useState('');
-    const [maxFullness, setMaxFullness] = useState(false);
-    const [inBusinessNews, setInBusinessNews] = useState(false);
-    const [onlyMainRole, setOnlyMainRole] = useState(false);
+    const [maxFullness, setMaxFullness] = useState(true);
+    const [inBusinessNews, setInBusinessNews] = useState(true);
+    const [onlyMainRole, setOnlyMainRole] = useState(true);
     const [onlyWithRiskFactors, setOnlyWithRiskFactors] = useState(false);
-    const [includeTechNews, setIncludeTechNews] = useState(false);
-    const [excludeAnnouncements, setIncludeAnnouncements] = useState(true);
-    const [excludeDigests, setIncludeDigests] = useState(true);
+    const [excludeTechNews, setExcludeTechNews] = useState(true);
+    const [excludeAnnouncements, setExcludeAnnouncements] = useState(false);
+    const [excludeDigests, setExcludeDigests] = useState(true);
 
     const INNinputOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const INNvalue = event.target.value;
@@ -118,7 +118,7 @@ function ArticlesSearch() {
 
     const onSubmitHandler = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        navigate(`/searchResults/${limit}/${startDateJSON}/${endDateJSON}/${INN}/${tonality}/${maxFullness}/${inBusinessNews}/${onlyMainRole}/${onlyWithRiskFactors}/${!includeTechNews}/${excludeAnnouncements}/${excludeDigests}`);
+        navigate(`/searchResults/${limit}/${startDateJSON}/${endDateJSON}/${INN}/${tonality}/${maxFullness}/${inBusinessNews}/${onlyMainRole}/${onlyWithRiskFactors}/${excludeTechNews}/${excludeAnnouncements}/${excludeDigests}`);
     }
 
     const btnDisable = () => {
@@ -166,15 +166,18 @@ function ArticlesSearch() {
                 <div className='rightBlock__checkboxes'>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setMaxFullness(event.target.checked)}></input><span>Признак максимальной полноты</span></label>
+                            checked={maxFullness}
+                            onChange={(event) => setMaxFullness(event.target.checked)} ></input><span>Признак максимальной полноты</span></label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
+                            checked={inBusinessNews}
                             onChange={(event) => setInBusinessNews(event.target.checked)}></input>
                         <span>Упоминания в бизнес-контексте</span>
                     </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setOnlyMainRole(event.target.checked)}></input>
+                        checked={onlyMainRole}
+                            onChange={(event) => setOnlyMainRole(event.target.checked)} ></input>
                         <span>Главная роль в публикации</span>
                     </label>
                     <label className='customCheckbox'>
@@ -184,17 +187,19 @@ function ArticlesSearch() {
                     </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeTechNews(event.target.checked)}></input>
+                            checked={!excludeTechNews}
+                            onChange={(event) => setExcludeTechNews(!event.target.checked)}></input>
                         <span>Включать технические новости рынков</span>
                     </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeAnnouncements(event.target.checked)}></input>
+                            checked={!excludeAnnouncements}
+                            onChange={(event) => setExcludeAnnouncements(!event.target.checked)}></input>
                         <span>Включать анонсы и календари</span>
                     </label>
                     <label className='customCheckbox'>
                         <input type='checkbox'
-                            onChange={(event) => setIncludeDigests(event.target.checked)}></input>
+                            onChange={(event) => setExcludeDigests(event.target.checked)}></input>
                         <span>Включать сводки новостей</span>
                     </label>
                 </div>

@@ -33,7 +33,6 @@
     border-color: gray;
   }
   
-  
   /* стили для чекбокса, находящегося в состоянии checked */
   .customCheckbox>input:checked+span::before {
     border-color: #000000;
@@ -42,6 +41,11 @@
     background-size: 20px 20px;
   }
   
+  /* стили для span чекбокса, находящегося в состоянии checked */
+  input:not(:disabled):not(:checked)+span {
+    color: #949494;
+  }
+
   /* стили для чекбокса, находящегося в состоянии disabled */
   .customCheckbox>input:disabled+span::before {
     background-color: #949494;
