@@ -9,7 +9,7 @@ function HeaderSignIn({ isMobile }: { isMobile?: boolean }) {
 
     return (
         <div className={`HeaderSignIn${className}`}>
-            <a className={`HeaderSignIn${className}__registrationA`} href="">Зарегистрироваться</a>
+            <a className={`HeaderSignIn${className}__registrationA`} href='/'>Зарегистрироваться</a> 
             {!isMobile && <div className='HeaderSignIn__divider'></div>}
             <a className={`HeaderSignIn${className}__signInA`} href='/auth'>Войти</a>
         </div>

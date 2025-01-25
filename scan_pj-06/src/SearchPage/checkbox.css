@@ -37,11 +37,11 @@
   .customCheckbox>input:checked+span::before {
     border-color: #000000;
     
-    background-image: url("../assets/checkbox-img.png");
+    background-image: url('../assets/checkbox-img.png');
     background-size: 20px 20px;
   }
   
-  /* стили для span чекбокса, находящегося в состоянии checked */
+  /* стили для span , находящегося в состоянии checked */
   input:not(:disabled):not(:checked)+span {
     color: #949494;
   }

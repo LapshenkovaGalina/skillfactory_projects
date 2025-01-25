@@ -14,7 +14,7 @@ function AuthInit() {
         } else {
             console.log('[AuthInit][useEffect] auth is not ok.');
         }
-    }, []);
+    }, [authInfo]);
 
     return (
         <div></div>

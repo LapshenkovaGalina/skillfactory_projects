@@ -116,9 +116,10 @@ function ArticleView({ data }: ArticleViewProps) {
     const result = /img src='(\S+?)'/.exec(text);
 
     const img = result && result[1]
-        ? (<img src={result[1]} className='articleImg'></img>)
+        ? (<img src={result[1]} className='articleImg' alt=''></img>)
         : null;
 
+    // eslint-disable-next-line no-useless-escape
     text = text
         .replace(/<.*?>/g, '')
         .replace(/<[^>]*>/g, '')

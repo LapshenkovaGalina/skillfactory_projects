@@ -64,7 +64,7 @@ function Auth() {
     }
 
     return (
-        <div className="Auth">
+        <div className='Auth'>
             <div className='Auth__head'>
                 <div className='head__block active'><a href='/auth'>Войти</a></div>
                 <div className='head__block'><a href='/auth'>Зарегистрироваться</a></div>
@@ -80,7 +80,7 @@ function Auth() {
                     className='commonTypeBtn signInBtn'>
                     Войти</button>
             </form>
-            <a className='Auth__resetPass' href=''>Восстановить пароль</a>
+            <a className='Auth__resetPass' href='/auth'>Восстановить пароль</a>
             <div className='Auth__altAuth'>
                 <span>Войти через:</span>
                 <div className='altAuth__variants'>
