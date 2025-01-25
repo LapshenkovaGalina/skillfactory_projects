@@ -22,7 +22,7 @@
 @media screen and (max-width: 425px) {
   .AppMain {
     /* min-height: 37vh; */
-    padding: 3vh 3vw;
+    padding: 2rem 3vw;
   }
 }
 
@@ -31,7 +31,7 @@
     /* min-height: 37vh; */
     /* padding: 3vh 5vw 3vh 5vw; */
     /* height: 82.4vh; */
-    padding: 7vh 3vw;
+    padding: 2rem 3vw;
   }
 }
 
