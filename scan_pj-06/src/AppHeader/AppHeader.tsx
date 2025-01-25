@@ -10,7 +10,6 @@ const burgerMenuImg = require('../assets/burger-menu-button_img.png');
 const burgerMenuExitImg = require('../assets/burger-menu_exit-button_img.png');
 
 function AppHeaderDesktop() {
-    console.log('AppHeaderDesktop');
     return (
         <header className='AppHeader'>
             <a href='/'>
@@ -25,7 +24,6 @@ function AppHeaderDesktop() {
 }
 
 function AppHeader() {
-    console.log('AppHeader');
     const isMobile = window.screen.width <= 425 ? true : false;
 
     if (isMobile) {
@@ -37,10 +35,8 @@ function AppHeader() {
 
 function AppHeaderMobile() {
     const [opened, setOpened] = useState(false);
-    console.log('AppHeaderMobile');
 
     const toggleOpened = () => {
-        console.log('on burger menu click');
         setOpened(!opened);
     }
 

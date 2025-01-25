@@ -58,7 +58,7 @@ function Auth() {
             }
 
         } catch (e) {
-            console.log(Error);
+            console.log(e);
             setAuthErrorMsg('');
         }
     }

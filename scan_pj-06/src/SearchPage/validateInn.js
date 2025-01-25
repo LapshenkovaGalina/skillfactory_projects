@@ -34,7 +34,7 @@ export function validateInn(inn, error) {
 				}
 				break;
 			default:
-				console.log('validateInn(): unknownErr');
+				console.log('[validateInn][validateInn] unknownErr');
 		}
 		if (!result) {
 			return 'Невалидный ИНН';

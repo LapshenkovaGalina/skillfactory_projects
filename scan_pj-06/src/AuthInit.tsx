@@ -12,7 +12,7 @@ function AuthInit() {
         if (expireDate.getTime() > currTime.getTime()) {
             authInfo?.setAccessToken(localStorage.getItem('accessToken') || null);
         } else {
-            console.log('Auth is not ok!');
+            console.log('[AuthInit][useEffect] auth is not ok.');
         }
     }, []);
 

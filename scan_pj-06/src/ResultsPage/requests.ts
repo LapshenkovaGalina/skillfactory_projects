@@ -107,8 +107,7 @@ export async function histogramRequest(requestValues: HistogramReqValues): Promi
         let result = await response.json();
 
         if (!result.data) {
-            console.debug('result', result);
-            throw new Error('data is not found');
+            throw new Error('[requests][histogramRequest] result.data is not found');
         } else {
             return result.data;
         }
