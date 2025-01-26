@@ -176,6 +176,10 @@
   column-gap: 0.5rem;
 }
 
+.Plan__description {
+  row-gap: 0.5rem;
+}
+
 .description__descriptionList {
   list-style: none;
   row-gap: 0.2rem;
