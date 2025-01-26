@@ -41,7 +41,7 @@ function Plan({ planInfo }: PlanPropsType) {
     )
 
     return (
-        <div className={'Plan' + `${planInfo.active ? ' active' : ''}`}
+        <div className={`Plan ${planInfo.active ? 'active' : ''}`}
             style={planInfo.active ? { borderColor: `#${planInfo.color}` } : undefined}>
             <div className='Plan__head' style={{ backgroundColor: `#${planInfo.color}` }}>
                 <div className='head__textBlock' style={{ color: `#${planInfo.fontColor}` }}>

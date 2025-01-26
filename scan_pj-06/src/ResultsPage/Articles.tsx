@@ -119,13 +119,12 @@ function ArticleView({ data }: ArticleViewProps) {
         ? (<img src={result[1]} className='articleImg' alt=''></img>)
         : null;
 
-    // eslint-disable-next-line no-useless-escape
     text = text
         .replace(/<.*?>/g, '')
         .replace(/<[^>]*>/g, '')
-        .replace(/\&lt;/g, '')
+        .replace(/&lt;/g, '')
         .replace(/\p&gt;/g, '')
-        .replace(/\&gt;/g, '');
+        .replace(/&gt;/g, '');
 
     return (
         <div className='Article' ref={ref}>

@@ -13,35 +13,35 @@ function UserPlanInfo() {
     const authInfo = useContext(AuthContext);
     const accessToken = authInfo?.accessToken;
 
-    async function getUserPlanInfo() {
-        try {
-            let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/info', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'Authorization': `Bearer ${accessToken}`
-                }
-            });
-
-            let result = await response.json();
-
-            if (!result.eventFiltersInfo) {
-                throw new Error('eventFiltersInfo is not found');
-            } else {
-                setCompaniesNum(result.eventFiltersInfo.usedCompanyCount);
-                setCompaniesLimit(result.eventFiltersInfo.companyLimit);
-                setUserPlanInfoLoaded(true);
-            }
-
-        } catch (e) {
-            console.log(e);
-        }
-    }
-
     useEffect(() => {
+        async function getUserPlanInfo() {
+            try {
+                let response = await fetch('https://gateway.scan-interfax.ru/api/v1/account/info', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        'Authorization': `Bearer ${accessToken}`
+                    }
+                });
+    
+                let result = await response.json();
+    
+                if (!result.eventFiltersInfo) {
+                    throw new Error('eventFiltersInfo is not found');
+                } else {
+                    setCompaniesNum(result.eventFiltersInfo.usedCompanyCount);
+                    setCompaniesLimit(result.eventFiltersInfo.companyLimit);
+                    setUserPlanInfoLoaded(true);
+                }
+    
+            } catch (e) {
+                console.log(e);
+            }
+        }
+
         getUserPlanInfo();
-    }, []);
+    }, [accessToken]);
 
     return (
         <div className='UserPlanInfo'>
