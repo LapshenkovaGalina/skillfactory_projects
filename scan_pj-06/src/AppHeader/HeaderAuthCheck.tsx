@@ -23,7 +23,7 @@ export function HeaderAuthCheckDesktop() {
     )
 }
 
-export function HeaderAuthCheckMobile({ isMenuOpened }: { isMenuOpened: boolean }) {
+export function HeaderAuthCheckMobile({ menuIsOpened }: { menuIsOpened: boolean }) {
     const authInfo = useContext(AuthContext);
     const loggedIn = !!authInfo?.accessToken;
 
@@ -31,11 +31,11 @@ export function HeaderAuthCheckMobile({ isMenuOpened }: { isMenuOpened: boolean 
         <div className='HeaderAuthCheck'>
             {loggedIn ?
                 <>
-                    {!isMenuOpened && <UserPlanInfo />}
-                    {isMenuOpened && <HeaderUserInfo isMobile={true} />}
+                    {!menuIsOpened && <UserPlanInfo />}
+                    {menuIsOpened && <HeaderUserInfo isMobile={true} />}
                 </>
                 : <>
-                    {isMenuOpened && <HeaderSignIn isMobile={true} />}
+                    {menuIsOpened && <HeaderSignIn isMobile={true} />}
                 </>
             }
         </div>

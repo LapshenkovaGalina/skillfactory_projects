@@ -42,7 +42,7 @@
   }
   
   /* стили для span , находящегося в состоянии checked */
-  input:not(:disabled):not(:checked)+span {
+  .customCheckbox>input:not(:disabled):not(:checked)+span {
     color: #949494;
   }
 

@@ -46,7 +46,7 @@ function AppHeaderMobile() {
                 <img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img>
             </a>
             <div className='AppHeader__rightBlock'>
-                <HeaderAuthCheckMobile isMenuOpened={false} />
+                <HeaderAuthCheckMobile menuIsOpened={false} />
             </div>
             <img className='AppHeader__burgerBtn' onClick={toggleOpened} src={burgerMenuImg} alt='MENU'></img>
         </header>
@@ -61,7 +61,7 @@ function AppHeaderMobile() {
                         <img className='burgerMenu__burgerMenuExit' onClick={toggleOpened} src={burgerMenuExitImg} alt='EXIT'></img>
                     </div>
                     <HeaderNav isMobile={true} />
-                    <HeaderAuthCheckMobile isMenuOpened={true} />
+                    <HeaderAuthCheckMobile menuIsOpened={true} />
                 </div>
             </header>
         )
