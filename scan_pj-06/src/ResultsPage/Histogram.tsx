@@ -18,11 +18,11 @@ export function JSONdateToFormatedString(date: string) {
 }
 
 type HistogramViewProps = {
-    sliderDataArr: HandledHistogramReqData[]
+    sliderDataArr: HandledHistogramReqData[] | null;
 };
 
 function Slide({ slideData }: { slideData: HandledHistogramReqData }) {
-    return (
+    return slideData ? (
         <>
             <div className='slider__slide'>
                 <div>{JSONdateToFormatedString(`${slideData.date}`)}</div>
@@ -31,7 +31,7 @@ function Slide({ slideData }: { slideData: HandledHistogramReqData }) {
             </div>
             <div className='slider__divider'></div>
         </>
-    )
+    ) : <></>
 }
 
 const HistogramSlider = Slider<HandledHistogramReqData>;
@@ -68,7 +68,7 @@ function Histogram({ sliderDataArr }: HistogramViewProps) {
                     <span>Риски</span>
                 </div>
                 <div className='slider__slides'>
-                    {sliderDataArr.length > 0 ?
+                    {sliderDataArr !== null ?
                         <HistogramSlider
                             firstSlide={firstSlideIndex}
                             slidesData={sliderDataArr}

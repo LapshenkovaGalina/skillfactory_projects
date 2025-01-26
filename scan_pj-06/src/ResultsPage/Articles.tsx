@@ -10,7 +10,7 @@ type ArticlesProps = {
     reqValues: HistogramReqValues
 };
 
-const nextStep = 4;
+const nextStep = 10;
 
 export function Articles({ reqValues }: ArticlesProps) {
     const [numOfArticlesToShow, setNumOfArticlesToShow] = useState<number>(nextStep);
@@ -39,7 +39,7 @@ export function Articles({ reqValues }: ArticlesProps) {
                 numOfArticlesToShow={numOfArticlesToShow}
                 ids={ids}
                 reqValues={reqValues} />
-            {numOfArticlesToShow < (100 - nextStep) ?
+            {numOfArticlesToShow < (ids.length) ?
                 <button className='commonTypeBtn moreDetailedBtn' onClick={() => setNumOfArticlesToShow(numOfArticlesToShow + nextStep)}>
                     Показать больше
                 </button>

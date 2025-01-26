@@ -19,7 +19,7 @@ export type HandledHistogramReqData = {
 };
 
 function ResultsPage() {
-    const [reqHandledData, setReqHandledData] = useState<Array<HandledHistogramReqData>>([]);
+    const [reqHandledData, setReqHandledData] = useState<Array<HandledHistogramReqData> | null>(null);
 
     const navigate = useNavigate();
 
@@ -106,7 +106,7 @@ function ResultsPage() {
 
     const articlesNum = () => {
         let articlesNum = 0;
-        if (reqHandledData.length > 0) {
+        if ((reqHandledData !== null) && (reqHandledData.length > 0)) {
             for (let dataObj of reqHandledData) {
                 articlesNum += dataObj.value;
             }
@@ -118,7 +118,7 @@ function ResultsPage() {
     return (
         <div className='ResultsPage'>
             <main className='ResultsPage___main AppMain'>
-                <div className={`ResultsPage__headerBlock ${reqHandledData.length > 0 ? 'invisible' : ''}`}>
+                <div className={`ResultsPage__headerBlock ${reqHandledData !== null ? 'invisible' : ''}`}>
                     <div className='headerBlock__textPart'>
                         <h1 className='headerBlock__h1'>Ищем. Скоро<br></br>
                             будут результаты</h1>
