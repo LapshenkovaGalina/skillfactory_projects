@@ -51,22 +51,6 @@ function ResultsPage() {
         };
     }, [params, accessToken]);
 
-    // const reqValues = {
-    //     accessToken: accessToken,
-    //     limit: +params.limit,
-    //     startDate: params.startDateJSON,
-    //     endDate: params.endDateJSON,
-    //     INN: +params.INN,
-    //     tonality: params.tonality,
-    //     maxFullness: params.maxFullness === 'true' ? true : false,
-    //     inBusinessNews: params.inBusinessNews === 'true' ? true : false,
-    //     onlyMainRole: params.onlyMainRole === 'true' ? true : false,
-    //     onlyWithRiskFactors: params.onlyWithRiskFactors === 'true' ? true : false,
-    //     excludeTechNews: params.excludeTechNews === 'true' ? true : false,
-    //     excludeAnnouncements: params.excludeAnnouncements === 'true' ? true : false,
-    //     excludeDigests: params.excludeDigests === 'true' ? true : false
-    // };
-
     function histogramReqDataHandler(reqData: Array<HistogramRespDataType>) {
         let handledData: Array<HandledHistogramReqData> = [];
 

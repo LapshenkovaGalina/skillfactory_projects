@@ -22,6 +22,11 @@
     row-gap: 2rem;
 }
 
+.moreDetailedBtnWrapper {
+    width: 100%;
+    text-align: center;
+}
+
 .commonTypeBtn.moreDetailedBtn{
     margin-top: 2rem;
 }

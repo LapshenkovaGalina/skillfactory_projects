@@ -40,9 +40,11 @@ export function Articles({ reqValues }: ArticlesProps) {
                 ids={ids}
                 reqValues={reqValues} />
             {numOfArticlesToShow < (ids.length) ?
-                <button className='commonTypeBtn moreDetailedBtn' onClick={() => setNumOfArticlesToShow(numOfArticlesToShow + nextStep)}>
-                    Показать больше
-                </button>
+                <div className='moreDetailedBtnWrapper'>
+                    <button className='commonTypeBtn moreDetailedBtn' onClick={() => setNumOfArticlesToShow(numOfArticlesToShow + nextStep)}>
+                        Показать больше
+                    </button>
+                </div>
                 : null}
         </>
     )
