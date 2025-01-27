@@ -1,7 +1,7 @@
 @media screen and (max-width: 425px){
     .Article {
         width: 100%;
-        padding: 3vh 5vw;
+        padding: 1rem;
     }
 
     .title {
@@ -35,7 +35,7 @@
 
 @media screen and (min-width: 426px){
     .Article {
-        padding: 2vh 2vw;
+        padding: 1rem 1.5rem 2rem 1.5rem;
         width: calc(97% / 2);
     }
 
