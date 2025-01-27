@@ -24,6 +24,7 @@ export function Router() {
                     <Route path='/auth' element={<AuthPage />} />
                     <Route path='/articlesSearch' element={<GoToAuth />} />
                     <Route path='/searchResults' element={<GoToAuth />} />
+                    <Route path='/searchResults/:limit/:startDateJSON/:endDateJSON/:INN/:tonality/:maxFullness/:inBusinessNews/:onlyMainRole/:onlyWithRiskFactors/:excludeTechNews/:excludeAnnouncements/:excludeDigests' element={<GoToAuth />} />
                 </Routes>
             </BrowserRouter>
         )
