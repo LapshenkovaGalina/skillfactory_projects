@@ -20,7 +20,7 @@
 
 @media screen and (min-width: 426px) {
   .Slide {
-    width: 27.5vw;
+    width: calc(100% / 3);
     padding: 1rem;
     justify-content: start;
   }
