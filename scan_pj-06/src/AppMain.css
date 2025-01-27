@@ -1,3 +1,15 @@
+@media screen and (min-width: 1921px) {
+  .AppMain {
+    padding: 2rem 6vw;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .AppMain {
+    padding: 2rem 3vw;
+  }
+}
+
 .AppMain {
   display: flex;
   flex-direction: column;
@@ -5,6 +17,5 @@
   box-sizing: border-box;
   flex-grow: 1;
 
-  padding: 2rem 3vw;
   background-color: #FFFFFF;
 }

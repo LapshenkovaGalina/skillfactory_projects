@@ -1,6 +1,13 @@
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1921px) {
   .AuthPage__img {
-    width: 55vh;
+    width: 20vw;
+    margin-left: 4vw;
+  }
+} 
+
+@media screen and (max-width: 1920px)  and (min-width: 1025px) {
+  .AuthPage__img {
+    width: 25vw;
     margin-left: 8vw;
   }
 } 
@@ -71,7 +78,7 @@
 
 .AuthPage__main {
   align-items: center;
-  justify-content: start;
+  justify-content: center;
 }
 
 .AuthPage__headerBlock {

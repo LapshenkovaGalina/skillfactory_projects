@@ -1,3 +1,15 @@
+@media screen and (min-width: 1921px) {
+  .headerBlock__h1 {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .rightBlock__bigImg {
+    width: 25vw;
+    margin-bottom: 0rem;
+  }
+}
+
 @media screen and (min-width: 1025px) {
   .headerBlock__img {
     display: none;
@@ -69,7 +81,7 @@
 @media screen and (min-width: 1026px) {
   .SearchPage__main {
     flex-direction: row;
-    align-items: end;
+    align-items: center;
   }
 
   .leftBlock__headerBlock {

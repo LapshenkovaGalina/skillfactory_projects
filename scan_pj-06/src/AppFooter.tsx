@@ -1,3 +1,4 @@
+import './logo.css';
 import './AppFooter.css';
 
 const footerSCANlogo = require('./assets/SCAN-logo_footer.png');
@@ -5,8 +6,8 @@ const footerSCANlogo = require('./assets/SCAN-logo_footer.png');
 function AppFooter() {
     return (
         <footer className='AppFooter'>
-            <a href='/'>
-                <img className='AppFooter__logo' src={footerSCANlogo} alt='SCAN logo'></img>
+            <a className='logoWrapperAnchor' href='/'>
+                <img className='logo' src={footerSCANlogo} alt='SCAN logo'></img>
             </a>
             <div className='AppFooter__rightBlock'>
                 <span>г. Москва, Цветной б-р, 40</span>

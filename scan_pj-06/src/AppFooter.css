@@ -1,22 +1,16 @@
-@media screen and (max-width: 425px){
-    .AppFooter {
-      padding: 0vh 3vw;
-    }
-
-    .AppFooter__logo {
-      height: 30%;
-    }
+@media screen and (min-width: 1921px) {
+  .AppFooter {
+    padding: 0rem 6vw;
+    height: 11rem;
   }
+}
 
-  @media screen and (min-width: 426px){
-    .AppFooter {
-      padding: 0vh 3vw;
-    }
-
-    .AppFooter__logo {
-      height: 35%;
-    }
+@media screen and (max-width: 1920px) {
+  .AppFooter {
+    padding: 0rem 3vw;
+    height: 9rem;
   }
+}
   
   .AppFooter {
     display: flex;
@@ -25,7 +19,6 @@
     align-items: center;
 
     box-sizing: border-box;
-    height: 9rem;
 
     font-size: calc(14px + 4 * (100vw - 320px) / 2240);
     font-weight: 200;
@@ -38,10 +31,6 @@
     display: flex;
     flex-direction: column;
     align-items: end;
-  }
-
-  .AppFooter__logo {
-    width: auto;
   }
 
   .AppFooter__copyright {

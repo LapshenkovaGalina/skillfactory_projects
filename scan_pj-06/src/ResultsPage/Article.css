@@ -1,4 +1,10 @@
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1921px){
+    .Article {
+        width: 42vw;
+    }
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1025px){
     .Article {
         width: 44vw;
     }
@@ -156,6 +162,15 @@
 
     border-radius: 5px;
     border: 0px;
+}
+
+.readInTheSourseBtn:hover {
+    background-color: #88f9f8
+}
+
+.readInTheSourseBtn:active {
+    color: #FFFFFF;
+    background-color: #7CE3E1;
 }
 
 .techNewsMarker {

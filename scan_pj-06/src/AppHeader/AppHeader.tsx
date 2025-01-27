@@ -1,3 +1,4 @@
+import '../logo.css';
 import './AppHeader.css';
 
 import { useState } from 'react';
@@ -12,8 +13,8 @@ const burgerMenuExitImg = require('../assets/burger-menu_exit-button_img.png');
 function AppHeaderDesktop() {
     return (
         <header className='AppHeader'>
-            <a href='/'>
-                <img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img>
+            <a className='logoWrapperAnchor' href='/'>
+                <img className='logo' src={SCANlogo} height={'50%'} width={'auto'} alt='Avatar'></img>
             </a>
             <div className='AppHeader__rightBlock'>
                 <HeaderNav isMobile={false} />
@@ -42,8 +43,8 @@ function AppHeaderMobile() {
 
     return !opened ? (
         <header className='AppHeader'>
-            <a className='AppHeader__mainPageRef' href='/'>
-                <img className='AppHeader__logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img>
+            <a className='logoWrapperAnchor' href='/'>
+                <img className='logo' src={SCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img>
             </a>
             <div className='AppHeader__rightBlock'>
                 <HeaderAuthCheckMobile menuIsOpened={false} />
@@ -55,8 +56,8 @@ function AppHeaderMobile() {
             <header className='AppHeader burgerMenuOpened'>
                 <div className='AppHeader__burgerMenu'>
                     <div className='burgerMenu__top'>
-                        <a className='burgerMenu__mainPageRef' href='/'>
-                            <img className='AppHeader__logo' src={MobileMenuSCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img>
+                        <a className='logoWrapperAnchor'  href='/'>
+                            <img className='logo' src={MobileMenuSCANlogo} height={'50%'} width={'auto'} alt='SCANlogo'></img>
                         </a>
                         <img className='burgerMenu__burgerMenuExit' onClick={toggleOpened} src={burgerMenuExitImg} alt='EXIT'></img>
                     </div>

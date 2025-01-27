@@ -1,0 +1,32 @@
+@media screen and (min-width: 1921px) {
+    .logoWrapperAnchor {
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width: 1920px) and (min-width: 1025px) {
+    .logoWrapperAnchor {
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    .logoWrapperAnchor {
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .logoWrapperAnchor {
+        height: 2.5rem;
+    }
+}
+
+.logoWrapperAnchor {
+    width: auto;
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
+}

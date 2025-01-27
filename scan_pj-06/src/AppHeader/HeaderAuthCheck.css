@@ -1,6 +1,16 @@
-.HeaderAuthCheck {
+@media screen and (max-width: 768px) {
+    .HeaderAuthCheck {
+      column-gap: 4vw;
+    }
+  }
+  
+  @media screen and (min-width: 769px) {
+    .HeaderAuthCheck {
+      column-gap: 8vw;
+    }
+  }
+
+  .HeaderAuthCheck {
     display: flex;
     flex-direction: row;
-
-    column-gap: 8vw;
 }

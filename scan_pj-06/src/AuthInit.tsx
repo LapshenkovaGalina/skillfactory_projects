@@ -17,7 +17,7 @@ function AuthInit() {
     }, [authInfo]);
 
     return (
-        <div></div>
+        <></>
     )
 }
 

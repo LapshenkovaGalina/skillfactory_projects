@@ -25,4 +25,6 @@
 
 .info__avatar {
     border-radius: 50%;
+    width: calc(32px + 28 * (100vw - 320px) / 2240);;
+    height: auto;
 }
