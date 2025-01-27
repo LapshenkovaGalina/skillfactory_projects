@@ -137,7 +137,7 @@ function ArticleView({ data }: ArticleViewProps) {
             {img}
             <div className='articleText'>{text}</div>
             <div className='footer'>
-                <button className='readInTheSourseBtn' onClick={() => window.open(data.ok.url, '_blank')} >Читать в источнике</button>
+                <button className='readInTheSourceBtn' onClick={() => window.open(data.ok.url, '_blank')} >Читать в источнике</button>
                 <div className='articleWordsNum'>{`${data.ok.attributes.wordCount} слова`}</div>
             </div>
         </div>

@@ -27,7 +27,7 @@
         margin-bottom: 1.5rem;
     }
 
-    .readInTheSourseBtn {
+    .readInTheSourceBtn {
         padding: 1.5vh 5vw;
         font-size: 16px;
     }
@@ -62,7 +62,7 @@
         margin-bottom: 1.8rem;
     }
 
-    .readInTheSourseBtn {
+    .readInTheSourceBtn {
         padding: 1.5vh 3vw;
         font-size: 18px;
     }
@@ -133,18 +133,19 @@
     align-items: end;
 }
 
-.readInTheSourseBtn {
+.readInTheSourceBtn {
     background-color: #7CE3E1;
 
     border-radius: 5px;
     border: 0px;
 }
 
-.readInTheSourseBtn:hover {
-    background-color: #88f9f8
+.readInTheSourceBtn:hover {
+    background-color: #88f9f8;
+    cursor: pointer;
 }
 
-.readInTheSourseBtn:active {
+.readInTheSourceBtn:active {
     color: #FFFFFF;
     background-color: #7CE3E1;
 }
